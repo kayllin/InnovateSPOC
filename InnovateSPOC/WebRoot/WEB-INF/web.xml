@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>InnovateSPOC</display-name>
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  
+  </welcome-file-list>
+  
+  
+  	<!-- Spring MVC配置 -->
+	<!-- ====================================== -->
+	<!-- 声明了一个名为springMVC的servlet对象，并采用通配符的方式将所有的do类型的请求都映射到
+	 dispatherServlet对象上 -->
+	<servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/hibernate-config.xml,/WEB-INF/springmvc-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+  
+
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+ 
+
+    <!-- 配置请求过滤器，编码格式设为UTF-8，避免中文乱码-->
+	<filter>
+		<filter-name>Character Encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>	
+	  
+	<filter>    
+         <filter-name>loginFilter</filter-name>    
+         <filter-class>com.base.filter.checkLoginFilter</filter-class>    
+    </filter>    
+    <filter-mapping>    
+         <filter-name>loginFilter</filter-name>    
+         <url-pattern>/jsp/*</url-pattern>
+    </filter-mapping>
+     <filter-mapping>    
+         <filter-name>loginFilter</filter-name>    
+         <url-pattern>/html/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>    
+         <filter-name>loginFilter</filter-name>    
+         <url-pattern>*.do</url-pattern>
+    </filter-mapping> 
+    
+     <!-- TOMCAT移植到WEBLOGIC页面默认编码问题-->
+     <!-- 解决方法：为下载的文件自动装配相应的mime后缀 -->  
+    <mime-mapping>  
+        <extension>doc</extension>  
+        <mime-type>application/vnd.ms-word</mime-type>    
+    </mime-mapping>  
+      
+    <mime-mapping>   
+        <extension>xls</extension>   
+        <mime-type>application/msexcel</mime-type>   
+    </mime-mapping>  
+      
+    <mime-mapping>    
+       <extension>ppt</extension>  
+       <mime-type>application/vnd.ms-powerpoint</mime-type>  
+    </mime-mapping>  
+      
+    <mime-mapping>  
+        <extension>docx</extension>  
+        <mime-type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</mime-type>  
+    </mime-mapping>  
+      
+    <mime-mapping>  
+        <extension>pptx</extension>  
+        <mime-type>application/vnd.openxmlformats-officedocument.presentationml.presentation</mime-type>  
+    </mime-mapping>  
+      
+    <mime-mapping>  
+        <extension>xlsx</extension>  
+        <mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>  
+    </mime-mapping> 
+</web-app>
