@@ -7,45 +7,63 @@ import javax.persistence.Id;
 public class project_personnel {
 
 	@Id
-	private int id;//项目人员表id
-	private int pid;//项目作品id
-	private String participants;//参与人员
-	private int header;//是否负责人
+	private int id;//锟斤拷目锟斤拷员锟斤拷id
+	private int sid;//瀛︾敓id
+	private int pid;//锟斤拷目锟斤拷品id
+	private String participants;//锟斤拷锟斤拷锟斤拷员
+	private int header;//锟角凤拷锟斤拷锟斤拷
 	
 	public project_personnel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public project_personnel(int id, int pid, String participants, int header) {
+
+	public project_personnel(int id, int sid, int pid, String participants,
+			int header) {
 		super();
 		this.id = id;
+		this.sid = sid;
 		this.pid = pid;
 		this.participants = participants;
 		this.header = header;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public int getSid() {
+		return sid;
+	}
+
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+
 	public int getPid() {
 		return pid;
 	}
+
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
+
 	public String getParticipants() {
 		return participants;
 	}
+
 	public void setParticipants(String participants) {
 		this.participants = participants;
 	}
+
 	public int getHeader() {
 		return header;
 	}
+
 	public void setHeader(int header) {
 		this.header = header;
 	}
