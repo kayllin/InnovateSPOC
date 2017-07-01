@@ -47,11 +47,11 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>	
 	  
-	<filter>    
+	<!-- <filter>    
          <filter-name>loginFilter</filter-name>    
          <filter-class>com.base.filter.checkLoginFilter</filter-class>    
-    </filter>    
-    <filter-mapping>    
+    </filter>  -->   
+    <!-- <filter-mapping>    
          <filter-name>loginFilter</filter-name>    
          <url-pattern>/jsp/*</url-pattern>
     </filter-mapping>
@@ -62,7 +62,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <filter-mapping>    
          <filter-name>loginFilter</filter-name>    
          <url-pattern>*.do</url-pattern>
-    </filter-mapping> 
+    </filter-mapping>  -->
     
      <!-- TOMCAT移植到WEBLOGIC页面默认编码问题-->
      <!-- 解决方法：为下载的文件自动装配相应的mime后缀 -->  
