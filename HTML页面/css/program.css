@@ -222,7 +222,10 @@ ul{
 	height: 190px;
 	margin-top: 50px;
 	background: url(../images/program/title1.png) no-repeat;
-	background-size: contain;
+	background-position: center;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .team_content{
 	width: 880px;
@@ -248,6 +251,11 @@ ul{
 	margin-top: 40px;
 	width: 980px;
 	height: 300px;
+	position: relative;
+}
+#team_list{
+	position: absolute;
+	top: 100%;
 }
 .team_menber .carousel-indicators li{
 	width: 20px;
@@ -255,7 +263,7 @@ ul{
 	background-color: #D1D1D1;
 	border: 0;
 	border-radius: 50%;
-	margin:0  19px 0 0;
+	margin:20px 19px 0 0;
 	text-indent: 0;
 }
 .team_menber .carousel-indicators .active{
@@ -282,5 +290,180 @@ ul{
 
 
 .work{
-	margin-top: 60px;
+	margin: auto;
+	margin-top: 8%;
+	position: relative;
+}
+.work_title{
+	color: #fff;
+	text-align: center;
+	line-height: 250px;
+	position: absolute;
+	top: 0px;
+	left: 80px;
+	height: 250px;
+	width: 250px;
+	background-color: rgba(236,67,61,0.8);
+	font-size: 24px;
+	z-index: 9999;
+}
+.work_item img{
+	width: 100%;
+}
+.carousel_work{
+	margin: auto;
+	position: relative;
+}
+#work_list{
+	position: absolute;
+	top: 100%;
+}
+.work .carousel-indicators li{
+	width: 20px;
+	height: 20px;
+	background-color: #D1D1D1;
+	border: 0;
+	border-radius: 50%;
+	margin:20px 19px 0 0;
+	text-indent: 0;
+}
+.work .carousel-indicators .active{
+	background: #ec433d;
+}
+.work .carousel ol li{
+	*display: inline;
+}
+.slogan{
+	margin-top: 15%;
+}
+.slogan img{
+	width: 100%;
+}
+
+.employee{
+	margin: auto;
+	margin-top: 8%;
+	position: relative;
+}
+.employee_title{
+	color: #000;
+	text-align: center;
+	font-size: 24px;
+}
+.employee_item{
+	float: left;
+	margin-left: 20px;
+	width: 205px;
+	position: relative;
+}
+.employee_pic{
+	width: 205px;
+	height: 158px;	
+}
+.employee_item img{
+	width: 205px;
+}
+.employee_item h3{
+	position: absolute;
+	top:88px;
+	display: block;
+	font-size: 20px;
+	text-align: left;
+	color: #fff;
+	padding-left: 10px;
+}
+.employee_item p{
+	margin-top: 10px;
+	display: block;
+}
+#carousel_employee{
+	margin: auto;
+	width: 980px;
+}
+#employee_list{
+	position: absolute;
+	top: 100%;
+}
+.employee .carousel-indicators li{
+	width: 20px;
+	height: 20px;
+	background-color: #D1D1D1;
+	border: 0;
+	border-radius: 50%;
+	margin:20px 19px 0 0;
+	text-indent: 0;
+}
+.employee .carousel-indicators .active{
+	background: #ec433d;
+}
+.employee .carousel ol li{
+	*display: inline;
+}
+
+.teacher{
+	width: 980px;
+	margin: auto;
+	position: relative;
+}
+.teacher_title{
+	width: 313px;
+	height: 63px;
+	margin: auto;
+	margin-top: 10%;
+}
+.teacher_item{
+	width: 980px;
+}
+.teacher_left{
+	float:left;
+	height: 305px;
+	overflow: hidden;
+}
+.teacher_left img{
+	height: 305px;
+}
+.teacher_right{
+	color: #fff;
+	width: 635px;
+	float: left;
+	height: 305px;
+	background-color: rgba(236,67,61,0.9);
+}
+.teacher_right p{
+	margin-left: 20px;
+	font-size: 16px;
+	display:block;
+	padding-right: 20px;
+}
+.teacher_right h3{
+	margin-left: 20px;
+}
+.p2{
+	padding-top: 30px;
+}
+.teacher_bg{
+	background:url(../images/program/modal.png);
+	background-size: cover;
+	float: left;
+	height: 305px;
+	position: relative;
+}
+#teacher_list{
+	position: absolute;
+	top: 100%;
+}
+.teacher .carousel-indicators li{
+	width: 12px;
+	height: 12px;
+	background-color: #D1D1D1;
+	border: 0;
+	border-radius: 50%;
+	margin:20px 19px 0 0;
+	text-indent: 0;
+}
+.teacher .carousel-indicators .active{
+	background: #ec433d;
+}
+.teacher .carousel ol li{
+	*display: inline;
 }
