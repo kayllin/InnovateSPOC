@@ -467,3 +467,58 @@ ul{
 .teacher .carousel ol li{
 	*display: inline;
 }
+
+.caress{
+	background:#f4f4f4;
+	margin-top: 10%;
+}
+.caress_content{
+	width: 980px;
+	height: 600px;
+	margin: auto;
+}
+.caress_left{
+	float: left;
+	width: 580px;
+}
+.caress_right{
+	float: left;
+	width: 366px;
+	margin-left: 30px;
+}
+.caress_item{
+	background: #EEECEC;
+	margin-top:20px;
+	height: 165px;
+}
+.caress_item2{
+	background: #EEECEC;
+	margin-top:20px;
+	height: 258px;
+}
+.plan{
+	width: 980px;
+	margin-top: 10%;
+	margin: auto;
+}
+#plan_chart1 tr td{
+	border: 5px solid #fff;
+	width: 470px;
+	font-size: 18px;
+	background-color:#EEECEC;
+}
+#plan_chart2 tr td{
+	border: 5px solid #fff;
+	font-size: 18px;
+	background-color:#EEECEC;
+}
+.plan_table_title{
+	background-color: #EC433D !important;
+	color: #fff;
+	font-size: 28px !important;
+}
+.plan_table_title2{
+	background-color: #EA8A88 !important;
+	color: #fff;
+	font-size: 14px !important;
+}
