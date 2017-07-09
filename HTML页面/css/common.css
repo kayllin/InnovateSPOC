@@ -10,7 +10,7 @@ a {
 }
 a:active, a:hover {
 	outline: 0;
-	color:#02335b;
+	color:#ec433d;
 	text-decoration: underline;
     transition:all 0.3s;
 }
@@ -135,28 +135,3 @@ ul {
 	background: rgba(255, 255,255, 1)!important; 
 	filter: Alpha(opacity=100); background: #fff; /*　使用IE专属滤镜实现IE背景透明*/ 
 	}
-
-#advertise{	
-	width:320px;
-	height: 400px;
-	text-align: center;
-	padding-top:15px;
-	color: white;
-	font-size: 14px;	
-	z-index:2;
-	background-color: rgba(2,51,92,1);
-	}
-#advertise table tr td{
-	border: none;
-}
-	.code_advertise{
-	width: 100px;
-	height: 100px;
-	margin: auto;
-		margin-top: -10px;
-	}
-	.code_baoming{
-	width: 150px;
-	margin: auto;
-	/*margin-top: 10px;*/
-	}	
