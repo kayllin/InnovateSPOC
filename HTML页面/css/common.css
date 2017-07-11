@@ -10,7 +10,7 @@ a {
 }
 a:active, a:hover {
 	outline: 0;
-	color:#02335b;
+	color:#ec433d;
 	text-decoration: underline;
     transition:all 0.3s;
 }
@@ -135,69 +135,3 @@ ul {
 	background: rgba(255, 255,255, 1)!important; 
 	filter: Alpha(opacity=100); background: #fff; /*　使用IE专属滤镜实现IE背景透明*/ 
 	}
-
-#advertise{	
-	width:320px;
-	height: 400px;
-	text-align: center;
-	padding-top:15px;
-	color: white;
-	font-size: 14px;	
-	z-index:2;
-	background-color: rgba(2,51,92,1);
-	}
-#advertise table tr td{
-	border: none;
-}
-	.code_advertise{
-	width: 100px;
-	height: 100px;
-	margin: auto;
-		margin-top: -10px;
-	}
-	.code_baoming{
-	width: 150px;
-	margin: auto;
-	/*margin-top: 10px;*/
-	}	
-
-/* suspend */
-.IE6PNG{
-	margin-top: 73px;
-	height:254px;
-	text-align: center;
-	color: #02335c;
-	font-size: 14px;
-	background:url(../images/index/link_index.png) no-repeat;
-	border-radius:25px 0 0 25px;
-}
-.suspend {
-	width:60px;
-	height:400px;
-	position:fixed;
-	top:200px;
-	right:0;
-	overflow: hidden;
-	z-index:9999;
-}
-.suspend dl {
-	width:120px;
-	height:400px;
-	padding-left:60px;
-	box-shadow:0 0 5px #e4e8ec;
-}
-.suspend dl dt {
-	width:60px;
-	position:absolute;
-	top:0;
-	left:0;
-	cursor:pointer;
-}
-.suspend dl dd {}
-.suspend dl dd.suspendQQ {width:367px;height:400px;}
-* html .suspend {position:absolute;left:expression(eval(document.documentElement.scrollRight));top:expression(eval(document.documentElement.scrollTop+200))}	
-	
-
-	
-
-

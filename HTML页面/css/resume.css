@@ -1,0 +1,298 @@
+.wrap{
+	width: 1024px;
+	/*height: 1000px;*/
+	margin: auto;
+	display: table;
+}
+#section1{
+	width: 350px;
+	height: 1437px;
+	float: left;
+}
+#section1_1{
+	height: 250px;
+	background: #ec433e;
+	padding-top: 40px;
+}
+#section1_1 p{
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	margin: 0px;
+}
+#section1_1 p:nth-of-type(1){
+	font-weight: bold;
+	font-size: 22px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+#portrait{
+	margin: auto;
+	width: 130px;
+	height: 130px;
+	border-radius: 75px;
+	background: white;
+	border: 10px solid #fe9f9b;
+}
+#section1_2{
+	color: white;
+	height: 1037px;
+	background: #ec433e;
+	margin-top: 10px;
+	padding: 50px 40px 50px 40px;
+}
+.information{
+	margin-bottom: 80px;
+}
+.intro_title{
+	height: 30px;
+	margin-bottom: 30px;
+}
+.intro_title div{
+	float: left;
+}
+.text{
+	font-size: 20px;
+	margin-left: 10px;
+	font-weight: bold;
+}
+.text span{
+	padding-left: 10px;
+	color: #f6a19e;
+}
+.text2{
+	color: #EC433E;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 5px;
+	font-weight: bold;
+}
+.text2 span{
+	font-weight: 100;
+	font-size: 18px;
+	padding-left: 10px;
+	color: #f6a19e;
+}
+.icon1{
+	width: 30px;
+	height: 30px;
+	border-radius: 25px;
+	background: rgba(255,255,255,0.5);
+}
+.icon2{
+	width: 30px;
+	height: 30px;
+	border-radius: 25px;
+	background: rgba(255,255,255,1);
+}
+.icon3{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background: #EC433E;
+}
+.icon4{
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+#icon1{
+	background-image: url(../images/resume/ren.png);
+	background-size: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 69% 0%;
+}
+#icon2{
+	background-image: url(../images/resume/xinfeng.png);
+	background-size: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 50% 10%;
+}
+#icon3{
+	background-image: url(../images/resume/ZHUZHI.png);
+	background-size: 25px 60px;
+	background-repeat: no-repeat;
+	background-position: 150% 25%;
+}
+#icon4{
+	background-image: url(../images/resume/QQ.png);
+	background-size: 50px 120px;
+	background-repeat: no-repeat;
+	background-position: -20% 30%;
+}
+#icon5{
+	background-image: url(../images/resume/phone.png);
+	background-size: 17px 40px;
+	background-repeat: no-repeat;
+	background-position: 65% 40%;
+}
+#icon6{
+	background-image: url(../images/resume/zhuanyejineng.png);
+	background-size: 17px 40px;
+	background-repeat: no-repeat;
+	background-position: 65% 40%;
+}
+.intro_cotent{
+	font-size: 12px;
+}
+.intro_cotent div{
+	float: left;
+}
+.intro_cotent p:nth-of-type(1){
+	margin-bottom: 30px;
+}
+.intro_cotent2{
+	font-size: 12px;
+	margin-bottom: 30px;
+	height: 30px;
+}
+.intro_cotent2 .float_left{
+	float: left;
+}
+.contact{
+	width: 230px;
+	height: 30px;
+	float: left;
+	margin-left: 10px;
+}
+.contact p{
+	margin: 0px;
+	margin-bottom: 0px;
+}
+.font-s{
+	font-size: 9px;
+}
+#section2{
+	float: left;
+	padding: 50px 40px 0px 40px;
+	width: 584px;
+	margin-left: 10px;
+}
+.sec2_son{
+	display: table;
+	margin-bottom: 60px;
+}
+.sec2_son:nth-of-type(1){
+	/*height: 550px;*/
+}
+.sec2_son:nth-of-type(2){
+	/*height: 350px;*/
+}
+.sec2_content{
+	display: table;
+	width: 584px;
+	margin-top: 30px;
+}
+.sec2_content:nth-of-type(1){
+	width: 169px;
+}
+.sec2_title{
+	height: 40px;
+}
+.sec2_title div{
+	float: left;
+}
+.sec2_text{
+	color: #5e5e5e;
+	width: 520px;
+	float: left;
+	/*margin-bottom: 30px;*/
+}
+.sec2_text h1{
+	font-size: 24px;
+	font-weight: 100;
+	margin: 0px;
+}
+.sec2_text p:nth-of-type(1){
+	margin: 0px;
+}
+.sec2_text span{
+	display: block;
+	float: right;
+}
+.project{
+	width: 1024px;
+	display: table;
+	margin-bottom: 50px;
+}
+.progress_style{
+	border: 1px solid black;
+	width: 200px;
+	height: 8px !important;
+	margin-bottom: 0px !important;
+}
+.bar_style{
+	background: #ff9e9b !important;
+}
+.pro_title{
+	height: 40px;
+	margin-left: 40px;
+}
+.pro_title p{
+	font-size: 20px;
+	font-weight: bold;
+	color: #EC433E;
+	padding-top: 5px;
+}
+.pro_title p span{
+	padding-left: 20px;
+	font-size: 18px;
+	color: #F6A19E;
+}
+.icon5{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background: #EC433E;
+	margin-right: 20px;
+	float: left;
+}
+.icon5 span{
+	display: block;
+	padding-top: 6px;
+	padding-left: 14px;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+.pro_content{
+	width: 840px;
+	height: 500px;
+	margin: auto;
+}
+.content{
+	width: 230px;
+	height: 345px;
+	background: url(../images/resume/bg.png) no-repeat;
+	background-size: 250px 180px;
+	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
+	float: left;
+	margin-right: 75px;
+	margin-top: 60px;
+}
+.content:nth-of-type(3),.content:nth-of-type(6){
+	margin-right: 0px;
+}
+.intro{
+	padding-top: 185px;
+
+}
+.intro h1{
+	text-shadow: 0px 5px 5px rgba(1,1,1,0.5);
+	font-size: 15px;
+	font-weight: 100;
+	margin-bottom: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.intro p{
+	font-size: 12px;
+	padding-left: 25px;
+	padding-right: 25px;
+	color: grey;
+}
+.intro p:nth-of-type(3){
+	border-top: 1px solid #EFEFEF;
+	padding-top: 10px;
+}
