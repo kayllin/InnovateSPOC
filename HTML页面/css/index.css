@@ -400,6 +400,12 @@ a:hover{
 .foot_team{
 	float: left;
 }
+.foot_team a{
+	color: #fff;
+}
+.foot_team a:hover{
+	color: #fff;
+}
 .foot_team p:nth-of-type(2){
 	margin-top: 50px;
 }

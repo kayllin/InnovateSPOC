@@ -249,8 +249,7 @@ ul{
 .team_menber{
 	margin: auto;
 	margin-top: 40px;
-	width: 980px;
-	height: 300px;
+	height: 500px;
 	position: relative;
 }
 #team_list{
@@ -287,8 +286,14 @@ ul{
 .team_item p{
 	text-align: left;
 }
-
-
+.thumbnail{
+	border: none !important;
+}
+.thumbnail h4{
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
 .work{
 	margin: auto;
 	margin-top: 8%;
