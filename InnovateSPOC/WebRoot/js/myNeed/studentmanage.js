@@ -46,54 +46,63 @@ $(document).ready(
 							"mData" : "student_introduce",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "chinese_address",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "english_address",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "phone",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "qq",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "school_year",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "major",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "graduation",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
 							"mData" : "employed",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},
