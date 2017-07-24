@@ -159,7 +159,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<thead>
 									<tr bgcolor="#ECF1F5">
 									<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="3" id="button-left">
+										<td colspan="14" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
@@ -172,15 +172,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>学生id</th>
 										<th>学生姓名</th>
 										<th>性别</th>
-										<th>个人简介</th>
-										<th>中文居住地址</th>
-										<th>英文居住地址</th>
-										<th>联系电话</th>
-										<th>qq</th>
-										<th>入学年份</th>
-										<th>专业</th>
-										<th>是否毕业</th>
-										<th>是否应聘</th>
+										<th hidden>个人简介</th>
+										<th hidden>中文居住地址</th>
+										<th hidden>英文居住地址</th>
+										<th hidden>联系电话</th>
+										<th hidden>qq</th>
+										<th hidden>入学年份</th>
+										<th hidden>专业</th>
+										<th hidden>是否毕业</th>
+										<th hidden>是否应聘</th>
 										<th>修改</th>
 									</tr>
 								</thead>

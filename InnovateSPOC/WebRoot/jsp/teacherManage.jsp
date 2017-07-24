@@ -159,13 +159,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<thead>
 									<tr bgcolor="#ECF1F5">
 									<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="3" id="button-left">
+										<td colspan="6" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
-
-
 									</tr>
 									<tr>
 										<td>序号</td>
