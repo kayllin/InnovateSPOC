@@ -131,7 +131,7 @@ public class TeacherDaoImpl implements TeacherDao{
 				ch.setTid(rs.getString("id"));
 				ch.setTname(rs.getString("name"));
 				ch.setSex(rs.getString("sex"));
-//				ch.setTeacher_introduce(rs.getString("teacher_introduce"));
+				ch.setTeacher_introduce(rs.getString("introduce"));
 //				ch.setPhoto_address(rs.getString("photo_address"));
 				list.add(ch);
 			}

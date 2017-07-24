@@ -54,8 +54,8 @@ public class TeachermanageController {
 	// 数据起始位置
 	Integer startIndex = Integer.parseInt(request.getParameter("start"));
 	Integer draw = Integer.parseInt(request.getParameter("draw"));
-	int order = Integer.valueOf(request.getParameter("order[0][column]"));// 排序的列号
-//	int order = 1;
+//	int order = Integer.valueOf(request.getParameter("order[0][column]"));// 排序的列号
+	int order = 1;
 	// String orderDir = request.getParameter("order[0][dir]");//
 	// 排序的顺序asc or
 	String orderDir = "desc"; // // desc

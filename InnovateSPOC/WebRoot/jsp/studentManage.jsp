@@ -164,11 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
-										<td colspan="5"></td>
-										<td colspan="3" id="button-right">
-											<!-- <button type="button" id="import" class="btn btn-primary"
-												data-toggle="modal" data-target="#exportmodal">导出</button> -->
-										</td>
+
 
 									</tr>
 									<tr>
@@ -176,15 +172,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>学生id</th>
 										<th>学生姓名</th>
 										<th>性别</th>
-										<th hidden>中文居住地址</th>
-										<th hidden>英文居住地址</th>
-										<th hidden>联系电话</th>
-										<th hidden>qq</th>
-										<th hidden>入学年份</th>
-										<th hidden>专业</th>
-										<th hidden>是否毕业</th>
-										<th hidden>是否应聘</th>
-										<th hidden>个人简介</th>
+										<th>个人简介</th>
+										<th>中文居住地址</th>
+										<th>英文居住地址</th>
+										<th>联系电话</th>
+										<th>qq</th>
+										<th>入学年份</th>
+										<th>专业</th>
+										<th>是否毕业</th>
+										<th>是否应聘</th>
 										<th>修改</th>
 									</tr>
 								</thead>
@@ -228,12 +224,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td>学生id ：</td>
 												<td><input type="text" class="form-control"
-													id="tid" name="tid" disabled/></td>
+													id="sid" name="sid" disabled/></td>
 											</tr>
 											<tr>
 												<td>学生姓名 ：</td>
 												<td><input type="text" class="form-control"
-													id="tname" name="tname" readonly/>
+													id="sname" name="sname" readonly/>
 													</td>
 											</tr>
 											<tr>
@@ -244,11 +240,60 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tr>
 											<tr>
 												<td>个人简介 ：</td>
-												<td><input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
+												<td><input type="text" class="form-control" id="Sintroduce" name="Sintroduce"
 													/><span id="display1" style="color:#f00;"></span>
 													<input type="text" id="copyMname" hidden/>
 													</td>
 											</tr>
+											<tr>
+												<td>中文居住地址 ：</td>
+												<td><input type="text" class="form-control" id="chinese_address" name="chinese_address"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>英文居住地址 ：</td>
+												<td><input type="text" class="form-control" id="english_address" name="english_address"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>联系电话 ：</td>
+												<td><input type="text" class="form-control" id="phone" name="phone"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>Q Q ：</td>
+												<td><input type="text" class="form-control" id="qq" name="qq"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>入学年份 ：</td>
+												<td><input type="text" class="form-control" id="school_year" name="school_year"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>专 业 ：</td>
+												<td><input type="text" class="form-control" id="major" name="major"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>是否毕业 ：</td>
+												<td><input type="text" class="form-control" id="graduation" name="graduation"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>是否应聘 ：</td>
+												<td><input type="text" class="form-control" id="employed" name="employed"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											
 											
 										</table>
 									</form>
