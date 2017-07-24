@@ -164,11 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
-										<td colspan="5"></td>
-										<td colspan="3" id="button-right">
-											<!-- <button type="button" id="import" class="btn btn-primary"
-												data-toggle="modal" data-target="#exportmodal">导出</button> -->
-										</td>
+
 
 									</tr>
 									<tr>

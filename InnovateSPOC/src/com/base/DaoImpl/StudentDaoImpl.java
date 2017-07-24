@@ -55,7 +55,6 @@ public class StudentDaoImpl implements StudentDao{
 			sp.setString(13, emp);
 			sp.execute();
 		    flag = sp.getInt(14);
-		    System.out.println(flag);
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
@@ -94,8 +93,15 @@ public class StudentDaoImpl implements StudentDao{
 				ch.setSid(rs.getString("id"));
 				ch.setSname(rs.getString("name"));
 				ch.setSex(rs.getString("sex"));
-//				ch.setTeacher_introduce(rs.getString("teacher_introduce"));
-//				ch.setPhoto_address(rs.getString("photo_address"));
+				ch.setStudent_introduce(rs.getString("introduce"));
+				ch.setChinese_address(rs.getString("caddress"));
+				ch.setEnglish_address(rs.getString("eaddress"));
+				ch.setPhone(rs.getString("phone"));
+				ch.setQq(rs.getString("qq"));
+				ch.setSchool_year(rs.getString("schoolyear"));
+				ch.setMajor(rs.getString("major"));
+				ch.setGraduation(rs.getString("graduation"));
+				ch.setEmployed(rs.getString("employed"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {

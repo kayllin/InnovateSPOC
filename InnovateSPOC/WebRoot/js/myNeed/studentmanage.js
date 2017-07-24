@@ -142,18 +142,18 @@ $(document).on("click", "#checkdetale1", function() {
 	var index=$(this).val();	
 	$("#display1").html("");
 	tag1=true;
-	$("#tid").val(obj[index].tid);
-	$("#tname").val(obj[index].tname);
+	$("#sid").val(obj[index].sid);
+	$("#sname").val(obj[index].sname);
 	$("#sex").val(obj[index].sex);
-	$("#Tintroduce").val(obj[index].teacher_introduce);
-//	$("#copyMname").val(obj[index].mname);	
-//	var file=obj[index].file;
-//	if(file=="null"||file==""||file==null){
-//		$("#resourcetr").prop("hidden",true);
-//	}else{
-//		$("#resourcetr").prop("hidden",false);
-//		$("#Elink").prop("href",file);
-//	}	
+	$("#Sintroduce").val(obj[index].student_introduce);
+	$("#chinese_address").val(obj[index].chinese_address);
+	$("#english_address").val(obj[index].english_address);
+	$("#phone").val(obj[index].phone);
+	$("#qq").val(obj[index].qq);
+	$("#school_year").val(obj[index].school_year);
+	$("#major").val(obj[index].major);
+	$("#graduation").val(obj[index].graduation);
+	$("#employed").val(obj[index].employed);
 	$("#edit").modal('show');
 	
 });
