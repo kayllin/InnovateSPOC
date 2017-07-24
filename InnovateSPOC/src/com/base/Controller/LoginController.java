@@ -40,16 +40,14 @@ public class LoginController {
 	// 判断验证码
 	String strCode = (String) session.getAttribute("strCode");
 	if (!authCode.equals(strCode)) {
-
 	    return "redirect:login.html";
 	}
 	// 判断登录是否成功
 	boolean adminValue = userService.login(userid, pwd);
-
-	if (adminValue) {	    	   
+	if (adminValue) {
 	    CookieUtils.addCookie("username", userid, response);	    
 	    CookieUtils.addCookie("logintime",String.valueOf(new Date().getTime()), response);	   
-	    return "redirect:jsp/index.jsp";
+	    return "redirect:jsp/teacherManage.jsp";
 	} else {
 	    return "redirect:login.html";
 	}
