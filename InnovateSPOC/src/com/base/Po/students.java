@@ -8,29 +8,29 @@ import javax.persistence.Id;
 public class students {
 
 	@Id
-	private int sid;//Ñ§Éúid
-	private String sname;//Ñ§ÉúÐÕÃû
-	private String student_introduce;//×ÔÎÒ½éÉÜ
-	private String sex;//ÐÔ±ð
-	private String headshot;//Í·Ïñ£¨µØÖ·£©
-	private String chinese_address;//ÖÐÎÄ¾Ó×¡µØÖ·
-	private String english_address;//Ó¢ÎÄ¾Ó×¡µØÖ·
-	private int phone;//ÁªÏµµç»°
-	private int qq;//qqºÅ
-	private int school_year;//ÈëÑ§Äê·Ý
+	private String sid;//Ñ§ï¿½ï¿½id
+	private String sname;//Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String student_introduce;//ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½
+	private String sex;//ï¿½Ô±ï¿½
+	private String headshot;//Í·ï¿½ñ£¨µï¿½Ö·ï¿½ï¿½
+	private String chinese_address;//ï¿½ï¿½ï¿½Ä¾ï¿½×¡ï¿½ï¿½Ö·
+	private String english_address;//Ó¢ï¿½Ä¾ï¿½×¡ï¿½ï¿½Ö·
+	private String phone;//ï¿½ï¿½Ïµï¿½ç»°
+	private String qq;//qqï¿½ï¿½
+	private String school_year;//ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½
 	private String major;//×¨Òµ
-	private int graduation;//ÊÇ·ñ±ÏÒµ
-	private int employed;//ÊÇ·ñÓ¦Æ¸
+	private String graduation;//ï¿½Ç·ï¿½ï¿½Òµ
+	private String employed;//ï¿½Ç·ï¿½Ó¦Æ¸
 	
 	public students() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public students(int sid, String sname, String student_introduce,
+	public students(String sid, String sname, String student_introduce,
 			String sex, String headshot, String chinese_address,
-			String english_address, int phone, int qq, int school_year,
-			String major, int graduation, int employed) {
+			String english_address, String phone, String qq,
+			String school_year, String major, String graduation, String employed) {
 		super();
 		this.sid = sid;
 		this.sname = sname;
@@ -46,86 +46,110 @@ public class students {
 		this.graduation = graduation;
 		this.employed = employed;
 	}
-	
-	public int getSid() {
+
+	public String getSid() {
 		return sid;
 	}
-	public void setSid(int sid) {
+
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
+
 	public String getSname() {
 		return sname;
 	}
+
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
+
 	public String getStudent_introduce() {
 		return student_introduce;
 	}
+
 	public void setStudent_introduce(String student_introduce) {
 		this.student_introduce = student_introduce;
 	}
+
 	public String getSex() {
 		return sex;
 	}
+
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+
 	public String getHeadshot() {
 		return headshot;
 	}
+
 	public void setHeadshot(String headshot) {
 		this.headshot = headshot;
 	}
+
 	public String getChinese_address() {
 		return chinese_address;
 	}
+
 	public void setChinese_address(String chinese_address) {
 		this.chinese_address = chinese_address;
 	}
+
 	public String getEnglish_address() {
 		return english_address;
 	}
+
 	public void setEnglish_address(String english_address) {
 		this.english_address = english_address;
 	}
-	public int getPhone() {
+
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getQq() {
+
+	public String getQq() {
 		return qq;
 	}
-	public void setQq(int qq) {
+
+	public void setQq(String qq) {
 		this.qq = qq;
 	}
-	public int getSchool_year() {
+
+	public String getSchool_year() {
 		return school_year;
 	}
-	public void setSchool_year(int school_year) {
+
+	public void setSchool_year(String school_year) {
 		this.school_year = school_year;
 	}
+
 	public String getMajor() {
 		return major;
 	}
+
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public int getGraduation() {
+
+	public String getGraduation() {
 		return graduation;
 	}
-	public void setGraduation(int graduation) {
+
+	public void setGraduation(String graduation) {
 		this.graduation = graduation;
 	}
-	public int getEmployed() {
+
+	public String getEmployed() {
 		return employed;
 	}
-	public void setEmployed(int employed) {
+
+	public void setEmployed(String employed) {
 		this.employed = employed;
 	}
-	
-	
+
 	
 }

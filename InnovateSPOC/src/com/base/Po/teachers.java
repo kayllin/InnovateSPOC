@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class teachers {
 
 	@Id
-    private int tid;//��ʦid
+    private String tid;//��ʦid
 	private String sex;//性别
 	private String tname;//��ʦ����
 	private String teacher_introduce;//���ҽ���
@@ -16,8 +16,7 @@ public class teachers {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public teachers(int tid, String sex, String tname,
+	public teachers(String tid, String sex, String tname,
 			String teacher_introduce, String photo_address) {
 		super();
 		this.tid = tid;
@@ -26,11 +25,10 @@ public class teachers {
 		this.teacher_introduce = teacher_introduce;
 		this.photo_address = photo_address;
 	}
-	
-	public int getTid() {
+	public String getTid() {
 		return tid;
 	}
-	public void setTid(int tid) {
+	public void setTid(String tid) {
 		this.tid = tid;
 	}
 	public String getSex() {
