@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/teacher.css">
@@ -175,7 +176,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>教师id</th>
 										<th>教师姓名</th>
 										<th>性别</th>
-										<th hidden>个人简介</th>
+										<th>个人简介</th>
 										<th>修改</th>
 									</tr>
 								</thead>
