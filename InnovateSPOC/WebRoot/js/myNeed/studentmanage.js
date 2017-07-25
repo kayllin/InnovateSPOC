@@ -88,7 +88,7 @@ $(document).ready(
 							"mData" : "major",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
-							"visible":false,
+//							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
@@ -147,7 +147,6 @@ $(document).ready(
 
 //修改操作
 $(document).on("click", "#checkdetale1", function() {	
-	
 	var index=$(this).val();	
 	$("#display1").html("");
 	tag1=true;
@@ -160,7 +159,7 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#phone").val(obj[index].phone);
 	$("#qq").val(obj[index].qq);
 	$("#school_year").val(obj[index].school_year);
-	$("#major").val(obj[index].major);
+	$("#smajor").val(obj[index].major);
 	$("#graduation").val(obj[index].graduation);
 	$("#employed").val(obj[index].employed);
 	$("#edit").modal('show');
@@ -250,13 +249,13 @@ $("#save").click(function(){
 				});
 			 return;
 		}
-		if($("#teacherId").val()==""){
+		if($("#studentId").val()==""){
 				bootbox.alert({
 				message : "请填写学生id",
 				size : 'small'
 			});	
 			return;
-		}else if($("#teacherName").val()==""){
+		}else if($("#studentName").val()==""){
 				bootbox.alert({
 				message : "请填写学生名称",
 				size : 'small'
@@ -305,10 +304,10 @@ $("#saverun").click(function(){
 						}
 					});
 });
-//点击增加清空数据
-$("#ZJ").click(function(){
-	$("#display1").html("");
-	$("#display2").html("");
-});
+////点击增加清空数据
+//$("#ZJ").click(function(){
+//	$("#display1").html("");
+//	$("#display2").html("");
+//});
 
 

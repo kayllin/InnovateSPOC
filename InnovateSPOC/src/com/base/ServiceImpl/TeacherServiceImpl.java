@@ -26,11 +26,6 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 	
 	@Override
-	public void updateTeacher(String teacherName, String Areason, String password){
-		teacherdao.updateTeacher(teacherName, Areason, password);
-	}
-	
-	@Override
 	public teacherList query_teacher(Integer size, Integer pageindex,
 			int order, String orderDir, String searchValue) {
 		// TODO Auto-generated method stub
