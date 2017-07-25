@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
-<!-- 	<link rel="stylesheet" href="../css/employmentManage.css"> -->
+<!-- 	 <link rel="stylesheet" href="../css/employmentManage.css"> -->
   </head>
   
   <body>
@@ -207,10 +207,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="modal-content">
 			
 				<div class="modal-header" style="background:#3071a9; color:#FFF">
-					<!-- <button type="button" class="close" data-dismiss="modal"
+					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
-					</button> -->
+					</button>
 					<div id="closebas" class="glyphicon glyphicon-remove closeModal"
 				data-dismiss="modal"></div>
 					<h4 class="modal-title text-center" id="myModalLabel">增加就业信息</h4>
@@ -261,19 +261,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											name="graduateYear" placeholder="">
 										</div>
 								</div>
+								
 								<div class="form-group">
 									<label class="col-md-3 control-label">是否优秀<span
 										class="setTag">*</span></label>
 									<div class="col-md-6">
-										<label class="radio-inline"> <input type="radio"
-											class="colle" name="excRadio" id="excellence" value="1"
-											checked="true"> 是
-										</label> 
-										<label class="radio-inline"> <input type="radio"
-											name="excRadio" id="excellence" value="0"> 否
-										</label>
+										<select class="form-control" id="excellence0" name="exc">
+											<option id="excellence" value="是">是</option>
+											<option id="excellence" value="否">否</option>
+										</select>
 									</div>
-								</div>
+								</div> 
 							</form>
 						</div>
 					</div>
@@ -284,13 +282,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<button type="button" class="btn btn-default" id="daoclose"
 										data-dismiss="modal">取消</button>
 							<button type="submit" class="btn btn-primary"
-										id="confirmButton">确定</button>
+										id="submit0">确定</button>
 						</center>
 				</div>
 			
 			</div>
 		</div>
-	</div>
+	</div> 
+	
 	
 	<!-- 弹出框导出 -->
 	<div class="modal fade" id="export" tabindex="-1" role="dialog"
