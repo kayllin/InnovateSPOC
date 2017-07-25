@@ -7,21 +7,21 @@ import javax.persistence.Id;
 public class employment {
 
 	@Id
-	private int id;//¾ÍÒµ±íid
-	private int sid;//Ñ§Éúsid
-	private String company;//ËùÔÚ¹«Ë¾
-	private int salary;//ÄêÐ½
-	private String workin;//´ÓÊÂ¹¤×÷
-	private int graduation_year;//±ÏÒµÄê·Ý
-	private int excellence;//ÊÇ·ñÓÅÐã
+	private int id;//ï¿½ï¿½Òµï¿½ï¿½id
+	private String sid;//Ñ§ï¿½ï¿½
+	private String company;//ï¿½ï¿½ï¿½Ú¹ï¿½Ë¾
+	private String salary;//ï¿½ï¿½Ð½
+	private String workin;//ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½
+	private String graduation_year;//ï¿½ï¿½Òµï¿½ï¿½ï¿½
+	private String excellence;//ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	public employment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public employment(int id, int sid, String company, int salary,
-			String workin, int graduation_year, int excellence) {
+	public employment(int id, String sid, String company, String salary,
+			String workin, String graduation_year, String excellence) {
 		super();
 		this.id = id;
 		this.sid = sid;
@@ -38,10 +38,10 @@ public class employment {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getSid() {
+	public String getSid() {
 		return sid;
 	}
-	public void setSid(int sid) {
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
 	public String getCompany() {
@@ -50,10 +50,10 @@ public class employment {
 	public void setCompany(String company) {
 		this.company = company;
 	}
-	public int getSalary() {
+	public String getSalary() {
 		return salary;
 	}
-	public void setSalary(int salary) {
+	public void setSalary(String salary) {
 		this.salary = salary;
 	}
 	public String getWorkin() {
@@ -62,16 +62,16 @@ public class employment {
 	public void setWorkin(String workin) {
 		this.workin = workin;
 	}
-	public int getGraduation_year() {
+	public String getGraduation_year() {
 		return graduation_year;
 	}
-	public void setGraduation_year(int graduation_year) {
+	public void setGraduation_year(String graduation_year) {
 		this.graduation_year = graduation_year;
 	}
-	public int getExcellence() {
+	public String getExcellence() {
 		return excellence;
 	}
-	public void setExcellence(int excellence) {
+	public void setExcellence(String excellence) {
 		this.excellence = excellence;
 	}
 	

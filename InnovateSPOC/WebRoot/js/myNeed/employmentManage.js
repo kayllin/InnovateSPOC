@@ -85,7 +85,7 @@ var page = $('#employmentManage').DataTable(
 											"targets" : [ 0 ], // 指定的列
 											"data" : "id",
 											"render" : function(data, type, row) {	
-																					
+												
 												return '<label><input type="checkbox" name="recordcheck" value="'
 														+ data
 														+ '" class="ck" id="checkHa"></label>';
@@ -107,4 +107,63 @@ var page = $('#employmentManage').DataTable(
 											}
 										}
 									});
+
+							//增加框的js控制
+							$(document).on("click", "#submit0", function() {
+								alert("aaaaaaa");	
+								/*var tag=1;
+								var sid = $("#sid").val;
+								var company = $("#company").val;
+								var salary = $("#salary").val;
+								var workin = $("#workin").val;
+								var graduation_year = $("#graduation_year").val;
+								var excellence = $("#excellence").find("option:selected").text();
+								if(!tag){		
+									 bootbox.alert({
+											message : "该学生编号已存在，请重新输入",
+											size : 'small'
+										});
+									 return;
+								}	
+								if(company==""){
+									 bootbox.alert({
+											message : "请填写所在公司",
+											size : 'small'
+										});
+									 return;
+								}
+								if(salary==""){
+									 bootbox.alert({
+											message : "请填写年薪",
+											size : 'small'
+										});
+									 return;
+								}
+								if(workin==""){
+									 bootbox.alert({
+											message : "请填写从事工作",
+											size : 'small'
+										});
+									 return;
+								}
+								if(graduation_year==""){
+									 bootbox.alert({
+											message : "请填写毕业年份",
+											size : 'small'
+										});
+									 return;
+								}
+								if(excellence==""){
+									 bootbox.alert({
+											message : "请填写是否优秀",
+											size : 'small'
+										});
+									 return;
+								}*/
+								
+								$("#myForm").submit();
+							});
+
+
+
 });
