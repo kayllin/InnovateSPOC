@@ -170,7 +170,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>教师id</th>
 										<th>教师姓名</th>
 										<th>性别</th>
-										<th>个人简介</th>
+										<th hidden>个人简介</th>
 										<th>修改</th>
 									</tr>
 								</thead>
@@ -214,7 +214,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td>教师id ：</td>
 												<td><input type="text" class="form-control"
-													id="tid" name="tid" disabled/></td>
+													id="tid" name="tid" readonly/></td>
 											</tr>
 											<tr>
 												<td>教师姓名 ：</td>

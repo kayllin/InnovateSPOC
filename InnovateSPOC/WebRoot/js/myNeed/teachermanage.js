@@ -46,6 +46,7 @@ $(document).ready(
 							"mData" : "teacher_introduce",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "5%",
 
 						},

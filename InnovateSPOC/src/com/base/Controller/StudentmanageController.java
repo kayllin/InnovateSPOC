@@ -45,7 +45,6 @@ public class StudentmanageController {
 //			String photo = request.getParameter("file");
 			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp);
 			request.setAttribute("flag", flag);
-			System.out.println(flag);
 			return "studentManage";
 		}
 		
@@ -91,28 +90,43 @@ public class StudentmanageController {
 		return null;
 	    }
 		
-	  //删除教师
-	    @RequestMapping("/delstudent.do")
-	    public String deleteStudent(HttpServletRequest request,
-	    	    HttpServletResponse response) {
-	    	String str = request.getParameter("deletstr");
-	    	String message = studentService.deleteStudent(str);
-	    	System.out.println(str);
-	    	System.out.println(message);
-	    	if (message.equals("success")) {
-	    	    message = "操作成功";
-	    	} else if (message.equals("fail")) {
-	    	    message = "操作失败";
-	    	}
-	    	JSONObject getObj = new JSONObject();
-	    	getObj.put("str", message);
-	    	response.setContentType("text/html;charset=UTF-8");
-	    	try {
-	    	    response.getWriter().print(getObj.toString());
-	    	} catch (IOException e) {
-	    	    // TODO Auto-generated catch block
-	    	    e.printStackTrace();
-	    	}
-	    	return null;
-	        }
+	// 删除学生
+	@RequestMapping("/delstudent.do")
+	public String deleteStudent(HttpServletRequest request,
+			HttpServletResponse response) {
+		String str = request.getParameter("deletstr");
+		String message = studentService.deleteStudent(str);
+		if (message.equals("success")) {
+			message = "操作成功";
+		} else if (message.equals("fail")) {
+			message = "操作失败";
+		}
+		JSONObject getObj = new JSONObject();
+		getObj.put("str", message);
+		response.setContentType("text/html;charset=UTF-8");
+		try {
+			response.getWriter().print(getObj.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	//修改学生信息
+	@RequestMapping("updatestudent.do")
+	public String updateStudent(HttpServletRequest request,
+			HttpServletResponse response){
+		String sid = request.getParameter("sid");
+		String Sintroduce = request.getParameter("Sintroduce");
+		String chinese_address = request.getParameter("chinese_address");
+		String english_address = request.getParameter("english_address");
+		String phone = request.getParameter("phone");
+		String qq = request.getParameter("qq");
+		String smajor = request.getParameter("smajor");
+		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor);
+		return "studentManage";
+		
+	}
+	
 }

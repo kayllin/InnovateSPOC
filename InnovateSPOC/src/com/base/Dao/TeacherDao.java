@@ -19,7 +19,5 @@ public interface TeacherDao {
 
 	public String deleteTeacher(String str);
 
-	public void updateTeacher(String teacherName, String Areason, String password);
-
 	public void updateteacher(String tid, String tintroduce);
 }

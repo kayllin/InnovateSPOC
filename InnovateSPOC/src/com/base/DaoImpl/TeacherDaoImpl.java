@@ -79,29 +79,6 @@ public class TeacherDaoImpl implements TeacherDao{
 		return message;
 	}
 	
-	//修改教师信息
-	@Override
-	public void updateTeacher(String teacherName,String Areason,String password) {
-		Connection conn = null;
-		PreparedStatement ps=null;
-		ResultSet rs = null;		
-		try {
-		    conn = (Connection) SessionFactoryUtils.getDataSource(
-			    sessionFactory).getConnection();
-		    String sql =("update teacher set mname=? where mid=?");
-		    ps = conn.prepareStatement(sql);
-		    ps.setString(1, teacherName);
-		    ps.setString(2, Areason);
-		    ps.setString(2, password);
-		    ps.executeUpdate();
-		} catch (SQLException e) {
-		    // TODO Auto-generated catch block
-		    e.printStackTrace();
-		} finally {
-		    SqlConnectionUtils.free(conn, ps, rs);
-		}
-	}
-	
 	// 分页展示教师信息
 	@Override
 	public teacherList query_teacher(Integer size, Integer pageindex,
@@ -172,7 +149,7 @@ public class TeacherDaoImpl implements TeacherDao{
 		return flag;
 	    }
 
-
+	//修改教师信息
 	@Override
 	public void updateteacher(String tid, String tintroduce) {
 		// TODO Auto-generated method stub
@@ -182,7 +159,7 @@ public class TeacherDaoImpl implements TeacherDao{
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    String sql =("update teacher set tintroduce=? where tid=?");
+		    String sql =("update teachers set teacher_introduce=? where tid=?");
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, tintroduce);
 		    ps.setString(2, tid);

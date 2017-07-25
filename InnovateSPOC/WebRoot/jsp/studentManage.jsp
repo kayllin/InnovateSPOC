@@ -178,7 +178,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th hidden>联系电话</th>
 										<th hidden>qq</th>
 										<th hidden>入学年份</th>
-										<th hidden>专业</th>
+										<th>专业</th>
 										<th hidden>是否毕业</th>
 										<th hidden>是否应聘</th>
 										<th>修改</th>
@@ -218,13 +218,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updateteacher.do" method="post" class="form-horizontal"
+									<form action="updatestudent.do" method="post" class="form-horizontal"
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
 												<td>学生id ：</td>
 												<td><input type="text" class="form-control"
-													id="sid" name="sid" disabled/></td>
+													id="sid" name="sid" readonly/></td>
 											</tr>
 											<tr>
 												<td>学生姓名 ：</td>
@@ -271,13 +271,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tr>
 											<tr>
 												<td>入学年份 ：</td>
-												<td><input type="text" class="form-control" id="school_year" name="school_year"
+												<td><input type="text" class="form-control" id="school_year" name="school_year" readonly
 													/><span id="display1" style="color:#f00;"></span>
 													</td>
 											</tr>
 											<tr>
 												<td>专 业 ：</td>
-												<td><input type="text" class="form-control" id="major" name="major"
+												<td><input type="text" class="form-control" id="smajor" name="smajor"
 													/><span id="display1" style="color:#f00;"></span>
 													</td>
 											</tr>
