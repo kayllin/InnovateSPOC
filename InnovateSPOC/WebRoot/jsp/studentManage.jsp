@@ -82,7 +82,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="studentResume.jsp"><span class="text">学生简历管理</span></a></li>
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 
 									</ul>
 								</li>
@@ -100,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">就业信息管理</span></a></li>
+											href="employmentManage.jsp"><span class="text">就业信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -240,9 +246,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tr>
 											<tr>
 												<td>个人简介 ：</td>
-												<td><input type="text" class="form-control" id="Sintroduce" name="Sintroduce"
-													/><span id="display1" style="color:#f00;"></span>
-													<input type="text" id="copyMname" hidden/>
+												<td>
+													<textarea class="form-control" id="Sintroduce" name="Sintroduce"></textarea>
 													</td>
 											</tr>
 											<tr>
@@ -411,13 +416,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<td class="col-md-3 col-md-offset-2">自我介绍:</td>
 										<td class="col-md-9"><textarea class="form-control" id="Areason" name="Areason"></textarea></td>
 									</tr>
-									<%-- <tr>
-										<td class="col-md-3">上传照片:</td>
-										<td class="col-md-9">
-											<input type="file" accept="image/gif, image/jpeg" name="file" id="file"/>
-											<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />
-										</td>
-									</tr> --%>
 								</table>
 							</form>
 						</div>

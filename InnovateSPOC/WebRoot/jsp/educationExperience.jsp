@@ -150,7 +150,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">教师管理</a></li>
+							<li><a href="RepairManage.jsp">教育经历管理</a></li>
 						</ol>
 					</div>
 					
@@ -165,18 +165,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<thead>
 									<tr bgcolor="#ECF1F5">
 									<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="6" id="button-left">
+										<td colspan="14" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
+
+
 									</tr>
 									<tr>
 										<td>序号</td>
-										<th>教师id</th>
-										<th>教师姓名</th>
-										<th>性别</th>
-										<th hidden>个人简介</th>
+										<th>学生id</th>
+										<th>学生姓名</th>
+										<th>学校</th>
+										<th>开始时间</th>
+										<th>结束时间</th>
+										<th hidden>教育内容</th>
 										<th>修改</th>
 									</tr>
 								</thead>
@@ -209,40 +213,53 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-header" style="background:#3071a9; color:#FFF">
 							<div class="glyphicon glyphicon-remove closeModal"
 								data-dismiss="modal"></div>
-							<h4 class="modal-title text-center" id="myModalLabel">教师信息修改</h4>
+							<h4 class="modal-title text-center" id="myModalLabel">教育经历详情及修改</h4>
 						</div>
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updateteacher.do" method="post" class="form-horizontal"
+									<form action="updateEducation.do" method="post" class="form-horizontal"
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
-												<td>教师id ：</td>
+												<td>id ：</td>
 												<td><input type="text" class="form-control"
-													id="tid" name="tid" readonly/></td>
+													id="id" name="id" readonly/></td>
 											</tr>
 											<tr>
-												<td>教师姓名 ：</td>
+												<td>学生id ：</td>
 												<td><input type="text" class="form-control"
-													id="tname" name="tname" readonly/>
+													id="sid" name="sid" readonly/></td>
+											</tr>
+											<tr>
+												<td>学生姓名 ：</td>
+												<td><input type="text" class="form-control"
+													id="sname" name="sname" readonly/>
 													</td>
 											</tr>
 											<tr>
-												<td>性别 ：</td>
+												<td>学校 ：</td>
 												<td><input type="text" class="form-control"
-													id="sex" name="sex" readonly/>
+													id="address" name="address" readonly/>
 													</td>
 											</tr>
 											<tr>
-												<td>个人简介 ：</td>
-												<td><!-- <input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
+												<td>开始时间 ：</td>
+												<td><input type="text" class="form-control" id="begin" name="begin"
 													/><span id="display1" style="color:#f00;"></span>
-													<input type="text" id="copyMname" hidden/> -->
-													<textarea class="form-control" id="Tintroduce" name="Tintroduce"></textarea>
 													</td>
 											</tr>
-											
+											<tr>
+												<td>结束时间 ：</td>
+												<td><input type="text" class="form-control" id="end" name="end"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>教育内容 ：</td>
+												<td><textarea class="form-control" id="description" name="description"></textarea>
+													</td>
+											</tr>
 										</table>
 									</form>
 								</div>
@@ -269,57 +286,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title text-center" id="myModalLabel">教师信息</h4>
+					<h4 class="modal-title text-center" id="myModalLabel">教育经历信息</h4>
 				</div>
 				<div class="modal-body table-responsive">
 					<div class="row">
 						<div class="col-md-12">
-							<form action="addteacher.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+							<form action="addEducation.do" method="post" class="form-horizontal" enctype="multipart/form-data"
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
-										<td class="col-md-3 col-md-offset-2">教师id:</td>
-										<td class="col-md-9"><input name="teacherId" id="teacherId" type="text" style="width:80%" class="form-control"/><span id="display1"
+										<td class="col-md-3 col-md-offset-2">学生id:</td>
+										<td class="col-md-9"><input name="studentId" id="studentId" type="text" style="width:80%" class="form-control"/><span id="display1"
+												style="color:#f00;"></span><input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" /></td>
+									</tr>
+									<!-- <tr>
+										<td class="col-md-3 col-md-offset-2">学生姓名:</td>
+										<td class="col-md-9"><input name="studentName" id="studentName" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr> -->
+									<tr>
+										<td class="col-md-3 col-md-offset-2">学校:</td>
+										<td class="col-md-9"><input name="address1" id="address1" type="text" style="width:80%" class="form-control"/></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">开始时间:</td>
+										<td class="col-md-9"><input name="begin1" id="begin1" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">教师姓名:</td>
-										<td class="col-md-9"><input name="teacherName" id="teacherName" type="text" style="width:80%" class="form-control"/><span id="display2"
+										<td class="col-md-3 col-md-offset-2">结束时间:</td>
+										<td class="col-md-9"><input name="end1" id="end1" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">性别:</td>
-										<td class="col-md-9" id="sex-style">
-											<label class="radio-inline">
-												<input id="sex" name="sex" type="radio" value="男" checked/>男
-											</label>
-											<label class="radio-inline">
-												<input id="sex" name="sex" type="radio" value="女" />女
-											</label>
-											<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />
-											<!-- <label class="radio-inline">
-  												<input type="radio" name="sex" id="sex" value="男"> 男
-											</label>
-											<label class="radio-inline">
-  												<input type="radio" name="isex" id="sex" value="女"> 女
-											</label> -->
-										</td>
+										<td class="col-md-3 col-md-offset-2">教育内容:</td>
+										<td class="col-md-9"><textarea class="form-control" id="description1" name="description1"></textarea></td>
 									</tr>
-									<tr>
-										<td class="col-md-3 col-md-offset-2">密码:</td>
-										<td class="col-md-9"><input name="password" id="password" type="password" style="width:80%" class="form-control"/></td>
-									</tr>
-									<tr>
-										<td class="col-md-3 col-md-offset-2">自我介绍:</td>
-										<td class="col-md-9"><textarea class="form-control" id="Areason" name="Areason"></textarea></td>
-									</tr>
-									<%-- <tr>
-										<td class="col-md-3">上传照片:</td>
-										<td class="col-md-9">
-											<input type="file" accept="image/gif, image/jpeg" name="file" id="file"/>
-											<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />
-										</td>
-									</tr> --%>
+									
 								</table>
 							</form>
 						</div>
@@ -342,7 +345,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.dataTables.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
-	<script src="../js/myNeed/teachermanage.js"></script>	
+	<script src="../js/myNeed/educationExperience.js"></script>	
 	<script src="../js/kg.js"></script>
 	<script type="text/javascript">
 		var flag = document.getElementById('baseapply').value;
@@ -353,7 +356,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			});
 		} else if (flag == false) {
 			bootbox.alert({
-				message : "教师编号已存在",
+				message : "学生编号不存在",
 				size : 'small'
 			});
 		}
