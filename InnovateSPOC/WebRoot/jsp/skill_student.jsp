@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/teacher.css">
@@ -81,7 +82,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="studentResume.jsp"><span class="text">学生简历管理</span></a></li>
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 
 									</ul>
 								</li>
@@ -99,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">就业信息管理</span></a></li>
+											href="employmentManage.jsp"><span class="text">就业信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -143,7 +150,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">学生简历管理</a></li>
+							<li><a href="RepairManage.jsp">学生技能管理</a></li>
 						</ol>
 					</div>
 					
@@ -153,21 +160,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-lg-12">
 						<form action="" method="post" enctype="multipart/form-data"
 							name="formApplyInfo" id="formApplyInfo">
-							<table id="Repairmanage" class="cell-border" cellspacing="0"
+							<table id="major" class="cell-border" cellspacing="0"
 								width="100%">
 								<thead>
 									<tr bgcolor="#ECF1F5">
 									<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="3" id="button-left">
+										<td colspan="14" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
-										<td colspan="5"></td>
-										<td colspan="3" id="button-right">
-											<button type="button" id="import" class="btn btn-primary"
-												data-toggle="modal" data-target="#exportmodal">导出</button>
-										</td>
+
 
 									</tr>
 									<tr>
@@ -175,6 +178,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>学生id</th>
 										<th>学生姓名</th>
 										<th>性别</th>
+										<th hidden>个人简介</th>
+										<th hidden>中文居住地址</th>
+										<th hidden>英文居住地址</th>
+										<th hidden>联系电话</th>
+										<th hidden>qq</th>
+										<th hidden>入学年份</th>
+										<th>专业</th>
+										<th hidden>是否毕业</th>
+										<th hidden>是否应聘</th>
+										<th>修改</th>
 									</tr>
 								</thead>
 								<tbody class="text-center">
@@ -197,6 +210,113 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<!--row end-->
 	</div>
+	
+	<!-- 弹出框-->
+			<div class="modal fade" id="edit" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabe" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content" style="border:#3071a9 8px solid">
+						<div class="modal-header" style="background:#3071a9; color:#FFF">
+							<div class="glyphicon glyphicon-remove closeModal"
+								data-dismiss="modal"></div>
+							<h4 class="modal-title text-center" id="myModalLabel">学生信息修改</h4>
+						</div>
+						<div class="modal-body table-responsive">
+							<div class="row">
+								<div class="col-md-12">
+									<form action="updatestudent.do" method="post" class="form-horizontal"
+										role="form" id="majoreditform">
+										<table class="table" style="border:none !important;">
+											<tr>
+												<td>学生id ：</td>
+												<td><input type="text" class="form-control"
+													id="sid" name="sid" readonly/></td>
+											</tr>
+											<tr>
+												<td>学生姓名 ：</td>
+												<td><input type="text" class="form-control"
+													id="sname" name="sname" readonly/>
+													</td>
+											</tr>
+											<tr>
+												<td>性别 ：</td>
+												<td><input type="text" class="form-control"
+													id="sex" name="sex" readonly/>
+													</td>
+											</tr>
+											<tr>
+												<td>个人简介 ：</td>
+												<td><input type="text" class="form-control" id="Sintroduce" name="Sintroduce"
+													/><span id="display1" style="color:#f00;"></span>
+													<input type="text" id="copyMname" hidden/>
+													</td>
+											</tr>
+											<tr>
+												<td>中文居住地址 ：</td>
+												<td><input type="text" class="form-control" id="chinese_address" name="chinese_address"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>英文居住地址 ：</td>
+												<td><input type="text" class="form-control" id="english_address" name="english_address"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>联系电话 ：</td>
+												<td><input type="text" class="form-control" id="phone" name="phone"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>Q Q ：</td>
+												<td><input type="text" class="form-control" id="qq" name="qq"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>入学年份 ：</td>
+												<td><input type="text" class="form-control" id="school_year" name="school_year" readonly
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>专 业 ：</td>
+												<td><input type="text" class="form-control" id="smajor" name="smajor"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>是否毕业 ：</td>
+												<td><input type="text" class="form-control" id="graduation" name="graduation"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											<tr>
+												<td>是否应聘 ：</td>
+												<td><input type="text" class="form-control" id="employed" name="employed"
+													/><span id="display1" style="color:#f00;"></span>
+													</td>
+											</tr>
+											
+											
+										</table>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer table-responsive">
+							<center>
+								<button type="button" class="btn btn-primary" id="saverun">保存</button>
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">取消</button>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+	
 	<!-- 弹出框 -->
 	<div class="modal fade" id="add" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -212,17 +332,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="modal-body table-responsive">
 					<div class="row">
 						<div class="col-md-12">
-							<form action="addteacher.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+							<form action="addstudent.do" method="post" class="form-horizontal" enctype="multipart/form-data"
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
 										<td class="col-md-3 col-md-offset-2">学生id:</td>
-										<td class="col-md-9"><input name="teacherId" id="teacherId" type="text" style="width:80%" class="form-control"/><span id="display2"
+										<td class="col-md-9"><input name="studentId" id="studentId" type="text" style="width:80%" class="form-control"/><span id="display1"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
 										<td class="col-md-3 col-md-offset-2">学生姓名:</td>
-										<td class="col-md-9"><input name="teacherName" id="teacherName" type="text" style="width:80%" class="form-control"/></td>
+										<td class="col-md-9"><input name="studentName" id="studentName" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
 										<td class="col-md-3 col-md-offset-2">性别:</td>
@@ -234,12 +355,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<input id="sex" name="sex" type="radio" value="女" />女
 											</label>
 											<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />
-											<!-- <label class="radio-inline">
-  												<input type="radio" name="sex" id="sex" value="男"> 男
-											</label>
-											<label class="radio-inline">
-  												<input type="radio" name="isex" id="sex" value="女"> 女
-											</label> -->
 										</td>
 									</tr>
 									<tr>
@@ -247,16 +362,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<td class="col-md-9"><input name="password" id="password" type="password" style="width:80%" class="form-control"/></td>
 									</tr>
 									<tr>
+										<td class="col-md-3 col-md-offset-2">中文居住地址:</td>
+										<td class="col-md-9"><input name="Caddress" id="Caddress" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">英文居住地址:</td>
+										<td class="col-md-9"><input name="Eaddress" id="Eaddress" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">联系电话:</td>
+										<td class="col-md-9"><input name="telephone" id="telephone" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">QQ:</td>
+										<td class="col-md-9"><input name="qq" id="qq" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">入学年份:</td>
+										<td class="col-md-9"><input name="EnrollmentYear" id="EnrollmentYear" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">专业:</td>
+										<td class="col-md-9"><input name="major" id="major" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">是否毕业:</td>
+										<td class="col-md-9" id="sex-style">
+											<label class="radio-inline">
+												<input id="gra" name="gra" type="radio" value="是" checked/>是
+											</label>
+											<label class="radio-inline">
+												<input id="gra" name="gra" type="radio" value="否" />否
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-3 col-md-offset-2">是否应聘:</td>
+										<td class="col-md-9" id="sex-style">
+											<label class="radio-inline">
+												<input id="emp" name="emp" type="radio" value="是" checked/>是
+											</label>
+											<label class="radio-inline">
+												<input id="emp" name="emp" type="radio" value="否" />否
+											</label>
+										</td>
+									</tr>
+									<tr>
 										<td class="col-md-3 col-md-offset-2">自我介绍:</td>
 										<td class="col-md-9"><textarea class="form-control" id="Areason" name="Areason"></textarea></td>
 									</tr>
-									<%-- <tr>
-										<td class="col-md-3">上传照片:</td>
-										<td class="col-md-9">
-											<input type="file" accept="image/gif, image/jpeg" name="file" id="file"/>
-											<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />
-										</td>
-									</tr> --%>
 								</table>
 							</form>
 						</div>
@@ -277,10 +437,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--datatable javascript-->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/jquery.dataTables.min.js"></script>	
-	<script src="../js/kg.js"></script>
+	<script src="../js/jquery.dataTables.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
-	<script src="../js/teacher.js"></script>
+	<script src="../js/myNeed/studentmanage.js"></script>	
+	<script src="../js/kg.js"></script>
 	<script type="text/javascript">
 		var flag = document.getElementById('baseapply').value;
 		if (flag == true) {
@@ -290,7 +450,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			});
 		} else if (flag == false) {
 			bootbox.alert({
-				message : "操作失败",
+				message : "学生编号已存在",
 				size : 'small'
 			});
 		}
