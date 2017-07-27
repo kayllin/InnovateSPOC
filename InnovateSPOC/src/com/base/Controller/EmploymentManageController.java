@@ -138,14 +138,16 @@ public class EmploymentManageController {
     }
     
  // 修改实习基地信息
-    @RequestMapping("/updateBaseInfo.do")
-    public String updateBaseInfo(HttpServletRequest request,
+    @RequestMapping("/updateEmpInfo.do")
+    public String updateEmpInfo(HttpServletRequest request,
 	    HttpServletResponse response, ModelMap map) {
 	String sid = request.getParameter("Sid");
+	System.out.println(sid+"sid");
 	String company=request.getParameter("Company");
 	if(company.equals("")){
 		company=null;
 	}
+	System.out.println(company+"company");
 	String salary=  request.getParameter("Salary");
 	if(salary.equals("")){
 		salary=null;
@@ -162,7 +164,6 @@ public class EmploymentManageController {
 	if(excellence.equals("")){
 		excellence=null;
 	}
-
 	String message=employmentmanageservice.updateEmpInfo(sid,company,salary,workin,graduationYear,excellence);
 	if(message=="success"){
 	    message="操作成功";
@@ -181,6 +182,6 @@ public class EmploymentManageController {
 	    e.printStackTrace();
 	}
 
-	return null;
+	return "employmentManage";
     }
 }

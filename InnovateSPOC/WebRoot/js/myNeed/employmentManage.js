@@ -239,38 +239,43 @@ $(document).ready(function() {
 								$("#Workin").val(obj[index].workin);
 								$("#Graduation_year").val(obj[index].graduation_year);
 								$("#Excellence").val(obj[index].excellence);
-								/*var file=obj[index].file;
-								if(file=="null"||file==""||file==null){
-									$("#resourcetr").prop("hidden",true);
-								}else{
-									$("#resourcetr").prop("hidden",false);
-									$("#Elink").prop("href",file);
-								}	*/
-								$("#edit").modal('show');
 								
+								$("#edit").modal('show');
 							});
 							$("#saverun").click(function(){
-													if ($("#Mdept").val() == "") {
+													if ($("#Company").val() == "") {
 														bootbox.alert({
-															message : "学院名称不能为空",
+															message : "所在公司名称不能为空",
 															size : 'small'
 														});
 														return;
-													} else if ($("#Mid").val() == "") {
+													} else if ($("#Salary").val() == "") {
 														bootbox.alert({
-															message : "专业编号不能为空",
+															message : "年薪不能为空",
 															size : 'small'
 														});
 														return;
-													} else if ($("#Mname").val() == "") {
+													} else if ($("#Workin").val() == "") {
 														bootbox.alert({
-															message : "专业名称不能为空",
+															message : "从事工作不能为空",
 															size : 'small'
 														});
 														return;
-													} else if(!tag1){
+													} else if ($("#Graduation_year").val() == "") {
 														bootbox.alert({
-															message : "该专业名称已存在，请重新输入",
+															message : "毕业年份不能为空",
+															size : 'small'
+														});
+														return;
+													}else if ($("#Excellence").val() == "") {
+														bootbox.alert({
+															message : "是否优秀不能为空",
+															size : 'small'
+														});
+														return;
+													}else if(!tag1){
+														bootbox.alert({
+															message : "该学生编号已存在，请重新输入",
 															size : 'small'
 														});
 													 return;
@@ -289,9 +294,9 @@ $(document).ready(function() {
 														},
 													callback: function (result) {
 															if(result){
-																$("#majoreditform").submit();
+																$("#employEditForm").submit();
 																}
 															}
 														});
-							})
+							});
 });

@@ -138,8 +138,8 @@ public class EmploymentManageDaoImpl implements EmploymentManageDao {
 		public String updateEmpInfo(String sid, String company, String salary,
 				String workin, String graduationYear, String excellence) {
 			int flag;
-			System.out.println(excellence+"aaaa");
-			System.out.println(sid+"bbbb");
+			//System.out.println(excellence+"aaaa");
+			//System.out.println(sid+"bbbb");
 			
 			String message=null;
 			Connection conn = null;

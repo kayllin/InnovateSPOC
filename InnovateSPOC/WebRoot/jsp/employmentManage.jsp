@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
-										<li><a href="#"><span class="text"></span>教师管理</a></li>
+ +										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
 									</ul></li>
 
@@ -327,13 +327,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updateBaseInfo.do" method="post" class="form-horizontal"
-										role="form" id="majoreditform">
+									<form action="updateEmpInfo.do" method="post" class="form-horizontal"
+										role="form" id="employEditForm">
 										<table class="table" style="border:none !important;">
 											<tr>
 												<td>学生编号:</td>
 												<td><input type="text" class="form-control"
-													id="Sid" name="Sid" disabled/></td>
+													id="Sid" name="Sid" readonly="readonly"/></td>
 											</tr>
 											<tr>
 												<td>所在公司:</td>
