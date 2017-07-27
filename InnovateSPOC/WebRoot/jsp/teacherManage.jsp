@@ -82,7 +82,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="studentResume.jsp"><span class="text">学生简历管理</span></a></li>
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 
 									</ul>
 								</li>
@@ -100,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">就业信息管理</span></a></li>
+											href="employmentManage.jsp"><span class="text">就业信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -170,7 +176,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>教师id</th>
 										<th>教师姓名</th>
 										<th>性别</th>
-										<th>个人简介</th>
+										<th hidden>个人简介</th>
 										<th>修改</th>
 									</tr>
 								</thead>
@@ -214,7 +220,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td>教师id ：</td>
 												<td><input type="text" class="form-control"
-													id="tid" name="tid" disabled/></td>
+													id="tid" name="tid" readonly/></td>
 											</tr>
 											<tr>
 												<td>教师姓名 ：</td>
@@ -230,9 +236,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</tr>
 											<tr>
 												<td>个人简介 ：</td>
-												<td><input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
+												<td><!-- <input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
 													/><span id="display1" style="color:#f00;"></span>
-													<input type="text" id="copyMname" hidden/>
+													<input type="text" id="copyMname" hidden/> -->
+													<textarea class="form-control" id="Tintroduce" name="Tintroduce"></textarea>
 													</td>
 											</tr>
 											

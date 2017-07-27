@@ -61,7 +61,6 @@ public class TeachermanageController {
 	String orderDir = "desc"; // // desc
 	// 通过计算求出当前页面为第几页
 	Integer pageindex = (startIndex / size + 1);
-	System.out.println(pageindex);
 	int recordsTotal = 0;
 	List<teachers> list = new ArrayList<teachers>();
 	teacherList pr = null;
@@ -114,7 +113,7 @@ public class TeachermanageController {
     	String tid = request.getParameter("tid");
     	String Tintroduce = request.getParameter("Tintroduce");
     	teacherService.updateteacher(tid, Tintroduce);
-    	return "Professionalmanage";
+    	return "teacherManage";
     	
     }
     

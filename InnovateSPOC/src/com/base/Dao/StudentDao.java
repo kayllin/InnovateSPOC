@@ -14,4 +14,7 @@ public interface StudentDao {
 
 	public String deleteStudent(String str);
 
+	public void updateStudent(String sid, String Sintroduce,
+			String chinese_address, String english_address, String phone,
+			String qq, String smajor);
 }

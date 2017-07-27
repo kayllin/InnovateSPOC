@@ -141,4 +141,32 @@ public class StudentDaoImpl implements StudentDao{
 		return message;
 	}
 
+	//修改学生信息
+	@Override
+	public void updateStudent(String sid, String Sintroduce,
+			String chinese_address, String english_address, String phone,
+			String qq, String smajor){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+				    sessionFactory).getConnection();
+			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=? where sid =?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, Sintroduce);
+			pstmt.setString(2, chinese_address);
+			pstmt.setString(3, english_address);
+			pstmt.setString(4, phone);
+			pstmt.setString(5, qq);
+			pstmt.setString(6, smajor);
+			pstmt.setString(7, sid);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			SqlConnectionUtils.free(conn, pstmt, rs);
+		}
+	}
 }

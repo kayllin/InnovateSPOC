@@ -7,20 +7,22 @@ import javax.persistence.Id;
 public class internship {
 
 	@Id
-	private int id;// ÊµÏ°¾­Àú±íid
-	private int sid;// Ñ§Éúid
-	private String practice_location;// µØµã
-	private String begin_time;// ¿ªÊ¼Ê±¼ä
-	private String end_time;// ½áÊøÊ±¼ä
-	private String practice_description;// ÊµÏ°ÄÚÈÝ
+	private int id;// ÊµÏ°ï¿½ï¿½ï¿½ï¿½ï¿½id
+	private String sid;// Ñ§ï¿½ï¿½id
+	private String practice_location;// ï¿½Øµï¿½
+	private String begin_time;// ï¿½ï¿½Ê¼Ê±ï¿½ï¿½
+	private String end_time;// ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+	private String practice_description;// ÊµÏ°ï¿½ï¿½ï¿½ï¿½
+	private String sname;
 
 	public internship() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public internship(int id, int sid, String practice_location,
-			String begin_time, String end_time, String practice_description) {
+	public internship(int id, String sid, String practice_location,
+			String begin_time, String end_time, String practice_description,
+			String sname) {
 		super();
 		this.id = id;
 		this.sid = sid;
@@ -28,6 +30,7 @@ public class internship {
 		this.begin_time = begin_time;
 		this.end_time = end_time;
 		this.practice_description = practice_description;
+		this.sname = sname;
 	}
 
 	public int getId() {
@@ -38,11 +41,11 @@ public class internship {
 		this.id = id;
 	}
 
-	public int getSid() {
+	public String getSid() {
 		return sid;
 	}
 
-	public void setSid(int sid) {
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
 
@@ -77,6 +80,15 @@ public class internship {
 	public void setPractice_description(String practice_description) {
 		this.practice_description = practice_description;
 	}
-	
+
+	public String getSname() {
+		return sname;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
+
 	
 }
