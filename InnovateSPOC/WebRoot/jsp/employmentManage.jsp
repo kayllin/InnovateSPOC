@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
- +										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
+										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
 									</ul></li>
 
