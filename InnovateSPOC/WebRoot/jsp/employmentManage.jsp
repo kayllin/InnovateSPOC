@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
-<!-- 	 <link rel="stylesheet" href="../css/employmentManage.css"> -->
+	 <link rel="stylesheet" href="../css/employmentManage.css"> 
   </head>
   
   <body>
@@ -157,18 +157,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								width="100%">
 								<thead>
 									<tr bgcolor="#ECF1F5">
-									<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="2" id="button-left">
+										<td hidden id="exportMaintain">${exportMaintain}</td>
+										<td colspan="8" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>
 										</td>
-										<td colspan="5"></td>
-										<td colspan="12" id="button-right">
-											<button type="button" id="export" class="btn btn-primary"
-												data-toggle="modal" data-target="#exportmodal">导出</button>
-										</td>
-
+										
 									</tr>
 									<tr>
 										<th>选择</th>
@@ -267,8 +262,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="setTag">*</span></label>
 									<div class="col-md-6">
 										<select class="form-control" id="excellence0" name="exc">
-											<option id="excellence" value="是">是</option>
-											<option id="excellence" value="否">否</option>
+											<option id="excellence0" value="是" >是</option>
+											<option id="excellence1" value="否" >否</option>
 										</select>
 									</div>
 								</div> 
@@ -281,8 +276,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<center>
 							<button type="button" class="btn btn-default" id="daoclose"
 										data-dismiss="modal">取消</button>
-							<button type="submit" class="btn btn-primary"
-										id="submit0">确定</button>
+							<button type="button" class="btn btn-primary" id="confirm">
+										确认</button>
 						</center>
 				</div>
 			
@@ -290,61 +285,95 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div> 
 	
-	
-	<!-- 弹出框导出 -->
-	<div class="modal fade" id="export" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog" style="width:400px;height:600px;">
-					<div class="modal-content" style="border:#3071a9 8px solid;">
-						<div class="modal-header" style="background:#3071a9; color:#FFF">
+	<!--单个删除确认对话框-->
+				<div class="modal fade" id="deleteOneModal" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<!-- data-backdrop="static" 禁止点击弹框后面内容 -->
+					<form class="form-horizontal" role="form">
+						<div class="modal-dialog modal-sm ">
+							<!-- modal-sm 小的  modal-lg 大的 -->
+							<div class="modal-content" style="border:#4D719B 8px solid">
+								<div class="modal-header" style="background:#4D719B; color:#FFF">
+									<div class="glyphicon glyphicon-remove closeModal"
+										data-dismiss="modal"></div>
+									<h6 class="modal-title" id="myModalLabel"></h6>
+								</div>
+								<div class="modal-body" style="text-align: left;">
+									<h5>您确定要删除吗？</h5>
+								</div>
+								<div class="modal-footer">
 
-							<div id="daoclose" class="glyphicon glyphicon-remove closeModal"
-								data-dismiss="modal"></div>
-
-							<h4 class="modal-title" id="myModalLabel">请选择导出就业信息</h4>
-						</div>
-						<form action="exportThisInfo.do" method="post">
-							<div class="modal-body" id="daochu">
-								<table>
-									<tr>
-										<td>基地类型:</td>
-										<td><select class="form-control" name="basetype"
-											id="daobaseh">
-												<option value="-1" id="daobase">全部</option>
-										</select></td>
-									</tr>
-									<tr ${college==null?"":"style='display:none;'" }>
-										<td>申报部门:</td>
-										<td><select class="form-control" id="daodepth"
-											name=${college==null?"applydept":"" }>
-												<option value="-1" id="daodept">全部</option>
-										</select></td>
-									</tr>
-									<tr>
-										<td>星级:</td>
-										<td><select class="form-control" id="daostarh"
-											name="star">
-												<option value="-1">全部</option>
-												<option value="0">无</option>
-												<option value="1">一星级</option>
-												<option value="2">二星级</option>
-												<option value="3">三星级</option>
-												<option value="4">四星级</option>
-												<option value="5">五星级</option>
-										</select></td>
-									</tr>
-								</table>
-
-							</div>
-							<div class="modal-footer">
-								<center>
-									<button type="button" class="btn btn-default" id="daoclose"
+									<button type="button" class="btn btn-default"
 										data-dismiss="modal">取消</button>
-									<button type="submit" class="btn btn-primary"
-										id="confirmButton">确定</button>
-								</center>
+
+									<button type="button" class="btn btn-primary" id="delSubmit">
+										确认</button>
+								</div>
 							</div>
-						</form>
+							<!-- /.modal-content -->
+						</div>
+					</form>
+				</div>
+	<!-- 弹出框修改-->
+			<div class="modal fade" id="edit" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabe" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content" style="border:#3071a9 8px solid">
+						<div class="modal-header" style="background:#3071a9; color:#FFF">
+							<div class="glyphicon glyphicon-remove closeModal"
+								data-dismiss="modal"></div>
+							<h4 class="modal-title text-center" id="myModalLabel">详情及修改</h4>
+						</div>
+						<div class="modal-body table-responsive">
+							<div class="row">
+								<div class="col-md-12">
+									<form action="updateEmpInfo.do" method="post" class="form-horizontal"
+										role="form" id="employEditForm">
+										<table class="table" style="border:none !important;">
+											<tr>
+												<td>学生编号:</td>
+												<td><input type="text" class="form-control"
+													id="Sid" name="Sid" readonly="readonly"/></td>
+											</tr>
+											<tr>
+												<td>所在公司:</td>
+												<td><input type="text" class="form-control"
+													id="Company" name="Company"  />
+													</td>
+											</tr>
+											<tr>
+												<td>年薪:</td>
+												<td><input type="text" class="form-control" id="Salary" name="Salary"
+													/><span id="display1" style="color:#f00;"></span></td>
+											</tr>
+											<tr>
+												<td>从事工作：</td>
+												<td><input type="text" class="form-control" id="Workin" name="Workin"
+													/><span id="display1" style="color:#f00;"></span></td>
+											</tr>
+											<tr>
+												<td>毕业年份：</td>
+												<td><input type="text" class="form-control" id="Graduation_year" name="Graduation_year"
+													/><span id="display1" style="color:#f00;"></span></td>
+											</tr>
+											<tr>
+												<td>是否优秀：</td>
+												<td><input type="text" class="form-control" id="Excellence" name="Excellence"
+													/><span id="display1" style="color:#f00;"></span></td>
+											</tr>
+											
+										</table>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer table-responsive">
+							<center>
+								<button type="button" class="btn btn-primary" id="saverun">保存</button>
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">取消</button>
+							</center>
+						</div>
 					</div>
 				</div>
 			</div>
