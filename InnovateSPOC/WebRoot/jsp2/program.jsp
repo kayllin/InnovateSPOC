@@ -1,22 +1,31 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="renderer" content="webkit">
-        <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
-		<title>SPOC创新实验室程序组</title>
-		<link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-		<link href="../css/common.css" type="text/css" rel="stylesheet"/>
-		<link href="../css/resume.css" type="text/css" rel="stylesheet"/>
-		<link rel="stylesheet" href="../css/program.css" />
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-      		<script src="../js/html5shiv.min.js"></script>
-      		<script src="../js/respond.min.js"></script>
-    	<![endif]-->
-	</head>
-	<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>SPOC创新实验室程序组</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
+    
+	<link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+	<link href="../css/common.css" type="text/css" rel="stylesheet"/>
+	<link href="../css/resume.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../css/program.css" />
+
+  </head>
+  
+  <body>
 		<div class="header">
 
 			<div class="Indextitle" id="J_m_nav">
