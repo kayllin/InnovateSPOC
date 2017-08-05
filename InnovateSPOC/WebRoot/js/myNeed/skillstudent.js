@@ -16,11 +16,11 @@ $(document).ready(
 						"bfilter" : true,
 						"dom" : 'ftipr<"bottom"l>',
 						"ajax" : {
-							"url" : "query_student.do",
+							"url" : "skillStudent.do",
 							"type" : "POST"
 						},
 						"aoColumns" : [ {
-							"mData" : "sid",
+							"mData" : "id",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
 						// "sWidth" : "2%",
@@ -37,69 +37,19 @@ $(document).ready(
 						// "sWidth" : "2%",
 
 						}, {
-							"mData" : "sex",
+							"mData" : "skill_name",
 							"orderable" : true, // 禁用排序
 							"sDefaultContent" : "",
 						// "sWidth" : "5%",
 
 						},{
-							"mData" : "student_introduce",
+							"mData" : "skill_exp",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
-							"visible":false,
 						// "sWidth" : "5%",
 
 						},{
-							"mData" : "chinese_address",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "english_address",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "phone",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "qq",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "school_year",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "major",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-//							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "graduation",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-							"visible":false,
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "employed",
+							"mData" : "kid",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
 							"visible":false,
@@ -143,26 +93,48 @@ $(document).ready(
 							}
 						}
 					});
-//				 $.ajax({
-//		  				type : 'POST',
-//		  				dataType : 'json',
-//		  				url : 'BaseApplyAllInfo.do',
-//		  				async : false,
-//		  				cache : false,
-//		  				error : function(request) {
-//		  					bootbox.alert({
-//		  	     			  message: "请求异常",
-//		  	     			  size: 'small'
-//		  	     		  });
-//		  				},
-//		  				success : function(data) {
-//		  					for ( var i=0;i<data[0].length;i++){
-//								$("#deptSelect1").after(
-//										"<option value="+data[0][i].aid+">"
-//												+ data[0][i].dept + "</option>");
-//							}
-//		  				}
-//		  			}); 
+				 //技能列表
+				 $.ajax({
+		  				type : 'POST',
+		  				dataType : 'json',
+		  				url : 'get_skill.do',
+		  				async : false,
+		  				cache : false,
+		  				error : function(request) {
+		  					bootbox.alert({
+		  	     			  message: "请求异常",
+		  	     			  size: 'small'
+		  	     		  });
+		  				},
+		  				success : function(data) {
+		  					for ( var i=0;i<data[0].length;i++){
+								$("#deptSelect1").after(
+										"<option value="+data[0][i].kid+">"
+												+ data[0][i].skill_name + "</option>");
+							}
+		  				}
+		  			}); 
+				 //学生列表
+				 $.ajax({
+		  				type : 'POST',
+		  				dataType : 'json',
+		  				url : 'get_sname.do',
+		  				async : false,
+		  				cache : false,
+		  				error : function(request) {
+		  					bootbox.alert({
+		  	     			  message: "请求异常",
+		  	     			  size: 'small'
+		  	     		  });
+		  				},
+		  				success : function(data) {
+		  					for ( var i=0;i<data[0].length;i++){
+								$("#deptSelect").after(
+										"<option value="+data[0][i].sid+">"
+												+ data[0][i].sname + "</option>");
+							}
+		  				}
+		  			}); 
 		});
 
 //修改操作
@@ -170,18 +142,11 @@ $(document).on("click", "#checkdetale1", function() {
 	var index=$(this).val();	
 	$("#display1").html("");
 	tag1=true;
+	$("#id").val(obj[index].id)
 	$("#sid").val(obj[index].sid);
 	$("#sname").val(obj[index].sname);
-	$("#sex").val(obj[index].sex);
-	$("#Sintroduce").val(obj[index].student_introduce);
-	$("#chinese_address").val(obj[index].chinese_address);
-	$("#english_address").val(obj[index].english_address);
-	$("#phone").val(obj[index].phone);
-	$("#qq").val(obj[index].qq);
-	$("#school_year").val(obj[index].school_year);
-	$("#smajor").val(obj[index].major);
-	$("#graduation").val(obj[index].graduation);
-	$("#employed").val(obj[index].employed);
+	$("#kname").val(obj[index].skill_name);
+	$("#exp").val(obj[index].skill_exp);
 	$("#edit").modal('show');
 	
 });
@@ -229,7 +194,7 @@ $("#delete").click(function(){
 										});
 						deletstr = deletstr + "')";
 						$.ajax({
-							url : 'delstudent.do',
+							url : 'delSkillstudent.do',
 							type : 'post',
 							dataType : 'json',
 							data : {
