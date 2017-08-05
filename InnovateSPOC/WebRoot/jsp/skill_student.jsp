@@ -212,14 +212,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-header" style="background:#3071a9; color:#FFF">
 							<div class="glyphicon glyphicon-remove closeModal"
 								data-dismiss="modal"></div>
-							<h4 class="modal-title text-center" id="myModalLabel">学生技能信息修改</h4>
+							<h4 class="modal-title text-center" id="myModalLabel">学生信息修改</h4>
 						</div>
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updatestudent.do" method="post" class="form-horizontal"
+									<form action="updateskill.do" method="post" class="form-horizontal"
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
+											<tr>
+												<td>id ：</td>
+												<td><input type="text" class="form-control"
+													id="id" name="id" readonly/></td>
+											</tr>
 											<tr>
 												<td>学生id ：</td>
 												<td><input type="text" class="form-control"
@@ -232,22 +237,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>技能id ：</td>
-												<td><input type="text" class="form-control"
-													id="sex" name="sex" readonly/>
-													</td>
-											</tr>
-											<tr>
 												<td>技能名 ：</td>
-												<td><input type="text" class="form-control" id="Sintroduce" name="Sintroduce"
-													/><span id="display1" style="color:#f00;"></span>
-													<input type="text" id="copyMname" hidden/>
+												<td><input type="text" class="form-control"
+													id="kname" name="kname" readonly/>
 													</td>
 											</tr>
 											<tr>
 												<td>技能值 ：</td>
-												<td><input type="text" class="form-control" id="chinese_address" name="chinese_address"
-													/><span id="display1" style="color:#f00;"></span>
+												<td><input type="text" class="form-control"
+													id="exp" name="exp"/>
 													</td>
 											</tr>
 										</table>
@@ -268,7 +266,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<!-- 弹出框 -->
 	<div class="modal fade" id="add" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
+		aria-labelledby="myModalLabel" >
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -281,13 +279,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="modal-body table-responsive">
 					<div class="row">
 						<div class="col-md-12">
-							<form action="addstudent.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+							<form action="addSkillstudent.do" method="post" class="form-horizontal" enctype="multipart/form-data"
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
 										<td class="col-md-3 col-md-offset-2">学生id:</td>
-										<td class="col-md-9"><input name="studentId" id="studentId" type="text" style="width:80%" class="form-control"/><span id="display1"
-												style="color:#f00;"></span></td>
+										<td class="col-md-9"><select class="form-control" id="deptSelectOne"
+													name="deptSelectOne" value="" style="width:80%">
+														<option id="deptSelect" value="" selected>请选择</option>
+												</select></td>
 									</tr>
 <!-- 									<tr>
 										<td class="col-md-3 col-md-offset-2">学生姓名:</td>
@@ -296,12 +296,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</tr> -->
 									<tr>
 										<td class="col-md-3 col-md-offset-2">技能名:</td>
-										<td class="col-md-9"><input name="password" id="password" type="password" style="width:80%" class="form-control"/></td>
+										<td class="col-md-9"><select class="form-control" id="deptSelectOne1"
+													name="deptSelectOne1" value="" style="width:80%">
+														<option id="deptSelect1" value="" selected>请选择</option>
+												</select></td>
 									</tr>
 									<tr>
 										<td class="col-md-3 col-md-offset-2">技能值:</td>
-										<td class="col-md-9"><input name="Caddress" id="Caddress" type="text" style="width:80%" class="form-control"/><span id="display2"
-												style="color:#f00;"></span></td>
+										<td class="col-md-9"><input name="exp1" id="exp1" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span>
+												<input type="hidden" value="<%=request.getAttribute("flag")%>" id="baseapply" />
+										</td>
 									</tr>
 								</table>
 							</form>
@@ -325,7 +330,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.dataTables.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
-	<script src="../js/myNeed/skill_student.js"></script>	
+	<script src="../js/myNeed/skillstudent.js"></script>	
 	<script src="../js/kg.js"></script>
 	<script type="text/javascript">
 		var flag = document.getElementById('baseapply').value;
