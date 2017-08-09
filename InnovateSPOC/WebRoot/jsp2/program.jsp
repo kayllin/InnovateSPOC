@@ -251,26 +251,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="carousel_work" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="work_list">
-						<li data-target="#carousel_work" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_work" data-slide-to="1"></li>
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					  
-							<div class="item active">
-								<div class="work_item">
-									<img src="../images/program/work1.png">
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="work_item">
-									<img src="../images/program/work1.png">
-								</div>
-							</div>
-							
-				  	</div>
+					  <div class="carousel-inner" id="show_work">							
+				  	  </div>
 			</div>
 		</div>
 		
@@ -285,74 +270,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="carousel_employee" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="employee_list">
-						<li data-target="#carousel_employee" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_employee" data-slide-to="1"></li>
+					
 					  </ol>
 
 					  <!-- Wrapper for slides -->
-					  <div class="carousel-inner">
-					  
-							<div class="item active">
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people1.png">
-									</div>
-									<h3 class="employee_h3">朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people2.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people3.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people4.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people1.png">
-									</div>
-									<h3 class="employee_h3">朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people2.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people3.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="employee_item">
-									<div class="employee_pic">
-										<img src="../images/program/people4.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>
+					  <div class="carousel-inner" id="show_employee">
+					  </div>
 							
 				  	</div>
 			</div>
