@@ -447,12 +447,12 @@ li:nth-of-type(1) .p2_bgimg1{
 	font-size: 38px;
 	margin-bottom: 100px;
 }
-#p7_content{
+.p7_content{
 	width: 980px;
 	height: 250px;
 	margin: auto;
 }
-#p7_content li{
+.p7_content li{
 	margin-right: 28px;
 	list-style: none;
 	float: left;
@@ -461,16 +461,16 @@ li:nth-of-type(1) .p2_bgimg1{
 	height: 290px;
 	box-shadow: 0 0 5px 0px rgba(0,0,0,0.4);
 }
-#p7_content li:nth-of-type(1){
+.p7_content li:nth-of-type(1){
 	background: url(../images/UI/p7_con1.jpg) no-repeat;
 }
-#p7_content li:nth-of-type(2){
+.p7_content li:nth-of-type(2){
 	background: url(../images/UI/p7_con2.jpg) no-repeat;
 }
-#p7_content li:nth-of-type(3){
+.p7_content li:nth-of-type(3){
 	background: url(../images/UI/p7_con3.jpg) no-repeat;
 }
-#p7_content li:nth-of-type(4){
+.p7_content li:nth-of-type(4){
 	background: url(../images/UI/p7_con4.jpg) no-repeat;
 	margin-right: 0px;
 }
@@ -521,7 +521,7 @@ li:nth-of-type(1) .p2_bgimg1{
 	font-size: 16px;
 	margin-bottom: 50px;
 }
-#p8_con1{
+.p8_con1{
 	position: relative;
 	width: 980px;
 	height: 305px;
@@ -536,7 +536,7 @@ li:nth-of-type(1) .p2_bgimg1{
 	border-radius: 10px;
 	box-shadow: 0 5px 10px 0px rgba(0,0,0,0.5);
 }
-#p8_teacher1{
+.p8_teacher1{
 	background: url(../images/UI/teacher1.jpg) no-repeat;
 	background-size: cover;
 	width: 350px;
