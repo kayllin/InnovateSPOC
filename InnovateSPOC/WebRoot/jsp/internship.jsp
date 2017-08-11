@@ -244,19 +244,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>开始时间 ：</td>
+												<td>开始时间 ：<span class="setTag">*</span></td>
 												<td><input type="text" class="form-control" id="begin" name="begin"
 													/><span id="display1" style="color:#f00;"></span>
 													</td>
 											</tr>
 											<tr>
-												<td>结束时间 ：</td>
+												<td>结束时间 ：<span class="setTag">*</span></td>
 												<td><input type="text" class="form-control" id="end" name="end"
 													/><span id="display1" style="color:#f00;"></span>
 													</td>
 											</tr>
 											<tr>
-												<td>实习内容 ：</td>
+												<td>实习内容 ：<span class="setTag">*</span></td>
 												<td><textarea class="form-control" id="description" name="description"></textarea>
 													</td>
 											</tr>
@@ -295,7 +295,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										role="form" id="applyaddform">
 								<table class="table" style="border:none !important;">
 									<tr>
-										<td class="col-md-3 col-md-offset-2">学生id:</td>
+										<td class="col-md-3 col-md-offset-2">学生姓名:<span class="setTag">*</span></td>
 										<td class="col-md-9"><select class="form-control" id="deptSelectOne"
 													name="deptSelectOne" value="" style="width:80%">
 														<option id="deptSelect" value="" selected>请选择</option>
@@ -307,21 +307,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												style="color:#f00;"></span></td>
 									</tr> -->
 									<tr>
-										<td class="col-md-3 col-md-offset-2">地点:</td>
+										<td class="col-md-3 col-md-offset-2">地点:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="address1" id="address1" type="text" style="width:80%" class="form-control"/></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">开始时间:</td>
+										<td class="col-md-3 col-md-offset-2">开始时间:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="begin1" id="begin1" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">结束时间:</td>
+										<td class="col-md-3 col-md-offset-2">结束时间:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="end1" id="end1" type="text" style="width:80%" class="form-control"/><span id="display2"
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">实习内容:</td>
+										<td class="col-md-3 col-md-offset-2">实习内容:<span class="setTag">*</span></td>
 										<td class="col-md-9"><textarea class="form-control" id="description1" name="description1"></textarea></td>
 									</tr>
 									
