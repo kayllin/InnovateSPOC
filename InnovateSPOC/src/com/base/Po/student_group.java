@@ -7,30 +7,26 @@ import javax.persistence.Id;
 public class student_group {
 
 	@Id
-	private int id;//Ñ§Éú×é±ð±í±àºÅ
-	private int sid;//Ñ§Éúid
-	private int gid;//×é±ðgid
+	private int id;//Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String sid;//Ñ§ï¿½ï¿½id
+	private int gid;//ï¿½ï¿½ï¿½gid
+	private String sname;
+	private String gname;
 	public student_group() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public student_group(int id, int sid, int gid) {
+	public student_group( String sid, int gid,String sname,String gname) {
 		super();
-		this.id = id;
 		this.sid = sid;
 		this.gid = gid;
+		this.sname=sname;
+		this.gname=gname;
 	}
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getSid() {
+	public String getSid() {
 		return sid;
 	}
-	public void setSid(int sid) {
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
 	public int getGid() {
@@ -39,6 +35,17 @@ public class student_group {
 	public void setGid(int gid) {
 		this.gid = gid;
 	}
-	
+	public String getSname(){
+		return sname;
+	}
+	public void setSname(String sname){
+		this.sname=sname;
+	}
+	public String getGname(){
+		return gname;
+	}
+	public void setGname(String gname){
+		this.gname=gname;
+	}
 	
 }
