@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.base.Po.groups;
 import com.base.Po.studentList;
 import com.base.Po.students;
 import com.base.Service.StudentService;
@@ -41,9 +43,11 @@ public class StudentmanageController {
 			String EnrollmentYear = request.getParameter("EnrollmentYear");
 			String major = request.getParameter("major");
 			String gra = request.getParameter("gra");
-			String emp = request.getParameter("emp");			
+			String emp = request.getParameter("emp");
+			int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
+			System.out.println(gid);
 //			String photo = request.getParameter("file");
-			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp);
+			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,gid);
 			request.setAttribute("flag", flag);
 			return "studentManage";
 		}
@@ -118,15 +122,36 @@ public class StudentmanageController {
 	public String updateStudent(HttpServletRequest request,
 			HttpServletResponse response){
 		String sid = request.getParameter("sid");
+		int gid = Integer.parseInt(request.getParameter("SelectOne"));
 		String Sintroduce = request.getParameter("Sintroduce");
 		String chinese_address = request.getParameter("chinese_address");
 		String english_address = request.getParameter("english_address");
 		String phone = request.getParameter("phone");
 		String qq = request.getParameter("qq");
 		String smajor = request.getParameter("smajor");
-		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor);
+		String gra = request.getParameter("SelectOne1");
+		String emp = request.getParameter("SelectOne2");
+		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp);
 		return "studentManage";
 		
 	}
 	
+	//获得组别名
+	@RequestMapping("get_group.do")
+	public String getGroup(HttpServletRequest request,
+		    HttpServletResponse response){
+		List<groups> list1 = studentService.getGroup();
+		try {
+		    List list4 = new ArrayList();
+		    list4.add(list1);
+		    JSONArray json = JSONArray.fromObject(list4);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+	}
 }
