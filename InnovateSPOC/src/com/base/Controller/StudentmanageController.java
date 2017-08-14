@@ -154,4 +154,42 @@ public class StudentmanageController {
 		}
 		return null;
 	}
+	
+	//获得UI学生
+	@RequestMapping("get_UIstudent.do")
+	public String get_UIstudent(HttpServletRequest request,
+		    HttpServletResponse response){
+		List<students> list1 = studentService.get_UIstudent();
+		try {
+		    List list4 = new ArrayList();
+		    list4.add(list1);
+		    JSONArray json = JSONArray.fromObject(list4);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+	}
+	
+	//获得程序学生
+		@RequestMapping("get_Pstudent.do")
+		public String get_Pstudent(HttpServletRequest request,
+			    HttpServletResponse response){
+			List<students> list1 = studentService.get_Pstudent();
+			try {
+			    List list4 = new ArrayList();
+			    list4.add(list1);
+			    JSONArray json = JSONArray.fromObject(list4);
+			    response.setContentType("text/html;charset=UTF-8");
+			    response.getWriter().print(json.toString());
+
+			} catch (Exception e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+			return null;
+		}
 }
