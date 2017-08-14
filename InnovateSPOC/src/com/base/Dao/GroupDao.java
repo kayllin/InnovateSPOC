@@ -6,6 +6,9 @@ public interface GroupDao {
 
 	public Group_list query_group(Integer size, Integer pageindex,String columnName, String orderDir, String searchValue);
 
+	public int addGroups(String gname);
+	
+	public String deleteGroup(String str);
 
-	public void updateGroup(String sid, String sname,int gid, String gname);
+	public void updateGroup(int gid, String gname);
 }

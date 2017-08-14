@@ -174,9 +174,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<tr>
 										<td>序号</td>
 										<th>小组编号</th>
-										<th>小组名称</th>
-										<th>学生编号</th>
-										<th>学生姓名</th>
+										<th>小组名称</th>										
 										<th>操作</th>
 									</tr>
 								</thead>
@@ -226,17 +224,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td>小组名称 ：</td>
 												<td><input type="text" class="form-control"
 													id="gname" name="gname" /></td>
-											</tr>
-											<tr>
-												<td>学生编号 ：</td>
-												<td><input type="text" class="form-control"
-													id="uid" name="uid" /></td>
-											</tr>
-											<tr>
-												<td>学生姓名 ：</td>
-												<td><input type="text" class="form-control"
-													id="uname" name="uname" /></td>
-											</tr>											
+											</tr>						
 										</table>
 									</form>
 								</div>
@@ -252,6 +240,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 			</div>
+			
+	<div class="modal fade" id="add" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title text-center" id="myModalLabel">组别信息</h4>
+				</div>
+				<div class="modal-body table-responsive">
+					<div class="row">
+						<div class="col-md-12">
+							<form action="addgroup.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+										role="form" id="addGroupform">
+								<table class="table" style="border:none !important;">
+									<tr>
+										<td class="col-md-3 col-md-offset-2">组别名称:<span class="setTag">*</span></td>
+										<td class="col-md-9"><input name="gname" id="gname" type="text" style="width:80%" class="form-control"/><span id="display2"
+												style="color:#f00;"></span></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<center>
+						<button type="button" class="btn btn-primary" id="save">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+			
+			
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="../js/jquery.min.js"></script>

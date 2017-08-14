@@ -36,18 +36,6 @@ $(document).ready(
 							"sDefaultContent" : "",
 						// "sWidth" : "2%",
 
-						}, {
-							"mData" : "uid",
-							"orderable" : true, // 禁用排序
-							"sDefaultContent" : "",
-						// "sWidth" : "5%",
-
-						},{
-							"mData" : "uname",
-							"orderable" : false, // 禁用排序
-							"sDefaultContent" : "",
-						// "sWidth" : "5%",
-
 						},
 						{
 							"mData" : "id",
@@ -64,7 +52,7 @@ $(document).ready(
 						"columnDefs" : [ {
 							"orderable" : false, // 禁用排序
 							"targets" : [ 0 ], // 指定的列
-							"data" : "id",
+							"data" : "gid",
 							"render" : function(data, type, row) {
 								return '<input type="checkbox" value="' + data
 										+ '" name="idname" class="ck"  />';
@@ -97,8 +85,6 @@ $(document).on("click", "#checkdetale1", function() {
 	tag1=true;
 	$("#gid").val(obj[index].gid);
 	$("#gname").val(obj[index].gname);
-	$("#uid").val(obj[index].uid);
-	$("#uname").val(obj[index].uname);
 	$("#edit").modal('show');
 	
 });
@@ -126,4 +112,83 @@ $("#saverun").click(function(){
 					});
 });
 
+var flag=0;
+$("#delete").click(function(){
+	flag = 0;
+	$("#groupManage input[name='idname']").each(function () {
+		if($(this).prop("checked")==true){
+			flag=1;
+		}
+	});
+	if(flag==0){
+		bootbox.alert({
+			  message: "您还没有选择任何内容",
+			  size: 'small'
+		  });
+	}else{
+		bootbox.confirm({
+			message: "确定删除？",
+			size: 'small',
+			buttons: {
+				confirm: {
+					label: '确定',
+					className: 'btn-success'
+				},
+				cancel: {
+					label: '取消',
+					className: 'btn-danger'
+				},
+			},
+			callback: function (result) {									
+				if(result){									
+					var deletstr = "('";//删除记录的格式(1,2,3,4,5)									
+					var i=0;
+					$("input[type='checkbox'][name='idname']:checked").each(function() {															
+											if (i != 0) {
+												deletstr = deletstr+ "','"+ $(this).val();
+											}
+											else{
+												deletstr = deletstr+ $(this).val();
+												}
+											i++;
+										});
+						deletstr = deletstr + "')";
+						alert(deletstr);
+						$.ajax({
+							url : 'delgroup.do',
+							type : 'post',
+							dataType : 'json',
+							data : {
+								"deletstr" : deletstr
+							},
+							success : function(msg) {
+								bootbox.alert({
+									message : msg.str,
+									size : 'small'
+								});
+								applytable.draw(false);
+							}
+						});//end
+
+				}
+			}
+		});
+
+	}
+});
+//全选
+$("#ck1").on("click", function () {
+	if ($(this).prop("checked") === true) {
+		$("#groupManage input[name='idname']").prop("checked", true);
+		
+	} else {
+		$("#groupManage input[name='idname']").prop("checked", false);
+		
+	}					
+ });
+
+$("#save").on("click",function(){
+	$("#addGroupform").submit();
+	$("#add").modal('hide');
+});
 
