@@ -1,6 +1,5 @@
 package com.base.Controller;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,9 +77,45 @@ public class GroupmanageController {
 			HttpServletResponse response){
 		int gid = Integer.parseInt(request.getParameter("gid"));
 		String gname = request.getParameter("gname");
-		String uid = request.getParameter("uid");
-		String uname = request.getParameter("uname");
-		groupSevice.updataGroup(uid, gname,gid,uname);
+		groupSevice.updataGroup(gid, gname);
 		return "groupManage";
 	}
+	
+	//增加组别
+			@RequestMapping("/addgroup.do")
+			public String addgroup(HttpServletRequest request,
+				    HttpServletResponse response, HttpSession session){
+				String gname = request.getParameter("gname");
+				System.out.println("*****************************");
+				System.out.println("/////"+gname+"///////");
+				System.out.println("*****************************");
+				int flag = groupSevice.addGroups(gname);
+				request.setAttribute("flag", flag);
+				return "groupManage";
+			}
+	//删除组别
+			@RequestMapping("/delgroup.do")
+			public String deleteGroup(HttpServletRequest request,
+					HttpServletResponse response) {
+				String str = request.getParameter("deletstr");
+				System.out.println("*****************************");
+				System.out.println("/////"+str+"///////");
+				System.out.println("*****************************");
+				String message = groupSevice.deleteGroup(str);
+				if (message.equals("success")) {
+					message = "操作成功";
+				} else if (message.equals("fail")) {
+					message = "操作失败";
+				}
+				JSONObject getObj = new JSONObject();
+				getObj.put("str", message);
+				response.setContentType("text/html;charset=UTF-8");
+				try {
+					response.getWriter().print(getObj.toString());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return null;
+			}
 }

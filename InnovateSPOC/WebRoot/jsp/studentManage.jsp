@@ -178,6 +178,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>学生id</th>
 										<th>学生姓名</th>
 										<th>性别</th>
+										<th>组别</th>
+										<th hidden>组别id</th>
 										<th hidden>个人简介</th>
 										<th hidden>中文居住地址</th>
 										<th hidden>英文居住地址</th>
@@ -245,7 +247,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>个人简介 ：</td>
+												<td>组别 ：</td>
+												<td><select class="form-control" id="SelectOne"
+													name="SelectOne" value="" style="width:80%">
+														<option id="Select" value="" selected>请选择</option>
+											</select>
+												</td>
+											</tr>
+											<tr>
+												<td>个人简介 ：<span class="setTag">*</span></td>
 												<td>
 													<textarea class="form-control" id="Sintroduce" name="Sintroduce"></textarea>
 													</td>
@@ -287,16 +297,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>是否毕业 ：</td>
-												<td><input type="text" class="form-control" id="graduation" name="graduation"
-													/><span id="display1" style="color:#f00;"></span>
-													</td>
+												<td>是否毕业 ：<span class="setTag">*</span></td>
+												<td class="col-md-9" id="sex-style">
+													<select class="form-control" id="SelectOne1"
+													name="SelectOne1" value="" style="width:30%">
+														<option id="Select1" value="是" selected>是</option>
+														<option id="Select2" value="否" selected>否</option>
+													</select>
+												</td>
 											</tr>
 											<tr>
-												<td>是否应聘 ：</td>
-												<td><input type="text" class="form-control" id="employed" name="employed"
-													/><span id="display1" style="color:#f00;"></span>
-													</td>
+												<td>是否应聘 ：<span class="setTag">*</span></td>
+												<td class="col-md-9" id="sex-style">
+													<select class="form-control" id="SelectOne2"
+													name="SelectOne2" value="" style="width:30%">
+														<option id="Select01" value="是" selected>是</option>
+														<option id="Select02" value="否" selected>否</option>
+													</select>
+												</td>
 											</tr>
 											
 											
@@ -357,6 +375,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</td>
 									</tr>
 									<tr>
+										<td>组别 ：<span class="setTag">*</span></td>
+										<td><select class="form-control" id="deptSelectOne1"
+													name="deptSelectOne1" value="" style="width:80%">
+														<option id="deptSelect1" value="" selected>请选择</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
 										<td class="col-md-3 col-md-offset-2">密码:<span class="setTag">*</span></td>
 										<td class="col-md-9"><input name="password" id="password" type="password" style="width:80%" class="form-control"/></td>
 									</tr>
@@ -391,7 +417,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												style="color:#f00;"></span></td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">是否毕业:</td>
+										<td class="col-md-3 col-md-offset-2">是否毕业:<span class="setTag">*</span></td>
 										<td class="col-md-9" id="sex-style">
 											<label class="radio-inline">
 												<input id="gra" name="gra" type="radio" value="是" checked/>是
@@ -402,7 +428,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</td>
 									</tr>
 									<tr>
-										<td class="col-md-3 col-md-offset-2">是否应聘:</td>
+										<td class="col-md-3 col-md-offset-2">是否应聘:<span class="setTag">*</span></td>
 										<td class="col-md-9" id="sex-style">
 											<label class="radio-inline">
 												<input id="emp" name="emp" type="radio" value="是" checked/>是
