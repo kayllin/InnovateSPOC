@@ -20,6 +20,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <style type="text/css">
+    	#preview{
+			width:120px;
+			height:120px;
+			border:1px solid #000;
+			border-radius:60px;
+			overflow:hidden;
+		}
+
+    </style>
   </head>
   
   <body>
@@ -148,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">组别管理</a></li>
+							<li><a href="RepairManage.jsp">企业交流管理</a></li>
 						</ol>
 					</div>
 					
@@ -158,7 +168,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-lg-12">
 						<form action="" method="post" enctype="multipart/form-data"
 							name="formApplyInfo" id="formApplyInfo">
-							<table id="groupManage" class="cell-border" cellspacing="0"
+							<table id="companyManage" class="cell-border" cellspacing="0"
 								width="100%">
 								<thead>
 									<tr bgcolor="#ECF1F5">
@@ -173,13 +183,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</tr>
 									<tr>
 										<td>序号</td>
-										<th>小组编号</th>
-										<th>小组名称</th>										
+										<th>标题</th>
+										<th>图片</th>
 										<th>操作</th>
 									</tr>
 								</thead>
 								<tbody class="text-center">
-
+									
 								</tbody>
 								<thead>
 									<tr>
@@ -207,7 +217,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-header" style="background:#3071a9; color:#FFF">
 							<div class="glyphicon glyphicon-remove closeModal"
 								data-dismiss="modal"></div>
-							<h4 class="modal-title text-center" id="myModalLabel">组别信息修改</h4>
+							<h4 class="modal-title text-center" id="myModalLabel">企业交流信息修改</h4>
 						</div>
 						<div class="modal-body table-responsive">
 							<div class="row">
@@ -216,15 +226,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
-												<td>小组编号 ：</td>
-												<td><input type="text" class="form-control"
-													id="gid" name="gid" readonly/></td>
+												<td>
+												
+													<div id="preview">
+    													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
+								  					</div>
+                                  					<div style="margin:20px 18px;">
+                                  						<label class="btn btn-primary" for="file" >修改图片</label>
+								  						<input type="file" onchange="previewImage(this)" id="file" name="photo" style="position:absolute;clip:rect(0 0 0 0);">                          
+                                  					</div>
+												
+												</td>
 											</tr>
 											<tr>
-												<td>小组名称 ：</td>
-												<td><input type="text" class="form-control"
-													id="gname" name="gname" /></td>
-											</tr>						
+												<td><input type="text" class="form-control" id="title" name="title" value="思博课"/></td>
+											</tr>																						
 										</table>
 									</form>
 								</div>
@@ -240,45 +256,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 			</div>
-			
-	<div class="modal fade" id="add" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title text-center" id="myModalLabel">组别信息</h4>
-				</div>
-				<div class="modal-body table-responsive">
-					<div class="row">
-						<div class="col-md-12">
-							<form action="addgroup.do" method="post" class="form-horizontal" enctype="multipart/form-data"
-										role="form" id="addGroupform">
-								<table class="table" style="border:none !important;">
-									<tr>
-										<td class="col-md-3 col-md-offset-2">组别名称:<span class="setTag">*</span></td>
-										<td class="col-md-9"><input name="gname" id="gname" type="text" style="width:80%" class="form-control"/><span id="display2"
-												style="color:#f00;"></span></td>
-									</tr>
-								</table>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<center>
-						<button type="button" class="btn btn-primary" id="save">确定</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					</center>
-				</div>
-			</div>
-		</div>
-	</div>
-			
-			
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="../js/jquery.min.js"></script>
@@ -289,19 +266,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/bootbox.min.js"></script>
 	<script src="../js/myNeed/groupManage.js"></script>	
 	<script src="../js/kg.js"></script>
-	<script type="text/javascript">
-		var flag = document.getElementById('baseapply').value;
-		if (flag == true) {
-			bootbox.alert({
-				message : "操作成功",
-				size : 'small'
-			});
-		} else if (flag == false) {
-			bootbox.alert({
-				message : "学生编号已存在",
-				size : 'small'
-			});
-		}
-	</script>
 </body>
 </html>

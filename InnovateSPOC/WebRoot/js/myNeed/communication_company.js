@@ -4,7 +4,7 @@ var applytable;
 $(document).ready(
 		function() {
 			// 分页表格
-				applytable = $('#groupManage').DataTable(
+				applytable = $('#companyManage').DataTable(
 					{
 						"processing" : true,
 						"serverSide" : true,
@@ -16,7 +16,7 @@ $(document).ready(
 						"bfilter" : true,
 						"dom" : 'ftipr<"bottom"l>',
 						"ajax" : {
-							"url" : "query_group.do",
+							"url" : ".do",
 							"type" : "POST"
 						},
 						"aoColumns" : [ {
@@ -26,12 +26,12 @@ $(document).ready(
 						// "sWidth" : "2%",
 
 						}, { // aoColumns设置列时，不可以任意指定列，必须列出所有列。
-							"mData" : "gid",
+							"mData" : "title",
 							"orderable" : true, // 禁用排序
 							"sDefaultContent" : "",
 						// "sWidth" : "5%",
 						}, {
-							"mData" : "gname",
+							"mData" : "photo",
 							"orderable" : true, // 禁用排序
 							"sDefaultContent" : "",
 						// "sWidth" : "2%",
@@ -52,7 +52,7 @@ $(document).ready(
 						"columnDefs" : [ {
 							"orderable" : false, // 禁用排序
 							"targets" : [ 0 ], // 指定的列
-							"data" : "gid",
+							"data" : "id",
 							"render" : function(data, type, row) {
 								return '<input type="checkbox" value="' + data
 										+ '" name="idname" class="ck"  />';
@@ -83,8 +83,8 @@ $(document).on("click", "#checkdetale1", function() {
 	var index=$(this).val();	
 	$("#display1").html("");
 	tag1=true;
-	$("#gid").val(obj[index].gid);
-	$("#gname").val(obj[index].gname);
+	$("#imghead").attr("src",obj[index].photo);
+	$("#title").val(obj[index].title);
 	$("#edit").modal('show');
 	
 });
@@ -112,83 +112,61 @@ $("#saverun").click(function(){
 					});
 });
 
-var flag=0;
-$("#delete").click(function(){
-	flag = 0;
-	$("#groupManage input[name='idname']").each(function () {
-		if($(this).prop("checked")==true){
-			flag=1;
-		}
-	});
-	if(flag==0){
-		bootbox.alert({
-			  message: "您还没有选择任何内容",
-			  size: 'small'
-		  });
-	}else{
-		bootbox.confirm({
-			message: "确定删除？",
-			size: 'small',
-			buttons: {
-				confirm: {
-					label: '确定',
-					className: 'btn-success'
-				},
-				cancel: {
-					label: '取消',
-					className: 'btn-danger'
-				},
-			},
-			callback: function (result) {									
-				if(result){									
-					var deletstr = "('";//删除记录的格式(1,2,3,4,5)									
-					var i=0;
-					$("input[type='checkbox'][name='idname']:checked").each(function() {															
-											if (i != 0) {
-												deletstr = deletstr+ "','"+ $(this).val();
-											}
-											else{
-												deletstr = deletstr+ $(this).val();
-												}
-											i++;
-										});
-						deletstr = deletstr + "')";
-						alert(deletstr);
-						$.ajax({
-							url : 'delgroup.do',
-							type : 'post',
-							dataType : 'json',
-							data : {
-								"deletstr" : deletstr
-							},
-							success : function(msg) {
-								bootbox.alert({
-									message : msg.str,
-									size : 'small'
-								});
-								applytable.draw(false);
-							}
-						});//end
 
-				}
-			}
-		});
 
-	}
-});
-//全选
-$("#ck1").on("click", function () {
-	if ($(this).prop("checked") === true) {
-		$("#groupManage input[name='idname']").prop("checked", true);
-		
-	} else {
-		$("#groupManage input[name='idname']").prop("checked", false);
-		
-	}					
- });
-
-$("#save").on("click",function(){
-	$("#addGroupform").submit();
-	$("#add").modal('hide');
-});
+//图片的显示与修改
+function previewImage(file)
+{
+  var MAXWIDTH  = 120; 
+  var MAXHEIGHT = 120;
+  var div = document.getElementById('preview');
+  if (file.files && file.files[0])
+  {
+      div.innerHTML ='<img id=imghead>';
+      var img = document.getElementById('imghead');
+      img.onload = function(){
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 120, 120);
+        img.width  =  rect.width;
+        img.height =  rect.height;
+//         img.style.marginLeft = rect.left+'px';
+        img.style.marginTop = rect.top+'px';
+      };
+      var reader = new FileReader();
+      reader.onload = function(evt){img.src = evt.target.result;};
+      reader.readAsDataURL(file.files[0]);
+  }
+  else //兼容IE
+  {
+    var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+    file.select();
+    var src = document.selection.createRange().text;
+    div.innerHTML = '<img id=imghead>';
+    var img = document.getElementById('imghead');
+    img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+    var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+    status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+    div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+  }
+}
+function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+    var param = {top:0, left:0, width:width, height:height};
+    if( width>maxWidth || height>maxHeight )
+    {
+        var rateWidth = width / maxWidth;
+        var rateHeight = height / maxHeight;
+         
+        if( rateWidth > rateHeight )
+        {
+            param.width =  maxWidth;
+            param.height = Math.round(height / rateWidth);
+        }else
+        {
+            param.width = Math.round(width / rateHeight);
+            param.height = maxHeight;
+        }
+    }
+    param.left = Math.round((maxWidth - param.width) / 2);
+    param.top = Math.round((maxHeight - param.height) / 2);
+    return param;
+}
 

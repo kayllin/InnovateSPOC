@@ -7,5 +7,9 @@ public interface GroupSevice {
 	public Group_list query_group(Integer size, Integer pageindex,
 			int order, String orderDir, String searchValue);
 	
-	public void updataGroup(String sid,String sname,int gid,String gname);
+	public int addGroups(String gname);
+	
+	public String deleteGroup(String str);
+	
+	public void updataGroup(int gid,String gname);
 }

@@ -41,7 +41,7 @@ public class GroupDaolmpl implements GroupDao{
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 					sessionFactory).getConnection();
 			sp = (CallableStatement) conn
-					.prepareCall("{call innovatespoc.query_StudentGroups(?,?,?,?,?,?)}");
+					.prepareCall("{call innovatespoc.query_groups(?,?,?,?,?,?)}");
 			sp.setInt(1, size);
 			sp.setInt(2, pageindex);
 			sp.setString(3, columnName);
@@ -54,9 +54,9 @@ public class GroupDaolmpl implements GroupDao{
 			while (rs.next()) {
 				student_group ch = new student_group();
 				ch.setGname(rs.getString("gname"));
-				ch.setSname(rs.getString("sname"));
+				
 				ch.setGid(rs.getInt("gid"));
-				ch.setSid(rs.getString("sid"));
+				
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -74,18 +74,19 @@ public class GroupDaolmpl implements GroupDao{
 	
 	//修改组别信息
 	@Override
-	public void updateGroup(String sid, String sname, int gid, String gname) {
+	public void updateGroup(int gid, String gname) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
+				
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
-			String sql = "update students set gid=? where sid=?";
+			String sql = "update groups set gname=? where gid=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(2, sid);		
-			pstmt.setInt(1, gid);		
+			pstmt.setString(1, gname);		
+			pstmt.setInt(2, gid);		
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -94,6 +95,67 @@ public class GroupDaolmpl implements GroupDao{
 			SqlConnectionUtils.free(conn, pstmt, rs);
 		}
 		
+	}
+
+
+	@Override
+	public int addGroups(String gname) {
+		// TODO Auto-generated method stub
+		int flag=0;
+		Connection conn = null;
+		PreparedStatement ps=null;
+		ResultSet rs = null;
+		CallableStatement sp = null;
+		try {
+			
+			System.out.println("*****************************");
+			System.out.println("/////"+gname+"///////");
+			System.out.println("*****************************");
+			
+		    conn = (Connection) SessionFactoryUtils.getDataSource(
+			    sessionFactory).getConnection();
+		    sp = (CallableStatement) conn
+					.prepareCall("{CALL innovatespoc.check_groups(?,?)}");
+			sp.setString(1, gname);
+			sp.execute();
+		    flag = sp.getInt(2);
+		} catch (SQLException e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		} finally {
+		    SqlConnectionUtils.free(conn, ps, rs);
+		}
+		return flag;
+	}
+
+
+	@Override
+	public String deleteGroup(String str) {
+		// TODO Auto-generated method stub
+		int flag = 0;
+		String message = null;
+		Connection conn = null;
+		CallableStatement sp = null;
+		try {
+			
+			System.out.println("*****************************");
+			System.out.println("/////"+str+"///////");
+			System.out.println("*****************************");
+			
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					sessionFactory).getConnection();
+			sp = (CallableStatement) conn
+					.prepareCall("{CALL innovatespoc.delete_groups(?,?)}");
+			sp.setString(1, str);
+			sp.execute();
+			flag = sp.getInt(2); 
+			message=BaseUtils.getException(flag);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			SqlConnectionUtils.free(conn, sp, null);
+		}
+		return message;
 	}
 	
 }

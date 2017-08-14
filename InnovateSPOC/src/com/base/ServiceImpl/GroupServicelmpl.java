@@ -35,9 +35,30 @@ public class GroupServicelmpl implements GroupSevice{
 
 
 	@Override
-	public void updataGroup(String sid, String sname, int gid, String gname) {
+	public void updataGroup( int gid, String gname) {
 		// TODO Auto-generated method stub
-		groupDao.updateGroup(sid, sname, gid, gname);
+		groupDao.updateGroup(gid, gname);
+	}
+
+
+	@Override
+	public int addGroups(String gname) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("*****************************");
+		System.out.println("/////"+gname+"///////");
+		System.out.println("*****************************");
+		
+		int flag=groupDao.addGroups(gname);
+		return flag;
+	}
+
+
+	@Override
+	public String deleteGroup(String str) {
+		// TODO Auto-generated method stub
+		String message=groupDao.deleteGroup(str);
+		return message;
 	}
 
 }
