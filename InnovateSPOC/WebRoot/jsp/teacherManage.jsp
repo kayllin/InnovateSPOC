@@ -235,7 +235,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</td>
 											</tr>
 											<tr>
-												<td>个人简介 ：</td>
+												<td>个人简介 ：<span class="setTag">*</span></td>
 												<td><!-- <input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
 													/><span id="display1" style="color:#f00;"></span>
 													<input type="text" id="copyMname" hidden/> -->

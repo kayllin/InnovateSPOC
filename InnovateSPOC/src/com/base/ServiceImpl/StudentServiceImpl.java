@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.base.Dao.StudentDao;
 import com.base.Po.groups;
 import com.base.Po.studentList;
+import com.base.Po.students;
 import com.base.Service.StudentService;
 
 @Service("StudentService")
@@ -61,6 +62,19 @@ public class StudentServiceImpl implements StudentService {
 	public List<groups> getGroup() {
 		// TODO Auto-generated method stub
 		List<groups> list = studentdao.getGroup();
+		return list;
+	}
+	
+	@Override
+	public List<students> get_UIstudent(){
+		List<students> list = studentdao.get_UIstudent();
+		return list;
+	}
+
+	@Override
+	public List<students> get_Pstudent() {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.get_Pstudent();
 		return list;
 	}
 }

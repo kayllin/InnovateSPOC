@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.base.Po.groups;
 import com.base.Po.studentList;
+import com.base.Po.students;
 
 public interface StudentService {
 
@@ -21,4 +22,7 @@ public interface StudentService {
 
 	public List<groups> getGroup();
 
+	public List<students> get_UIstudent();
+
+	public List<students> get_Pstudent();
 }
