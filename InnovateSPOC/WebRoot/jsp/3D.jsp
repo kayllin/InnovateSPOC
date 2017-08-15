@@ -1,6 +1,12 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>
+  <head>
 		<meta charset="utf-8" />
 		<meta name="renderer" content="webkit">
         <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
@@ -15,8 +21,9 @@
       		<script src="../js/respond.min.js"></script>
     	<![endif]-->
 	</head>
-	<body>
-		<div class="header">
+  
+  <body>
+    <div class="header">
 			<div class="Indextitle" id="J_m_nav">
 					<div class="cc_c">
 					  <div class="logo">
@@ -654,8 +661,9 @@
           </table>
         </div>
       </div>
-	</body>	
-	<script src="../js/jquery.min.js" type="text/javascript"></script>
+  </body>
+  
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/3D.js" type="text/javascript"></script>   
 </html>

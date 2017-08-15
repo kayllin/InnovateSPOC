@@ -196,4 +196,37 @@ public class StudentDaoImpl implements StudentDao{
 		}
 		return list;
 	}
+	
+	@Override
+	public List<students> get_UIstudent(){
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = 2";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<students> get_Pstudent() {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		String hql="from students where gid = 1";
+		List<students> list = null;
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
 }
