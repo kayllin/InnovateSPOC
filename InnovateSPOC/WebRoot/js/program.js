@@ -91,83 +91,83 @@ $(document).ready(function() {
  			}
         });
 	//获取组员作品的请求
-//	$.ajax({
-//    	type : 'POST',
-//			dataType : 'json',
-//			url : '',
-//			error : function(request) {
-//				bootbox.alert({
-//     			  message: "请求异常",
-//     			  size: 'small'
-//     		  });
-//			},
-//			success : function(data) {
-//			var Wstring='';
-//			var Wstr='';
-//				for (var i=0;i<data.length;i++){
-//					if(i===0){
-//					Wstr=Wstr+'<li data-target="#carousel_work" data-slide-to="0" class="active"></li>';
-//					Wstring=Wstring+'<div class="item active"><div class="work_item"><img src="../images/program/work1.png"></div></div>';
-//				}else{
-//					Wstr=Wstr+'<li data-target="#carousel_work" data-slide-to="'+i+'"></li>';
-//					Wstring=Wstring+'<div class="item"><div class="work_item"><img src="../images/program/work1.png"></div></div>';
-//				}
-//				}
-//			$("#work_list").append(Wstr);
-//			$("#show_work").append(Wstring);
-//			}
-//    });		
-//				
-//	//获取就业学员的请求
-//	$.ajax({
-//    	type : 'POST',
-//			dataType : 'json',
-//			url : '',
-//			error : function(request) {
-//				bootbox.alert({
-//     			  message: "请求异常",
-//     			  size: 'small'
-//     		  });
-//			},
-//			success : function(data) {
-//			var Estring='';
-//			var Estr='<li data-target="#carousel_employee" data-slide-to="0" class="active"></li>';
-//			var num=0;
-//			var num1=data.lenght/4;
-//			var num2=data.lenght%4;
-//			if(num2===0){
-//				num=num1;
-//			}
-//			else{
-//				num=parseInt(num1)+1;
-//			}
-//			for(var k=1;k<num;k++){
-//				Estr=Estr+'<li data-target="#carousel_employee" data-slide-to="'+k+'"></li>';
-//			}
-//			
-//			for(var i=1;i<=num;i++){
-//				if(i===1){
-//					Estring=Estring+'<div class="item active">';
-//				}else{
-//					Estring=Estring+'<div class="item">';
-//				}
-//				if(i!==num){
-//					for(var j=0;j<4;j++){
-//						
-//							Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="../images/program/people1.png"></div><h3 class="employee_h3">朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div>';
-//					}
-//				}else{
-//					var maxNum=data.lenght-(num-1)*4;
-//					for(var a=0;a<maxNum;a++){
-//						
-//							Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="../images/program/people1.png"></div><h3 class="employee_h3">朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div>';
-//					}
-//				}
-//				
-//				Estring=Estring+'</div></div>';
-//			}
-//			$("#employee_list").append(Estr);
-//				$("#show_employee").append(Estring);
-//			}
-//    });
+	$.ajax({
+    	type : 'POST',
+			dataType : 'json',
+			url : '',
+			error : function(request) {
+				bootbox.alert({
+     			  message: "请求异常",
+     			  size: 'small'
+     		  });
+			},
+			success : function(data) {
+			var Wstring='';
+			var Wstr='';
+				for (var i=0;i<data.length;i++){
+					if(i===0){
+					Wstr=Wstr+'<li data-target="#carousel_work" data-slide-to="0" class="active"></li>';
+					Wstring=Wstring+'<div class="item active"><div class="work_item"><img src="../images/program/work1.png"></div></div>';
+				}else{
+					Wstr=Wstr+'<li data-target="#carousel_work" data-slide-to="'+i+'"></li>';
+					Wstring=Wstring+'<div class="item"><div class="work_item"><img src="../images/program/work1.png"></div></div>';
+				}
+				}
+			$("#work_list").append(Wstr);
+			$("#show_work").append(Wstring);
+			}
+    });		
+				
+	//获取就业学员的请求
+	$.ajax({
+    	type : 'POST',
+			dataType : 'json',
+			url : 'getEmploy.do',
+			error : function(request) {
+				bootbox.alert({
+     			  message: "请求异常",
+     			  size: 'small'
+     		  });
+			},
+			success : function(data) {
+			var Estring='';
+			var Estr='<li data-target="#carousel_employee" data-slide-to="0" class="active"></li>';
+			var num=0;
+			var num1=data.length/4;
+			var num2=data.length%4;
+			if(num2===0){
+				num=num1;
+			}
+			else{
+				num=parseInt(num1)+1;
+			}
+			for(var k=1;k<num;k++){
+				Estr=Estr+'<li data-target="#carousel_employee" data-slide-to="'+k+'"></li>';
+			}
+			
+			for(var i=1;i<=num;i++){
+				if(i===1){
+					Estring=Estring+'<div class="item active">';
+				}else{
+					Estring=Estring+'<div class="item">';
+				}
+				if(i!==num){
+					for(var j=0;j<4;j++){
+						
+							Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="../images/program/people1.png"></div><h3 class="employee_h3">'+ data[0][i].sid +'</h3><p>'+ data[0][i].graduation_year +'本科毕业生</p></div>';
+					}
+				}else{
+					var maxNum=data.length-(num-1)*4;
+					for(var a=0;a<maxNum;a++){
+						
+							Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="../images/program/people1.png"></div><h3 class="employee_h3">朱锐锋1</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div>';
+					}
+				}
+				
+				Estring=Estring+'</div></div>';
+			}
+			$("#employee_list").append(Estr);
+				$("#show_employee").append(Estring);
+			}
+    });
 });
