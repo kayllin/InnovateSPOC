@@ -10,12 +10,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 import com.base.Dao.ProjectWorkDao;
+import com.base.Po.employment;
 import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.utils.BaseUtils;
@@ -182,6 +185,22 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		    SqlConnectionUtils.free(conn, sp, null);
 		}
 		return message;
+	}
+
+	@Override
+	public List<project_work> getWork() {
+		List<project_work> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from project_work";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
 	}
 
 
