@@ -3,6 +3,9 @@
  */
 package com.base.Dao;
 
+import java.util.List;
+
+import com.base.Po.project_work;
 import com.base.Po.workList;
 
 /**
@@ -23,6 +26,8 @@ public interface ProjectWorkDao {
 
 	public String updateWorkInfo(int pid,String gid, String projectName,
 			String workCategory, String expression, String bestWork,
-			String projectIntroduce); 
+			String projectIntroduce);
+
+	public List<project_work> getWork(); 
   
 }
