@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.base.Po.groups;
 import com.base.Po.studentList;
+import com.base.Po.students;
 
 public interface StudentDao {
 
@@ -22,4 +23,8 @@ public interface StudentDao {
 			String qq, String smajor, int gid, String gra, String emp);
 
 	public List<groups> getGroup();
+	
+	public List<students> get_UIstudent();
+
+	public List<students> get_Pstudent();
 }

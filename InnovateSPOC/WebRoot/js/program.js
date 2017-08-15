@@ -4,7 +4,7 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_sname.do',
+ 			url : 'get_Pstudent.do',
  			async : false,
  			cache : false,
  			error : function(request) {
