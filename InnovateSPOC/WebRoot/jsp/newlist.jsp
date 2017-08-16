@@ -74,6 +74,7 @@
 										class="icon-copy" aria-hidden="true"></i><span>用户管理</span>
 								</a>
 									<ul class="nav nav-children">
+										<li><a href="user.jsp"><span class="text"></span>用户管理</a></li>
 										<li><a href="studentManage.jsp"><span class="text"></span>学生管理</a></li>
 										<li><a href="teacherManage.jsp"><span class="text"></span>教师管理</a></li>
 										
@@ -84,7 +85,7 @@
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">组别信息管理</span></a></li>
+											href="groupManage.jsp"><span class="text">组别信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -94,7 +95,13 @@
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="studentResume.jsp"><span class="text">学生简历管理</span></a></li>
+											href="internship.jsp"><span class="text">实习经历管理</span></a></li>
+										<li><a
+											href="educationExperience.jsp"><span class="text">教育经历管理</span></a></li>
+										<li><a
+											href="hobbys.jsp"><span class="text">兴趣爱好管理</span></a></li>
+										<li><a
+											href="skill_student.jsp"><span class="text">学生技能管理</span></a></li>
 
 									</ul>
 								</li>
@@ -103,7 +110,7 @@
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">作品信息管理</span></a></li>
+											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -112,7 +119,7 @@
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">就业信息管理</span></a></li>
+											href="employmentManage.jsp"><span class="text">就业信息管理</span></a></li>
 
 									</ul>
 								</li>
@@ -121,7 +128,7 @@
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="rent-approve.jsp"><span class="text">企业交流信息管理</span></a></li>
+											href="communication_company.jsp"><span class="text">企业交流信息管理</span></a></li>
 
 									</ul>
 								</li>
