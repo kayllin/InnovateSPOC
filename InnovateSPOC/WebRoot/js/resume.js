@@ -1,10 +1,7 @@
    // JavaScript Document
 $(document).ready(function() {
-	alert("11");
 	$(document).on("click",".thumbnail",function (){
-		alert("22");
 		var stuId=$(this).attr("id");
-		alert(stuId);
 //		$("#resume_myModal").modal('show');
 				//获取简历信息的请求
 				$.ajax({
@@ -36,7 +33,7 @@ $(document).ready(function() {
 						var skillStr='<div class="intro_title"><div id="icon6" class="icon1"></div><div class="text">专业技能<span>MY SKILLS</span></div></div>';
 						
 						for(var a=0;a<data[4].length;a++){
-							skillStr=skillStr+'<div class="intro_cotent2"><div class="icon5 icon2 float_left"></div><div class="contact float_left"><p>'+data[4][a].skill_name+'</p><div style="width: 150px; height: 10px;"><div class="progress progress_style" ><div class="progress-bar bar_style" role="progressbar" aria-valuenow="'+data[4][a].skill_exp+'" aria-valuemin="0" aria-valuemax="100" style="width:'+data[4][a].skill_exp+'%;"></div></div></div></div></div>';
+							skillStr=skillStr+'<div class="intro_cotent2"><div class="icon5 icon2 float_left"></div><div class="contact float_left"><p>'+data[4][a].kid+'</p><div style="width: 150px; height: 10px;"><div class="progress progress_style" ><div class="progress-bar bar_style" role="progressbar" aria-valuenow="'+data[4][a].skill_exp+'" aria-valuemin="0" aria-valuemax="100" style="width:'+data[4][a].skill_exp+'%;"></div></div></div></div></div>';
 						}
 						
 						$("#resumeSkill").append(skillStr);

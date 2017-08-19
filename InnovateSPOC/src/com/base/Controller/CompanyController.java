@@ -1,7 +1,11 @@
 package com.base.Controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,15 +15,20 @@ import javax.servlet.http.HttpSession;
 import net.sf.json.JSONObject;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.base.Po.Company;
 import com.base.Po.CompanyList;
 import com.base.Po.studentList;
 import com.base.Po.students;
 import com.base.Service.CompanyService;
+import com.base.utils.CookieUtils;
+import com.base.utils.ExcelReport;
 
 @Controller("CompanyController")
 @RequestMapping("/jsp")
@@ -106,9 +115,53 @@ public class CompanyController {
 	
 	@RequestMapping("/updateCompany.do")
 	public String updateCompany(HttpServletRequest request,
-			HttpServletResponse response){
+			HttpServletResponse response, ModelMap map) throws IOException{
 		String title = request.getParameter("title");
-		String photo = request.getParameter("photo");
+		String photo = "";
+		
+		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
+				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+				// 得到上传的文件
+				MultipartFile mFile = multipartRequest.getFile("img");
+				// 得到上传服务器的路径
+				/*
+				 * String path = request.getSession().getServletContext()
+				 * .getRealPath("/imgdraw/");
+				 */
+				String path = ExcelReport.getWebRootUrl(request, "/imgdraw/");
+
+				// CookieUtils.addCookie("image", filename, response);		
+				if (!mFile.isEmpty()) {
+				    // 先删除原有的图像
+				    String deleteFile = CookieUtils.getCookieImage(request,
+					    response);
+				    deleteFile = deleteFile.substring(deleteFile
+					    .lastIndexOf("/"));
+				    File tempFile = new File(path + deleteFile);
+				    if (tempFile.isFile() && tempFile.exists()) {
+					tempFile.delete();
+					// System.out.println(filename+"rrrrrr");
+				    }
+				    // 得到上传的文件的文件名
+				    String fileName = mFile.getOriginalFilename();
+				    String fileType = fileName.substring(fileName
+					    .lastIndexOf("."));
+				    photo = new Date().getTime() + fileType;
+				    InputStream inputStream = mFile.getInputStream();
+				    byte[] b = new byte[1048576];
+				    int length = inputStream.read(b);
+				    path += "/" + photo;
+				    // 文件流写到服务器端
+				    FileOutputStream outputStream = new FileOutputStream(path);
+				    outputStream.write(b, 0, length);
+				    inputStream.close();
+				    outputStream.close();
+				    photo = "../imgdraw/" + photo;
+
+				    // 重新写cookie中的img属性值
+				    CookieUtils.addCookie("image", photo, response);
+				}
+		
 		companyservice.updateCompany(title, photo);
 		return "communication_company";
 	}
