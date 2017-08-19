@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.base.Po.groups;
 import com.base.Po.project_work;
 import com.base.Po.workList;
+import com.base.Po.work_category;
 import com.base.Service.ProjectWorkService;
 import com.base.utils.ExcelReport;
  
@@ -83,17 +85,19 @@ public class ProjectWorkController {
     @RequestMapping("/increaseWorkInfo.do")
     public String increaseWorkInfo(HttpServletRequest request,
     	    HttpServletResponse response, ModelMap map) {
-    	
+    		System.out.println(request.getParameter("groupName")+"aaaa");
     		String groupName = request.getParameter("groupName");
+    		
     		String projectName = request.getParameter("projectName");
     		String projectIntroduce = request.getParameter("projectIntroduce");
-    		//String projectAddress = request.getParameter("projectAddress");
+    		String projectAddress = request.getParameter("projectAddress");
     		//String photoAddress = request.getParameter("photoAddress");
     		String workCategory = request.getParameter("workCategory");
     		String express = request.getParameter("express");
     		String bestWork = request.getParameter("bestWork");
     		
-    		// 项目作品地址
+    
+    		/*// 项目作品地址
     		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
     		String path = null;
     		String projectAddress = null;
@@ -142,7 +146,7 @@ public class ProjectWorkController {
     		    
     		} else {
     			projectAddress = null;
-    		}
+    		}*/
     		
     		// 项目截图地址
     		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
@@ -282,7 +286,7 @@ public class ProjectWorkController {
 	return "projectWork";
     }
     
-  //获得就业学员
+  //获得所有作品
     @RequestMapping("/getWork.do")
     public String getWork(HttpServletRequest request,
 		    HttpServletResponse response){
@@ -300,4 +304,43 @@ public class ProjectWorkController {
 		}
 		return null;
     }
+    
+    //获得作品类别
+    @RequestMapping("/getCategory.do")
+    public String getCategory(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<work_category> list = ProjectWorkService.getCategory();
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    //获得组别
+    @RequestMapping("/getGroup.do")
+    public String getGroup(HttpServletRequest request,
+		    HttpServletResponse response){
+    	List<groups> list = ProjectWorkService.getGroup(); 
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+  
 }

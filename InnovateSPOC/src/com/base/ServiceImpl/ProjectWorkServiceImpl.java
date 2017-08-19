@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.base.Dao.ProjectWorkDao;
 import com.base.Po.employment;
+import com.base.Po.groups;
 import com.base.Po.project_work;
 import com.base.Po.workList;
+import com.base.Po.work_category;
 import com.base.Service.ProjectWorkService;
 
 @Service("ProjectWorkService")
@@ -70,6 +72,20 @@ public class ProjectWorkServiceImpl implements ProjectWorkService {
 	public List<project_work> getWork() {
 		// TODO Auto-generated method stub
 		List<project_work> list = workdao.getWork();
+		return list;
+	}
+
+	@Override
+	public List<work_category> getCategory() {
+		// TODO Auto-generated method stub
+		List<work_category> list = workdao.getCategory();
+		return list;
+	}
+
+	@Override
+	public List<groups> getGroup() {
+		// TODO Auto-generated method stub
+		 List<groups>  list = workdao.getGroup();
 		return list;
 	}
 
