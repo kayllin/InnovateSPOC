@@ -25,4 +25,6 @@ public interface StudentService {
 	public List<students> get_UIstudent();
 
 	public List<students> get_Pstudent();
+	
+	public List<students> getStudents(String sid);
 }

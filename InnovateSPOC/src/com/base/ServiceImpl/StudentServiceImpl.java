@@ -77,4 +77,11 @@ public class StudentServiceImpl implements StudentService {
 		List<students> list = studentdao.get_Pstudent();
 		return list;
 	}
+
+	@Override
+	public List<students> getStudents(String sid) {
+		// TODO Auto-generated method stub
+		List<students> list = studentdao.getStudents(sid);
+		return list;
+	}
 }

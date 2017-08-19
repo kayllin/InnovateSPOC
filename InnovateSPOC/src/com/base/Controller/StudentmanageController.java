@@ -15,9 +15,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.base.Po.education_experience;
 import com.base.Po.groups;
+import com.base.Po.hobbys;
+import com.base.Po.internship;
+import com.base.Po.skill_student;
 import com.base.Po.studentList;
 import com.base.Po.students;
+import com.base.Service.EducationExperienceService;
+import com.base.Service.HobbysService;
+import com.base.Service.InternshipService;
+import com.base.Service.SkillStudentService;
 import com.base.Service.StudentService;
 
 @Controller("StudentmanageController")
@@ -26,6 +34,18 @@ public class StudentmanageController {
 
 	@Autowired
     private StudentService studentService;
+	
+	@Autowired
+	private EducationExperienceService educationExperienceService;
+	
+	@Autowired
+	private HobbysService hobbysService;
+	
+	@Autowired
+	private InternshipService internshipService;
+	
+	@Autowired
+	private SkillStudentService skillStudentService;
 	
 	//增加学生信息
 		@RequestMapping("/addstudent.do")
@@ -192,4 +212,33 @@ public class StudentmanageController {
 			}
 			return null;
 		}
+		
+	//获得学生简历
+	@RequestMapping("get_resume.do")
+	public String get_resume(HttpServletRequest request,
+		    HttpServletResponse response){
+		String sid = request.getParameter("sid");
+		List<students> list1 = studentService.getStudents(sid);
+		List<education_experience> list2 = educationExperienceService.get_education_experience(sid);
+		List<hobbys> list3 = hobbysService.get_hobbys(sid);
+		List<internship> list4 = internshipService.get_internship(sid);
+		List<skill_student> list5 = skillStudentService.get_skill_student(sid);
+		System.out.println(sid);
+		try {
+		    List list = new ArrayList();
+		    list.add(list1);
+		    list.add(list2);
+		    list.add(list3);
+		    list.add(list4);
+		    list.add(list5);
+		    JSONArray json = JSONArray.fromObject(list);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+	}
 }
