@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.base.Dao.EmploymentManageDao;
 import com.base.Po.employList;
 import com.base.Po.employment;
+import com.base.Po.groups;
 import com.base.Service.EmploymentManageService;
 
 @Service("EmploymentManageService")
@@ -69,6 +70,12 @@ public class EmploymentManageServiceImpl implements EmploymentManageService {
 	public List<employment> getEmploy() {
 		// TODO Auto-generated method stub
 		List<employment> list = employmentdao.getEmploy();
+		return list;
+	}
+	@Override
+	public List<groups> getGroup() {
+		// TODO Auto-generated method stub
+		List<groups> list = employmentdao.getGroup();
 		return list;
 	}
 }

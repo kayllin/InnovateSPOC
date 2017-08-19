@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.base.Po.employList;
 import com.base.Po.employment;
+import com.base.Po.groups;
 
  
 /**
@@ -45,7 +46,9 @@ public interface EmploymentManageDao {
 	public String updateEmpInfo(String sid, String company, String salary,
 			String workin, String graduationYear, String excellence);
 
-	public List<employment> getEmploy(); 
+	public List<employment> getEmploy();
+
+	public List<groups> getGroup(); 
 
 
 }
