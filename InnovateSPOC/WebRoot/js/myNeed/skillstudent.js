@@ -234,13 +234,13 @@ $("#save").click(function(){
 				});
 			 return;
 		}
-		if($("#deptSelect").val()==""){
+		if($("#deptSelectOne").val()==""){
 				bootbox.alert({
 				message : "请填写学生名称",
 				size : 'small'
 			});	
 			return;
-		}else if($("#deptSelect1").val()==""){
+		}else if($("#deptSelectOne1").val()==""){
 				bootbox.alert({
 				message : "请填写技能名",
 				size : 'small'
