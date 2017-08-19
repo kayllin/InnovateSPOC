@@ -36,7 +36,7 @@ public class CompanyDaoimpl implements CompanyDao{
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-					.prepareCall("{CALL innovatespoc.check_student(?,?,?)}");
+					.prepareCall("{CALL innovatespoc.check_CommunicationCompany(?,?,?)}");
 			sp.setString(1, title);
 			sp.setString(2, photo);		
 			sp.execute();
@@ -76,7 +76,7 @@ public class CompanyDaoimpl implements CompanyDao{
 			while (rs.next()) {
 				Company ch = new Company();
 				ch.setTitle(rs.getString("title"));
-				ch.setPhoto(rs.getString("name"));
+				ch.setPhoto(rs.getString("photo"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
