@@ -20,7 +20,7 @@ $(document).ready(
 							"type" : "POST"
 						},
 						"aoColumns" : [ {
-							"mData" : "id",
+							"mData" : "gid",
 							"orderable" : false, // 禁用排序
 							"sDefaultContent" : "",
 						// "sWidth" : "2%",

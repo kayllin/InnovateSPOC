@@ -20,7 +20,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <style type="text/css">
+    <link rel="stylesheet" href="../css/teacher.css">
+<style type="text/css">
     	#preview{
 			width:120px;
 			height:120px;
@@ -159,7 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">企业交流管理</a></li>
+							<li><a href="RepairManage.jsp">学生管理</a></li>
 						</ol>
 					</div>
 					
@@ -185,12 +186,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<tr>
 										<td>序号</td>
 										<th>标题</th>
-										<th>图片</th>
-										<th>操作</th>
+										<th hidden>图片</th>
+										<th>查看修改</th>
 									</tr>
 								</thead>
 								<tbody class="text-center">
-									
+
 								</tbody>
 								<thead>
 									<tr>
@@ -223,25 +224,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="modal-body table-responsive">
 							<div class="row">
 								<div class="col-md-12">
-									<form action="updataGroup.do" method="post" class="form-horizontal"
+									<form action="updatestudent.do" method="post" class="form-horizontal"
 										role="form" id="majoreditform">
 										<table class="table" style="border:none !important;">
 											<tr>
 												<td>
-												
-													<div id="preview">
+   													<div id="preview">
     													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
 								  					</div>
                                   					<div style="margin:20px 18px;">
                                   						<label class="btn btn-primary" for="file" >修改图片</label>
 								  						<input type="file" onchange="previewImage(this)" id="file" name="photo" style="position:absolute;clip:rect(0 0 0 0);">                          
                                   					</div>
-												
-												</td>
+                                  				</td>
 											</tr>
 											<tr>
-												<td><input type="text" class="form-control" id="title" name="title" value="思博课"/></td>
-											</tr>																						
+												<td>
+												<input type="text" class="form-control" id="title" name="title" value="思博课"/>
+												</td>
+											</tr>
 										</table>
 									</form>
 								</div>
@@ -258,6 +259,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 	
+	<!-- 弹出框 -->
+	<div class="modal fade" id="add" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title text-center" id="myModalLabel">学生信息</h4>
+				</div>
+				<div class="modal-body table-responsive">
+					<div class="row">
+						<div class="col-md-12">
+							<form action="addstudent.do" method="post" class="form-horizontal" enctype="multipart/form-data"
+										role="form" id="applyaddform">
+								<table class="table" style="border:none !important;">
+									<tr>
+												<td>
+   													<div id="preview">
+    													<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
+								  					</div>
+                                  					<div style="margin:20px 18px;">
+                                  						<label class="btn btn-primary" for="file" >修改图片</label>
+								  						<input type="file" onchange="previewImage(this)" id="file" name="photo" style="position:absolute;clip:rect(0 0 0 0);">                          
+                                  					</div>
+                                  				</td>
+											</tr>
+											<tr>
+												<td>
+												<input type="text" class="form-control" id="title" name="title" value="思博课"/>
+												</td>
+											</tr>
+								</table>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<center>
+						<button type="button" class="btn btn-primary" id="save">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="../js/jquery.min.js"></script>
 	<!--datatable javascript-->
@@ -265,7 +315,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.dataTables.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
-	<script src="../js/myNeed/groupManage.js"></script>	
+	<script src="../js/myNeed/communication_company.js"></script>	
 	<script src="../js/kg.js"></script>
 </body>
 </html>
