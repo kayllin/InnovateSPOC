@@ -86,9 +86,7 @@ public class GroupmanageController {
 			public String addgroup(HttpServletRequest request,
 				    HttpServletResponse response, HttpSession session){
 				String gname = request.getParameter("gname");
-				System.out.println("*****************************");
-				System.out.println("/////"+gname+"///////");
-				System.out.println("*****************************");
+				System.out.println("/111/"+gname+"///////");
 				int flag = groupSevice.addGroups(gname);
 				request.setAttribute("flag", flag);
 				return "groupManage";

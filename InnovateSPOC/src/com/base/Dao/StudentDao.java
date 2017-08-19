@@ -27,4 +27,6 @@ public interface StudentDao {
 	public List<students> get_UIstudent();
 
 	public List<students> get_Pstudent();
+	
+	public List<students> getStudents(String sid);
 }
