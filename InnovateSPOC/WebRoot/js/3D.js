@@ -79,44 +79,7 @@ $(document).ready(function() {
  				}
 				$("#work_list").append(Wstr);
 				$("#show_work").append(Wstring);*/
-				var Estring='';
-				var Estr='<li data-target="#carouselEmployeeStar" data-slide-to="0" class="active"></li>';
-				var num=0;
-				var num1=8/4;
-				var num2=8%4;
-				if(num2===0){
-					num=num1;
-				}
-				else{
-					num=parseInt(num1)+1;
-				}
-				for(var k=1;k<num;k++){
-					Estr=Estr+'<li data-target="#carouselEmployeeStar" data-slide-to="'+k+'"></li>';
-				}
 				
-				for(var i=1;i<=num;i++){
-					if(i===1){
-						Estring=Estring+'<div class="item active">';
-					}else{
-						Estring=Estring+'<div class="item">';
-					}
-					if(i!==num){
-						for(var j=0;j<4;j++){
-							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student1_3D.png"></div><h3>朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div>';
-						}
-					}else{
-						var maxNum=8-(num-1)*4;
-						for(var a=0;a<maxNum;a++){
-							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student2_3D.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div>';
-						}
-					}
-					
-					Estring=Estring+'</div></div>';
-				}
-				$("#employeeCarousel").append(Estr);
- 				$("#show_employee").append(Estring);
 	
 	//团队成员获取数据的请求
 	 /*$.ajax({
@@ -213,31 +176,33 @@ $(document).ready(function() {
         });*/
 	
 	//组员作品获取数据的请求
-	/*$.ajax({
+	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'Checkdept.do',
+ 			url : 'getWork.do',
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
          			  size: 'small'
          		  });
  			},
+ 		
  			success : function(data) {
-				$("#img1").attr("src","../images/3D/partOne_1.png");
-				$("#img2").attr("src","../images/3D/partOne_2.png");
-				$("#img3").attr("src","../images/3D/partOne_3.png");
-				$("#img4").attr("src","../images/3D/partTwo_1.png");
-				$("#img5").attr("src","../images/3D/partTwo_2.png");
-				$("#img6").attr("src","../images/3D/partTwo_3.png");
+				$("#img1").attr("src",data[0][1].photo_address);
+				$("#img2").attr("src",data[0][2].photo_address);
+				$("#img3").attr("src",data[0][3].photo_address);
+				$("#img4").attr("src",data[0][4].photo_address);
+				$("#img5").attr("src",data[0][5].photo_address);
+				$("#img6").attr("src",data[0][0].photo_address);
  			}
+        
         });
-			*/	
+			
 	//就业成员获取数据的请求
-	 /*$.ajax({
+	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : '',
+ 			url : 'getEmploy.do',
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -248,8 +213,8 @@ $(document).ready(function() {
 				var Estring='';
 				var Estr='<li data-target="#carouselEmployeeStar" data-slide-to="0" class="active"></li>';
 				var num=0;
-				var num1=data.length/4;
-				var num2=data.length%4;
+				var num1=data[0].length/4;
+				var num2=data[0].length%4;
 				if(num2===0){
 					num=num1;
 				}
@@ -269,13 +234,13 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<4;j++){
 							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student1_3D.png"></div><h3>朱锐锋</h3><p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p></div>';
+								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student1_3D.png"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
 						}
 					}else{
-						var maxNum=data.lenght-(num-1)*4;
+						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student2_3D.png"></div><h3>刘安奇</h3><p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p></div>';
+								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student2_3D.png"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
 						}
 					}
 					
@@ -284,7 +249,8 @@ $(document).ready(function() {
 				$("#employeeCarousel").append(Estr);
  				$("#show_employee").append(Estring);
  			}
-        });*/
+        
+        });
 				
 	
 });

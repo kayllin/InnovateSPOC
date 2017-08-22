@@ -16,7 +16,7 @@ $(document).ready(
 						"bfilter" : true,
 						"dom" : 'ftipr<"bottom"l>',
 						"ajax" : {
-							"url" : ".do",
+							"url" : "",
 							"type" : "POST"
 						},
 						"aoColumns" : [ {
@@ -34,6 +34,7 @@ $(document).ready(
 							"mData" : "photo",
 							"orderable" : true, // 禁用排序
 							"sDefaultContent" : "",
+							"visible":false,
 						// "sWidth" : "2%",
 
 						},
@@ -44,7 +45,7 @@ $(document).ready(
 							"render":function(data,type,row){					
 								obj.push(row);	
 								return data="<button type='button' class='btn btn-warning btn-xs' value='"+(obj.length-1)
-											+ "' id='checkdetale1'>修改</button>";
+											+ "' id='checkdetale1'>查看修改</button>";
 							}
 						}
 						],

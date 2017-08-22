@@ -3,10 +3,13 @@
  */
 package com.base.Service;
 
+
 import java.util.List;
 
+import com.base.Po.groups;
 import com.base.Po.project_work;
 import com.base.Po.workList;
+import com.base.Po.work_category;
 
 
 
@@ -29,7 +32,12 @@ public interface ProjectWorkService {
 			String workCategory, String expression, String bestWork,
 			String projectIntroduce);
 
-	public List<project_work> getWork(); 
+	public List<project_work> getWork();
+
+	public List<work_category> getCategory();
+
+
+	public List<groups> getGroup();   
 
   
   

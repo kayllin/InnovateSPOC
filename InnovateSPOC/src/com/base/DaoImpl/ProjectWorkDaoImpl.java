@@ -19,8 +19,10 @@ import org.springframework.stereotype.Repository;
 
 import com.base.Dao.ProjectWorkDao;
 import com.base.Po.employment;
+import com.base.Po.groups;
 import com.base.Po.project_work;
 import com.base.Po.workList;
+import com.base.Po.work_category;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
 
@@ -116,6 +118,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		} finally {
 		    SqlConnectionUtils.free(conn, sp, rs);
 		}
+		System.out.println(groupName+"||"+projectName+"||"+projectIntroduce+"||"+projectAddress+"||"+photoAddress+"||"+workCategory+"||"+express+"||"+bestWork);
 		System.out.println(flag);
 		return flag;
 	}
@@ -192,6 +195,38 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		List<project_work> list = null;
 		Session session=sessionFactory.openSession();		
 		String hql="from project_work";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<work_category> getCategory() {
+		List<work_category> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from work_category";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<groups> getGroup() {
+		List<groups> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from groups";
 		try {
 	    	 Query query=session.createQuery(hql);
 	    	 list=query.list();
