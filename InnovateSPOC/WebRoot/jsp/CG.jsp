@@ -370,6 +370,157 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</table>
 	</div>
 
+<!--简历表-->
+		<!-- Modal -->
+		<div class="modal fade" id="resume_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="width:980px">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			  </div>
+			  <div class="modal-body">
+				<div class="resume_wrap">
+					<div style="display: table;">
+						<div id="section1">
+							<div id="section1_1">
+								<div id="portrait"></div>
+								<p id="resumeName"></p>
+								<p id="resumeMajor"></p>
+							</div>
+							<div id="section1_2">
+								<div class="information">
+									<div class="intro_title">
+										<div id="icon1" class="icon1"></div>
+										<div class="text">自我介绍<span>ABOUT ME</span></div>
+									</div>
+									<div class="intro_cotent">
+										<p id="resumeIntroduce"></p>
+									</div>
+								</div>
+								<div class="information">
+									<div class="intro_title">
+										<div id="icon2" class="icon1"></div>
+										<div class="text">联系方式<span>CONTACT ME</span></div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon3" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p id="resumeAdress"></p>
+											<p id="resumeEadre" class="font-s"></p>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon4" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p id="resumeQQ"></p>
+											<p id="resumeEqq" class="font-s"></p>
+										</div>
+									</div>
+									<div class="intro_cotent2">
+										<div id="icon5" class="icon2 float_left"></div>
+										<div class="contact float_left">
+											<p id="resumeTel"></p>
+											<p id="resumeEtel"></p>
+										</div>
+									</div>
+								</div>
+								<div class="information" id="resumeSkill">
+									
+								</div>
+							</div>
+						</div>
+						<div id="section2">
+							<div class="sec2_son" id="resumeExe">
+								
+							</div>
+							<div class="sec2_son" id="resumeEdu">
+								
+							</div>
+							<div class="sec2_son" id="resumIntr">
+								
+							</div>
+						</div>
+					</div>
+					<div class="project">
+						<div class="pro_title">
+							<div class="icon5"><span>P</span></div>
+							<p>我的主导项目<span>LEADING PROJECT</span></p>
+						</div>
+						<div class="pro_content">
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="project">
+						<div class="pro_title">
+							<div class="icon5"><span>P</span></div>
+							<p>我参与的项目<span>PARTICIPATE IN THE PROJECT</span></p>
+						</div>
+						<div class="pro_content">
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+							<div class="content">
+								<div class="intro">
+									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
+									<p>I whipped the Scotch tape from my pocket and said</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
 
 <!--简历表-->
 		<!-- Modal -->
@@ -655,5 +806,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../js/bootbox.min.js" type="text/javascript"></script>
+	<script src="../js/resume.js" type="text/javascript"></script>
 	<script src="../js/CG.js" type="text/javascript"></script>
 </html>
