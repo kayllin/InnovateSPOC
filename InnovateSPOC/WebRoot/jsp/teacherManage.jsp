@@ -177,6 +177,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<th>教师id</th>
 										<th>教师姓名</th>
 										<th>性别</th>
+										<th>组别</th>
+										<th hidden>组别id</th>
 										<th hidden>个人简介</th>
 										<th>修改</th>
 									</tr>
@@ -234,6 +236,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td><input type="text" class="form-control"
 													id="sex" name="sex" readonly/>
 													</td>
+											</tr>
+											<tr>
+												<td>组别 ：<span class="setTag">*</span></td>
+												<td><select class="form-control" id="SelectOne"
+													name="SelectOne" value="" style="width:80%">
+														<option id="Select" value="" selected>请选择</option>
+											</select>
+												</td>
 											</tr>
 											<tr>
 												<td>个人简介 ：<span class="setTag">*</span></td>
@@ -304,6 +314,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<label class="radio-inline">
   												<input type="radio" name="isex" id="sex" value="女"> 女
 											</label> -->
+										</td>
+									</tr>
+									<tr>
+										<td>组别 ：<span class="setTag">*</span></td>
+										<td><select class="form-control" id="deptSelectOne1"
+													name="deptSelectOne1" value="" style="width:80%">
+														<option id="deptSelect1" value="" selected>请选择</option>
+											</select>
 										</td>
 									</tr>
 									<tr>

@@ -65,7 +65,6 @@ public class StudentmanageController {
 			String gra = request.getParameter("gra");
 			String emp = request.getParameter("emp");
 			int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
-			System.out.println(gid);
 //			String photo = request.getParameter("file");
 			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,gid);
 			request.setAttribute("flag", flag);
