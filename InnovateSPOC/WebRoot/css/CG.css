@@ -187,6 +187,11 @@ ul{
 .member{
 	margin: auto;
 	margin-top: 6%;
+	position: relative;
+}
+#employee_list{
+	position: absolute;
+	top: 100%;
 }
 .member_item{
 	float: left;
