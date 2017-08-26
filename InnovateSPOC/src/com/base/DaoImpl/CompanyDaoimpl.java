@@ -162,7 +162,7 @@ public class CompanyDaoimpl implements CompanyDao{
 	public List<Company> get_Pcompany() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from Company";
+		String hql="from Company where gname='程序组'";
 		List<Company> list=null;
 		try {
 	    	 Query query=session.createQuery(hql);

@@ -134,10 +134,15 @@ public class CompanyController {
 	@RequestMapping("/getPcompany.do")
 	public String getPcompany(HttpServletRequest request,
 		    HttpServletResponse response){
+		
+		System.out.println("***********************");
+		
+		
 		List<Company> listCom=companyservice.get_Pcompany();
 		try{
 			List list = new ArrayList();
-			list.add(listCom);JSONArray json = JSONArray.fromObject(list);
+			list.add(listCom);
+			JSONArray json = JSONArray.fromObject(list);
 		    response.setContentType("text/html;charset=UTF-8");
 		    response.getWriter().print(json.toString());
 
@@ -154,7 +159,8 @@ public class CompanyController {
 		List<Company> listCom=companyservice.get_Ucompany();
 		try{
 			List list = new ArrayList();
-			list.add(listCom);JSONArray json = JSONArray.fromObject(list);
+			list.add(listCom);
+			JSONArray json = JSONArray.fromObject(list);
 		    response.setContentType("text/html;charset=UTF-8");
 		    response.getWriter().print(json.toString());
 
