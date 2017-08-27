@@ -30,38 +30,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="cc_c">
 					  <div class="logo">
 						<div class="logo_bg">						  
-							<img src="../images/index/logo.png" width="100px">						
+							<img src="../images/index/logo.png" width="200px">						
 						</div>
 					  </div>
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a class="nav_stop" href="index.html">
+						  <a class="nav_stop" href="../index.html">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
                          <li>
-							<a href="#">
+							<a href="program.jsp">
 							  <span class="name_ch">程序组</span>
 							</a>
 						  </li>
                          <li>
-							<a href="#">
+							<a href="UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
 						<li>
-							<a href="#">
+							<a href="3D.jsp">
 							  <span class="name_ch">3D组</span>
 							</a>
 						  </li>							
 							 <li>
-							<a href="#">
+							<a href="CG.jsp">
 						  	  <span class="name_ch">CG特效组</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="recruit.jsp">
 						  	  <span class="name_ch">企业招聘</span>
 							</a>
 						  </li>
@@ -70,8 +70,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li data-toggle="modal" data-target="#Login">
-							<a href="#">
+						  <li>
+							<a href="../login.html">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
@@ -237,21 +237,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     </div>
 <!-- 06 组员作品 -->
-    <div align="center">
-        <div style="margin-top:100px;">
-            <img src="../images/CG/06 work1.png" height="340" />
-            <img src="../images/CG/06 work2.png" height="340" />
+    <div class="works" align="center">
+        <div  class="work" style="margin-top:100px;">
+            <div class="work_imgone">
+              <img src="../images/CG/06 work1.jpg" height="340" />
+              <div class="word">
+                <img src="../images/CG/06 work.png">
+              </div>
+            </div>
+            <div class="work_imgtwo">
+               <img src="../images/CG/06 work2.jpg" height="340" />
+            </div>
         </div>
-        <div style="margin-top:5px;">
-            <img src="../images/CG/06 work3.png" height="340" />
-            <img src="../images/CG/06 work4.jpg" height="340" />          
-            <img src="../images/CG/06 work5.png" height="340" />
+    </div>
+    <div align="center">    
+        <div class="row workthree" style="margin-top:5px;">
+            <img src="../images/CG/06 work3.jpg" height="340" />
+            <img src="../images/CG/06 work4.jpg" height="340" id="work4" />          
+            <img src="../images/CG/06 work5.jpg" height="165" id="work5" />
+            <img src="../images/CG/06 work6.jpg" height="165" id="work6" />
         </div>
         <div style="margin-top:40px;">
-            <img src="../images/CG/06 work6.png" height="130" />
+            <img src="../images/CG/06 work7.png" height="130" />
         </div>
         <div style="margin-top:40px;">
-            <img src="../images/CG/06 work7.png" class="img-responsive" alt="Responsive image"/>
+            <img src="../images/CG/06 work8.png" class="img-responsive" alt="Responsive image"/>
         </div>
         <div style="margin-top:80px; margin-bottom:30px;">
             <h2 align="center">就业学员</h2>

@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="cc_c">
 					  <div class="logo">
 						<div class="logo_bg">						  
-							<img src="#" width="100px">						
+							<img src="../images/index/logo.png" width="200px">						
 						</div>
 					  </div>
 					  <div class="menu">
@@ -40,37 +40,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </a>
 						</li>
                          <li>
-							<a href="html/about.html">
+							<a href="program.jsp">
 							  <span class="name_ch">程序组</span>
 							</a>
 						  </li>
                          <li>
-							<a href="html/teaching-model.html">
+							<a href="UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
 						<li>
-							<a class="nav_stop" href="html/course_feature.html">
+							<a class="nav_stop" href="3D.jsp">
 							  <span class="name_ch">3D组</span>
 							</a>
 						  </li>							
 							 <li>
-							<a href="html/teachers.html">
+							<a href="CG.jsp">
 						  	  <span class="name_ch">CG特效组</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="html/employment.html">
+							<a href="recruit.jsp">
 						  	  <span class="name_ch">企业招聘</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="html/major.html">
+							<a href="#">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
 						  <li>
-							<a href="html/major.html">
+							<a href="../login.html">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>							 
