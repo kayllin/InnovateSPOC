@@ -190,20 +190,20 @@ $(document).ready(function() {
      		  });
 			},
 			success : function(data) {
-				/*alert(data[0].length);*/
+				/*alert(data[0].length);
 				alert(data[0].length+"****"+data[0][0].photo+"****"+data[0][0].title);
-				
-				/*$("#img1").attr("src",data[0][0].photo);
+				alert(data[0].length+"****"+data[0][1].photo+"****"+data[0][1].title);*/
+				$("#img1").attr("src",data[0][0].photo);
 				$("#img2").attr("src",data[0][1].photo);
 				$("#img3").attr("src",data[0][2].photo);
 				$("#img4").attr("src",data[0][3].photo);
 				$("#img5").attr("src",data[0][4].photo);
 				
-				$("#title1").attr("src",data[0][0].title);
-				$("#title2").attr("src",data[0][1].title);
-				$("#title3").attr("src",data[0][2].title);
-				$("#title4").attr("src",data[0][3].title);
-				$("#title5").attr("src",data[0][4].title);*/
+				$("#title1").text(data[0][0].title);
+				$("#title2").text(data[0][1].title);
+				$("#title3").text(data[0][2].title);
+				$("#title4").text(data[0][3].title);
+				$("#title5").text(data[0][4].title);
 			}
     });
 	
