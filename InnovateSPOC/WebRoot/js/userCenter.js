@@ -1,3 +1,4 @@
+$(document).ready(function() {
 function previewImage(file)
         {
           var MAXWIDTH  = 120; 
@@ -59,91 +60,121 @@ function previewImage(file)
 *
 *显示个人信息
 */
-	var flag;//用于判断是教师还是学生
-
-	$.ajax({
-        	type : 'POST',
- 			dataType : 'json',
- 			url : '',
- 			error : function(request) {
- 				bootbox.alert({
-         			  message: "请求异常",
-         			  size: 'small'
-         		  });
- 			},
- 			success : function(data) {
-				flag=data.flag;
-				if(flag===0){
-					$("#id").val(data.sid);
-					$("#name").val(data.sname);
-					$("#phone").val(data.phone);
-					$("#qq").val(data.qq);
-					$("#major").val(data.major);
-					$("#school_year").val(data.school_year);
-					$("#chinese_address").val(data.chinese_address);
-					$("#english_address").val(data.english_address);
-					$("#introduce").val(data.introduce);
-					if(data.sex==="男"){
-						$("#male").attr("checked", "true");
-					}else{
-						$("#female").attr("checked", "true");
-					}
-
-					if(data.graduation==="是"){
-						$("#gYes").attr("checked", "true");
-					}else{
-						$("#gNo").attr("checked", "true");
-					}
-
-					if(data.employed==="是"){
-						$("#eYes").attr("checked", "true");
-					}else{
-						$("#eNo").attr("checked", "true");
-					}
-				}else{
-					$("#id").val(data.sid);
-					$("#name").val(data.sname);
-					$("#introduce").val(data.introduce);
-					if(data.sex==="男"){
-						$("#male").attr("checked", "true");
-					}else{
-						$("#female").attr("checked", "true");
-					}
-					
-					$("#phone").removeAttr("name");
-					$("#qq").removeAttr("name");
-					$("#major").removeAttr("name");
-					$("#school_year").removeAttr("name");
-					$("#chinese_address").removeAttr("name");
-					$("#english_address").removeAttr("name");
-					$("#eYes").removeAttr("name");
-					$("#eNo").removeAttr("name");
-					$("#eYes").removeAttr("name");
-					$("#eNo").removeAttr("name");
-					$(".sFalg").hide();
-				}
-				
- 			}
-        });
-$("#save").click(function(){
-	//$(".sFalg").hide();
-	bootbox.confirm({
-		message: "是否确认修改",
-		size: 'small',
-		buttons: {
-				confirm: {
-						label: '确定',
-						className: 'btn-success'
-						},
-				cancel: {
-						label: '取消',
-						className: 'btn-danger'
-						},
-					},
-				callback: function (result) {
-						if(result){
-							$("#studentform").submit();
+    	$.ajax({
+    		type : 'POST',
+    		dataType : 'json',
+    		url : 'getPersonInfo.do',
+    		async : false,
+    		cache : false,
+    		error : function(request) {
+    			alert("error");
+    		},
+    		success : function(data) {
+    			var i = 0;
+    			for ( var item in data) {
+    				
+    				if(data[i].TSflag == 1){//教师页面
+		    				$("#name").val(data[i].tname);
+		    				$("#sex").val(data[i].sex);
+		    				$("#introduce").val(data[i].teacher_introduce);
+		    				if(data[i].sex ==="男"){
+								$("#male").attr("checked", "true");
+							}else{
+								$("#female").attr("checked", "true");
 							}
+		    				
+		    			 	$("#imghead").attr('src', data[i].photo_address);
+		    				$("#imgindex").attr('src', data[i].photo_address); 
+		    				/*$("#phone").removeAttr("name");
+							$("#qq").removeAttr("name");
+							$("#major").removeAttr("name");
+							$("#school_year").removeAttr("name");
+							$("#chinese_address").removeAttr("name");
+							$("#english_address").removeAttr("name");
+							$("#eYes").removeAttr("name");
+							$("#eNo").removeAttr("name");
+							$("#eYes").removeAttr("name");
+							$("#eNo").removeAttr("name");
+							*/
+		    				$(".sFalg").hide();
+    				}else if(data[i].TSflag == 2){//学生页面
+    					$("#imghead").attr('src', data[i].headshot);
+    					$("#imgindex").attr('src', data[i].photo_address); 
+    					$("#id").val(data[i].sid);
+    					$("#name").val(data[i].sname);
+    					$("#phone").val(data[i].phone);
+    					$("#qq").val(data[i].qq);
+    					$("#major").val(data[i].major);
+    					$("#school_year").val(data[i].school_year);
+    					$("#chinese_address").val(data[i].chinese_address);
+    					$("#english_address").val(data[i].english_address);
+    					$("#introduce").val(data[i].student_introduce);
+    					$("#possword").val(data[i].password);
+    					if(data[i].sex==="男"){
+    						$("#male").attr("checked", "true");
+    					}else{
+    						$("#female").attr("checked", "true");
+    					}
+
+    					if(data[i].graduation==="是"){
+    						$("#gYes").attr("checked", "true");
+    					}else{
+    						$("#gNo").attr("checked", "true");
+    					}
+
+    					if(data[i].employed==="是"){
+    						$("#eYes").attr("checked", "true");
+    					}else{
+    						$("#eNo").attr("checked", "true");
+    					}
+    					
+    					}
+		    	}
+		    			i++;
+    			
+    			
+    		}
+    	});
+	
+        
+ //修改个人信息 
+		    	/*function password(){	
+					var pw=document.getElementById("possword").value;
+					var pw2=document.getElementById("repossword").value;
+					if(pw!=pw2){
+						alert("两次输入不正确，请重新输入");
+						document.getElementById("possword").value="";
+						document.getElementById("repossword").value="";
+						}
+					}*/
+		    	
+				$("#save").click(function(){
+					if($("#introduce").val()==""){
+						bootbox.alert({
+						message : "请填写自我介绍",
+						size : 'small'
+						});	
+						return;
+					}
+					//$(".sFalg").hide();
+					bootbox.confirm({
+						message: "是否确认修改",
+						size: 'small',
+						buttons: {
+								confirm: {
+										label: '确定',
+										className: 'btn-success'
+										},
+								cancel: {
+										label: '取消',
+										className: 'btn-danger'
+										},
+								 },
+						callback: function (result) {
+							if(result){
+								$("#studentform").submit();
+									  }
 						}
 					});
+				}) ;
 }) ;

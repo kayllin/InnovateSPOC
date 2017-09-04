@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="container-fluid content">
     	<div class="row">
 			<div class="main " style="min-height: 584px;">					
-				<form action="Userupdate.do" method="post" role="form" id="studentform" >
+				<form action="Userupdate.do" method="post" role="form" id="studentform" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-md-6  col-md-offset-2 form-group xgarea form-horizontal">
 						
@@ -61,9 +61,107 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								  </label>
                                 </div>
                              </div>
+                             
+                             
+                             <div class="form-group jianju text-left sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">联系电话</label>
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group jianju text-left sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">QQ</label>
+                                <div class="col-sm-8">
+                                  <input type="text" class="form-control" id="qq" name="qq">
+                                </div>
+                            </div>
+                            
+							<div class="form-group jianju">
+                                <label for="inputEmail3" class="col-sm-2 control-label">密码修改</label>
+                                <div class="col-sm-6">
+                                  <input type="password" class="form-control" id="possword" name="possword">
+                                </div>
+                             </div>
+							<div class="form-group jianju">
+                                <label for="inputEmail3" class="col-sm-2 control-label">确认密码</label>
+                                <div class="col-sm-6">
+                                  <input type="password" class="form-control" id="repossword" name="possword" onBlur="password()">
+                                </div>
+                             </div>
+							<div class="form-group jianju sFalg" >
+                                <label for="inputEmail3" class="col-sm-2 control-label">专业</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="major" name="major">
+                                </div>
+                             </div>
+                             <div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">入学年份</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="school_year" name="school_year">
+                                </div>
+                             </div>
+							<div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">中文地址</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="chinese_address" name="chinese_address">
+                                </div>
+                             </div>
+							<div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">英文地址</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="english_address" name="english_address">
+                                </div>
+                            </div>
+						
+							<div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">是否毕业</label>
+                                <div class="col-sm-6">
+                                  <label class="radio-inline">
+  								  <input type="radio" name="graduation" value="是" id="gYes"> 是
+								  </label>
+								  <label class="radio-inline">
+								  <input type="radio" name="graduation" value="否" id="gNo"> 否
+								  </label>
+                                </div>
+                            </div>
+							<div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">是否应聘</label>
+                                <div class="col-sm-6">
+                                  <label class="radio-inline">
+  								  <input type="radio" name="employed" value="是" id="eYes"> 是
+								  </label>
+								  <label class="radio-inline">
+								  <input type="radio" name="employed" value="否" id="eNo"> 否
+								  </label>
+                                </div>
+                             </div>
+                             
+                             <div class="form-group jianju ">
+                                <label for="inputEmail3" class="col-sm-2 control-label">自我介绍</label>
+                                <div class="col-sm-6">
+                                  <textarea type="text" class="form-control" id="introduce" name="introduce"></textarea>
+                                </div>
+                            </div>
                             
 						</div>
 						<div class="col-md-3">
+                        	<div class="form-group">
+                                <div class="col-sm-10">
+                                  <div id="preview">
+    								<img id="imghead" class="img-circle bk-img-60" width="100%" height="auto" border="0" >
+								  </div>
+                                  <div style="margin:20px 18px;">
+                                  	<label class="btn btn-primary" for="file" >浏览头像</label>
+								  	<form><input type="file" name="img" onchange="previewImage(this)" id="file" style="position:absolute;clip:rect(0 0 0 0);"></form>                           
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            
+						</div>
+						<!--<div class="col-md-3">
                         	<div class="form-group">
                                 <div class="col-sm-10">
                                   <div id="preview">
@@ -185,7 +283,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="col-md-8">
 							<textarea class="form-control" rows="3" id="introduce" name="introduce"></textarea>
 						</div>
-					</div>
+					</div>-->
 					<div class="row">
 						<div class="col-md-5 col-md-offset-6">
 							<button type="button" class="btn btn-danger" id="save">保存</button>
