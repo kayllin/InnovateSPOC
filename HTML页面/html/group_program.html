@@ -2,10 +2,72 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
+		<title>思博客创新实验室作品</title>
+		<link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 		<link href="../css/group_program.css" type="text/css" rel="stylesheet" />
+		<link href="../css/common.css" type="text/css" rel="stylesheet"/>
 	</head>
 	<body>
+		<div class="header">
+
+			<div class="Indextitle" id="J_m_nav">
+					<div class="cc_c">
+					  <div class="logo">
+						<div class="logo_bg">						  
+							<img src="../images/index/logo.png" width="200px">						
+						</div>
+					  </div>
+					  <div class="menu">
+						<ul>
+						<li>
+						  <a href="index.html">
+							<span class="name_ch">首页</span>
+						  </a>
+						</li>
+                         <li>
+							<a href="#">
+							  <span class="name_ch">程序组</span>
+							</a>
+						  </li>
+                         <li>
+							<a href="#">
+							  <span class="name_ch">UI组</span>
+							</a>
+						  </li>
+						<li>
+							<a href="#">
+							  <span class="name_ch">3D组</span>
+							</a>
+						  </li>							
+							 <li>
+							<a href="#">
+						  	  <span class="name_ch">CG特效组</span>
+							</a>
+						  </li>
+							 <li>
+							<a href="#">
+						  	  <span class="name_ch">企业招聘</span>
+							</a>
+						  </li>
+						  <li>
+							<a  class="nav_stop" href="#">
+						  <span class="name_ch">团队作品</span>
+							</a>
+						  </li>
+						  <li data-toggle="modal" data-target="#Login">
+							<a href="#">
+						  <span class="name_ch">登录</span>
+							</a>
+						  </li>						 
+						</ul>
+					  </div>
+					  <div class="clear"></div>
+					</div>
+				</div>
+		</div>
+	
 		<div class="wrap">
 			<div id="head">
 				<div id="types"><span class="c">类型</span></div>
@@ -13,73 +75,18 @@
 				<div id="search_author">作者<input id="searh"/> </div>
 			</div>
 			<div id="contents">
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
-				<div class="content">
-					<div class="intro">
-						<h1>软件工程师</h1>
-						<p>主导人：李彩</p>
-						<p>参与人：潘葛&nbsp;赵勇</p>
-						<p>类型：软件工程师</p>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</body>
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/group_program.js"></script>
+	<script>
+		var ContStr=""
+		for(var i=0;i<7;i++){
+			ContStr=ContStr+'<div class="content" style="background: url(../images/group_program/bg.png) no-repeat;"><div class="intro"><h1>软件工程师</h1><p>主导人：李彩</p><p>参与人：潘葛&nbsp;赵勇</p><p>类型：软件工程师</p></div></div>';
+		}
+		$("#contents").append(ContStr);
+	
+	</script>
 </html>
