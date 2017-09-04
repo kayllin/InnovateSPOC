@@ -62,12 +62,12 @@ public class UserCenterDaoImpl implements UserCenterDao {
 		 			ch.setEmployed(rs.getString("employed"));
 		 			ch.setPassword(rs.getString("password"));
 		    	}else{
+		    		ch.setTid(rs.getString("tid"));
 		    		ch.setTname(rs.getString("tname"));
 					ch.setTeacher_introduce(rs.getString("teacher_introduce"));
 					ch.setPhoto_address(rs.getString("photo_address"));
 					ch.setSex(rs.getString("sex"));
 					ch.setPassword(rs.getString("password"));
-					ch.setPhoto_address(rs.getString("photo_address"));
 		    	}
 		   
 			

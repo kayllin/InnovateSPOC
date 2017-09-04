@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.hibernate.hql.internal.ast.tree.IntoClause;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -64,7 +65,6 @@ public class UserCenterController {
 					 * .getRealPath("/imgdraw/");
 					 */
 					String path = ExcelReport.getWebRootUrl(request,"/imgdraw/");
- 
 					//先删除原有的图像
 					String deleteFile = CookieUtils.getCookieImage(request,response);
 					System.out.println(deleteFile);
@@ -151,13 +151,11 @@ public class UserCenterController {
 					introduce = null;
 				}
 				usercenterservice.update(id,userType, name,sex, phone,qq,major,school_year, possword,chinese_address,english_address,graduation,employed, introduce,filename);
-				//id, name,sex, phone,qq,major,school_year, possword,chinese_address,english_address,graduation,employed, introduce,filename
 			}
 		}
 
-		// CookieUtils.addCookie("image", filename, response);
-
-		return "redirect:userCenter.jsp";
+		
+		return Integer.parseInt(userType) == 2 ?"redirect:userCenter.jsp" : "redirect:TeachersCenter.jsp";
 	}
 
 	// 获取个人信息

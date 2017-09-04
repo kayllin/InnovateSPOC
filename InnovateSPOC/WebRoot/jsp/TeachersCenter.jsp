@@ -24,7 +24,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-
+<style>
+.sFalg{
+	display:none;
+}
+</style>
   </head>
   
   <body>
@@ -32,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="container-fluid content">
     	<div class="row">
 			<div class="main " style="min-height: 584px;">					
-				<form action="Userupdate.do" method="post" role="form" id="studentform" enctype="multipart/form-data">
+				<form action="Userupdate.do" method="post" role="form" id="teachersform" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-md-6  col-md-offset-2 form-group xgarea form-horizontal">
 						
@@ -118,10 +122,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <label for="inputEmail3" class="col-sm-2 control-label">是否毕业</label>
                                 <div class="col-sm-6">
                                   <label class="radio-inline">
-  								  <input type="radio" name="graduation" value="是" id="gYes"> 是
+  								  <input type="radio" name="graduation" value="是" id="gYes" checked> 是
 								  </label>
 								  <label class="radio-inline">
-								  <input type="radio" name="graduation" value="否" id="gNo"> 否
+								  <input type="radio" name="graduation" value="否" id="gNo" > 否
 								  </label>
                                 </div>
                             </div>
@@ -129,7 +133,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <label for="inputEmail3" class="col-sm-2 control-label">是否应聘</label>
                                 <div class="col-sm-6">
                                   <label class="radio-inline">
-  								  <input type="radio" name="employed" value="是" id="eYes"> 是
+  								  <input type="radio" name="employed" value="是" id="eYes" checked> 是
 								  </label>
 								  <label class="radio-inline">
 								  <input type="radio" name="employed" value="否" id="eNo"> 否
@@ -173,12 +177,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div><!--row end-->
     </div>
 	<div class="clearfix"></div>
+	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../js/jquery.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootbox.min.js" type="text/javascript"></script>
-    <script src="../js/userCenter.js"></script>
+    <script src="../js/TeachersCenter.js"></script>
   </body>
 </html>

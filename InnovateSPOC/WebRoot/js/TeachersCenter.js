@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+
+
+
 /*
 *
 *显示个人信息
@@ -16,44 +20,31 @@ $(document).ready(function() {
     			var i = 0;
     			for ( var item in data) {
     				
-    				 if(data[i].TSflag == 2){//学生页面
-    					$("#imghead").attr('src', data[i].headshot);
-    					$("#id").val(data[i].sid);
-    					$("#name").val(data[i].sname);
-    					$("#phone").val(data[i].phone);
-    					$("#qq").val(data[i].qq);
-    					$("#major").val(data[i].major);
-    					$("#school_year").val(data[i].school_year);
-    					$("#chinese_address").val(data[i].chinese_address);
-    					$("#english_address").val(data[i].english_address);
-    					$("#introduce").val(data[i].student_introduce);
-    					$("#possword").val(data[i].password);
-    					if(data[i].sex==="男"){
-    						$("#male").attr("checked", "true");
-    					}else{
-    						$("#female").attr("checked", "true");
-    					}
-
-    					if(data[i].graduation==="是"){
-    						$("#gYes").attr("checked", "true");
-    					}else{
-    						$("#gNo").attr("checked", "true");
-    					}
-
-    					if(data[i].employed==="是"){
-    						$("#eYes").attr("checked", "true");
-    					}else{
-    						$("#eNo").attr("checked", "true");
-    					}
-    					
-    					}
+    				if(data[i].TSflag == 1){//教师页面
+    						$("#id").val(data[i].tid);
+		    				$("#name").val(data[i].tname);
+		    				$("#sex").val(data[i].sex);
+		    				$("#possword").val(data[i].password);
+		    				$("#introduce").val(data[i].teacher_introduce);
+		    				if(data[i].sex ==="男"){
+								$("#male").attr("checked", "true");
+							}else{
+								$("#female").attr("checked", "true");
+							}
+		    				
+		    			 	$("#imghead").attr('src', data[i].photo_address);
+		   
+    				}
+    				
 		    	}
 		    			i++;
     			
     			
     		}
     	});
-        
+	
+		
+    	
  //修改个人信息 
 		    	
 				$("#save").click(function(){
@@ -64,7 +55,6 @@ $(document).ready(function() {
 						});	
 						return;
 					}
-					//$(".sFalg").hide();
 					bootbox.confirm({
 						message: "是否确认修改",
 						size: 'small',
@@ -80,13 +70,12 @@ $(document).ready(function() {
 								 },
 						callback: function (result) {
 							if(result){
-								$("#studentform").submit();
+								$("#teachersform").submit();
 									  }
 						}
 					});
 				}) ;
 }) ;
-
 
 function previewImage(file)
 {
