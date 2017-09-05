@@ -29,7 +29,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	 //增加教师
 	 @Override
-	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,int gid) {
+	 public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid) {
 		 	int flag=0;
 			Connection conn = null;
 			PreparedStatement ps=null;
@@ -39,15 +39,16 @@ public class TeacherDaoImpl implements TeacherDao{
 			    conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
 			    sp = (CallableStatement) conn
-						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?)}");
+						.prepareCall("{CALL innovatespoc.check_teacher(?,?,?,?,?,?,?,?)}");
 				sp.setString(1, teacherId);
 				sp.setString(2, teacherName);
 				sp.setString(3, sex);
-				sp.setString(4, Areason);
-				sp.setString(5, password);
-				sp.setInt(6, gid);
+				sp.setString(4, filename);
+				sp.setString(5, Areason);
+				sp.setString(6, password);
+				sp.setInt(7, gid);
 				sp.execute();
-			    flag = sp.getInt(7);
+			    flag = sp.getInt(8);
 			} catch (SQLException e) {
 			    // TODO Auto-generated catch block
 			    e.printStackTrace();

@@ -37,9 +37,9 @@ public class TeachermanageController {
 		String sex = request.getParameter("sex");
 		String Areason = request.getParameter("Areason");
 		String password = request.getParameter("password");
-//		String photo = request.getParameter("file");
+		String filename = "../images/big.jpg";
 		int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
-		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,gid);
+		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,filename,gid);
 		request.setAttribute("flag", flag);
 		return "teacherManage";
 	}

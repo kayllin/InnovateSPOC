@@ -64,9 +64,10 @@ public class StudentmanageController {
 			String major = request.getParameter("major");
 			String gra = request.getParameter("gra");
 			String emp = request.getParameter("emp");
+			String filename = "../images/big.jpg";
 			int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
 //			String photo = request.getParameter("file");
-			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,gid);
+			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,filename,gid);
 			request.setAttribute("flag", flag);
 			return "studentManage";
 		}

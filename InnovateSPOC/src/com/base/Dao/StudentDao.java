@@ -11,7 +11,7 @@ public interface StudentDao {
 	public int addstudent(String studentId, String studentName, String sex,
 			String areason, String password, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
-			String emp,int gid);
+			String emp,String filename,int gid);
 
 	public studentList query_student(Integer size, Integer pageindex,
 			String columnName, String orderDir, String searchValue);

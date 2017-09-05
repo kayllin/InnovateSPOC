@@ -300,29 +300,7 @@
         return param;
     }
 	
-    $("#sendNotifitation").click(function(){
-    	var title=$("#title").val();
-    	var newContent=$("#Newcontent").val();
-    	var photo=$("#file").val();
-    	//alert(title+"***"+newContent+"***"+photo);
-    	$.ajax({
-			url : '',
-			type : 'post',
-			dataType : 'json',
-			data : {
-				"title" : title,
-				"newContent":newContent,
-				"photo":photo
-			},
-			success : function(msg) {
-				bootbox.alert({
-					message : msg.str,
-					size : 'small'
-				});
-			}
-		});
-    });
-    
+   
 	</script>
 	<!-- <script type="text/javascript" src="../js/ueditor/myeditor.js"></script> -->
 </body>
