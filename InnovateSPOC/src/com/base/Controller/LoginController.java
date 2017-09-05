@@ -68,8 +68,13 @@ public class LoginController {
 			name = ui.getTname();
 		}		
 		CookieUtils.addCookie("image", src,response);
-    
-	    return Integer.parseInt(userType) == 0?"redirect:jsp/user.jsp":"redirect:jsp/userCenter.jsp";
+	    if(adminValue == 0){
+	    	return "redirect:jsp/user.jsp";
+	    }else{
+	    	return adminValue == 1?"redirect:jsp/TeachersCenter.jsp":"redirect:jsp/userCenter.jsp";
+	    }
+	    
+	    
 	} else { 
 	    return "redirect:login.html";
 	}

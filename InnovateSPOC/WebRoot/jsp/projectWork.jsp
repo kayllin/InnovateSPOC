@@ -394,8 +394,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td>
 												<select class="form-control" id="Expression" name="Expression">
 															<option id="Expression0"  value="">请选择</option>
-															<option id="Expression1" value="视频" >视频</option>
-															<option id="Expression2" value="静帧图" >静帧图</option>
 													</select>
 												</td>
 											</tr>
@@ -404,8 +402,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td >
 													<select class="form-control" id="BestWork" name="BestWork">
 															<option id="BestWork3"  value="">请选择</option>
-															<option id="BestWork0" value="是" >是</option>
-															<option id="BestWork1" value="否" >否</option>
 													</select>
 												</td>
 											</tr>

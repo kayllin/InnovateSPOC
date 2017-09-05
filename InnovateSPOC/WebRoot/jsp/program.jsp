@@ -576,43 +576,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="icon5"><span>P</span></div>
 							<p>我的主导项目<span>LEADING PROJECT</span></p>
 						</div>
-						<div class="pro_content">
-							<div class="content">
+						<div class="pro_content" id="guideProject">
+							<div class="content" style="background: url(../images/resume/bg.png) no-repeat;">
 								<div class="intro">
 									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
 									<p>I whipped the Scotch tape from my pocket and said</p>
 								</div>
 							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+							
+							
 						</div>
 					</div>
 					<div class="project">
@@ -620,25 +592,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="icon5"><span>P</span></div>
 							<p>我参与的项目<span>PARTICIPATE IN THE PROJECT</span></p>
 						</div>
-						<div class="pro_content">
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
-							<div class="content">
-								<div class="intro">
-									<h1>旅行的路上每一个异国建筑都是别样的风景</h1>
-									<p>I whipped the Scotch tape from my pocket and said</p>
-								</div>
-							</div>
+						<div class="pro_content" id="joinproject">
+													
 						</div>
 					</div>
 				</div>
