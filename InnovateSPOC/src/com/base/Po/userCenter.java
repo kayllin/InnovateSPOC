@@ -30,6 +30,41 @@ public class userCenter {
 	private String photo_address;//��Ƭ����ַ��
 	private int TSflag;
 	private String password;
+	private String gid;
+	public userCenter(String sid, String sname, String student_introduce,
+			String sex, String chinese_address, String english_address,
+			String phone, String headshot, String qq, String school_year,
+			String major, String graduation, String employed, String tid,
+			String tname, String teacher_introduce, String photo_address,
+			int tSflag, String password, String gid) {
+		super();
+		this.sid = sid;
+		this.sname = sname;
+		this.student_introduce = student_introduce;
+		this.sex = sex;
+		this.chinese_address = chinese_address;
+		this.english_address = english_address;
+		this.phone = phone;
+		this.headshot = headshot;
+		this.qq = qq;
+		this.school_year = school_year;
+		this.major = major;
+		this.graduation = graduation;
+		this.employed = employed;
+		this.tid = tid;
+		this.tname = tname;
+		this.teacher_introduce = teacher_introduce;
+		this.photo_address = photo_address;
+		TSflag = tSflag;
+		this.password = password;
+		this.gid = gid;
+	}
+	public String getGid() {
+		return gid;
+	}
+	public void setGid(String gid) {
+		this.gid = gid;
+	}
 	public String getPassword() {
 		return password;
 	}
