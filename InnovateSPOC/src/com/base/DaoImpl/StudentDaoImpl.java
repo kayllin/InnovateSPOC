@@ -31,7 +31,7 @@ public class StudentDaoImpl implements StudentDao{
 	public int addstudent(String studentId, String studentName, String sex,
 			String areason, String password, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
-			String emp,int gid) {
+			String emp,String filename,int gid) {
 		// TODO Auto-generated method stub
 		int flag=0;
 		Connection conn = null;
@@ -43,23 +43,24 @@ public class StudentDaoImpl implements StudentDao{
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
 		    sp = (CallableStatement) conn
-					.prepareCall("{CALL innovatespoc.check_student(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+					.prepareCall("{CALL innovatespoc.check_student(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 			sp.setString(1, studentId);
 			sp.setString(2, studentName);
 			sp.setString(3, areason);
 			sp.setString(4, sex);
-			sp.setString(5, password);
-			sp.setString(6, caddress);
-			sp.setString(7, eaddress);
-			sp.setString(8, telephone);
-			sp.setString(9, qq);
-			sp.setString(10, enrollmentYear);
-			sp.setString(11, major);
-			sp.setString(12, gra);
-			sp.setString(13, emp);
-			sp.setInt(14, gid);
+			sp.setString(5, filename);
+			sp.setString(6, password);
+			sp.setString(7, caddress);
+			sp.setString(8, eaddress);
+			sp.setString(9, telephone);
+			sp.setString(10, qq);
+			sp.setString(11, enrollmentYear);
+			sp.setString(12, major);
+			sp.setString(13, gra);
+			sp.setString(14, emp);
+			sp.setInt(15, gid);
 			sp.execute();
-		    flag = sp.getInt(15);
+		    flag = sp.getInt(16);
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();

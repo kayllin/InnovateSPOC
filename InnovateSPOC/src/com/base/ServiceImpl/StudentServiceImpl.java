@@ -21,8 +21,8 @@ public class StudentServiceImpl implements StudentService {
 	public int addStudent(String studentId, String studentName, String sex,
 			String areason, String password, String caddress, String eaddress,
 			String telephone, String qq, String enrollmentYear,String major, String gra,
-			String emp,int gid) {
-		int flag = studentdao.addstudent(studentId,studentName,sex,areason,password,caddress,eaddress,telephone,qq,enrollmentYear,major,gra,emp,gid);
+			String emp,String filename,int gid) {
+		int flag = studentdao.addstudent(studentId,studentName,sex,areason,password,caddress,eaddress,telephone,qq,enrollmentYear,major,gra,emp,filename,gid);
 		return flag;
 	}
 

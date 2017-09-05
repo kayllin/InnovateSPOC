@@ -13,7 +13,7 @@ public interface TeacherDao {
      * @param password
      * @return
      */
-	public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,int gid);
+	public int addTeacher(String teacherId,String teacherName,String sex,String Areason,String password,String filename,int gid);
 
 	public teacherList query_teacher(Integer size, Integer pageindex,
 			String columnName, String orderDir, String searchValue);
