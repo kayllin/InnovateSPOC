@@ -202,7 +202,8 @@ public class TeachermanageController {
     @RequestMapping("/getTeacher.do")
     public String getTeacher(HttpServletRequest request,
 		    HttpServletResponse response){
-    	List<teachers> list = teacherService.getTeacher();
+    	int gid = Integer.parseInt(request.getParameter("gid"));
+    	List<teachers> list = teacherService.getTeacher(gid);
 		try {
 		    List list4 = new ArrayList();
 		    list4.add(list);

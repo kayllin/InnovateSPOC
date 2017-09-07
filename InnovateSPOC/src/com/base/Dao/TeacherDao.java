@@ -24,5 +24,5 @@ public interface TeacherDao {
 
 	public void updateteacher(String tid, String tintroduce, int gid,String photo);
 
-	public List<teachers> getTeacher();
+	public List<teachers> getTeacher(int gid);
 }

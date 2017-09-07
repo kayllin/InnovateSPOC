@@ -57,9 +57,9 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public List<teachers> getTeacher() {
+	public List<teachers> getTeacher(int gid) {
 		// TODO Auto-generated method stub
-		List<teachers> list= teacherdao.getTeacher();
+		List<teachers> list= teacherdao.getTeacher(gid);
 		return list;
 	} 
 	
