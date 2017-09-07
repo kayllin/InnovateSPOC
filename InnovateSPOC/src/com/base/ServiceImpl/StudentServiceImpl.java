@@ -53,9 +53,9 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor,int gid , String gra, String emp) {
+			String qq, String smajor,int gid , String gra, String emp,String photo) {
 		// TODO Auto-generated method stub
-		studentdao.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp);
+		studentdao.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp,photo);
 	}
 
 	@Override

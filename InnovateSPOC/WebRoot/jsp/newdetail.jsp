@@ -182,6 +182,7 @@
 						<div class="content" id="newdetail">
 							<!-- 在此插入新闻详情。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。-->
 							${notification.content }
+							<img width=200px height=200px src="${notification.photo }">
 						</div>
 					</div>
 				</div>

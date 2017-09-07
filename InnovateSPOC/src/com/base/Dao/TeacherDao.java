@@ -22,7 +22,7 @@ public interface TeacherDao {
 
 	public String deleteTeacher(String str);
 
-	public void updateteacher(String tid, String tintroduce, int gid);
+	public void updateteacher(String tid, String tintroduce, int gid,String photo);
 
 	public List<teachers> getTeacher();
 }

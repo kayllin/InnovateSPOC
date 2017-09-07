@@ -1,7 +1,11 @@
 package com.base.Controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +18,8 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.base.Po.education_experience;
 import com.base.Po.groups;
@@ -27,6 +33,8 @@ import com.base.Service.HobbysService;
 import com.base.Service.InternshipService;
 import com.base.Service.SkillStudentService;
 import com.base.Service.StudentService;
+import com.base.utils.CookieUtils;
+import com.base.utils.ExcelReport;
 
 @Controller("StudentmanageController")
 @RequestMapping("/jsp")
@@ -140,7 +148,7 @@ public class StudentmanageController {
 	//修改学生信息
 	@RequestMapping("updatestudent.do")
 	public String updateStudent(HttpServletRequest request,
-			HttpServletResponse response){
+			HttpServletResponse response) throws IOException{
 		String sid = request.getParameter("sid");
 		int gid = Integer.parseInt(request.getParameter("SelectOne"));
 		String Sintroduce = request.getParameter("Sintroduce");
@@ -151,7 +159,51 @@ public class StudentmanageController {
 		String smajor = request.getParameter("smajor");
 		String gra = request.getParameter("SelectOne1");
 		String emp = request.getParameter("SelectOne2");
-		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp);
+		String photo = null;
+		
+		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
+				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+				// 得到上传的文件
+				MultipartFile mFile2 = multipartRequest.getFile("photo2");
+				// 得到上传服务器的路径
+
+				/*
+				 * String path = request.getSession().getServletContext()
+				 * .getRealPath("/imgdraw/");
+				 */
+
+				String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
+
+				// CookieUtils.addCookie("image", filename, response);
+				if (!mFile2.isEmpty()) {
+					// 先删除原有的图像
+					String deleteFile = CookieUtils.getCookieImage(request, response);
+					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
+					File tempFile = new File(path2 + deleteFile);
+					if (tempFile.isFile() && tempFile.exists()) {
+						tempFile.delete();
+						// System.out.println(filename+"rrrrrr");
+					}
+					// 得到上传的文件的文件名
+					String fileName = mFile2.getOriginalFilename();
+					String fileType = fileName.substring(fileName.lastIndexOf("."));
+					photo = new Date().getTime() + fileType;
+					InputStream inputStream = mFile2.getInputStream();
+					byte[] b = new byte[1048576];
+					int length = inputStream.read(b);
+					path2 += "/" + photo;
+					// 文件流写到服务器端
+					FileOutputStream outputStream = new FileOutputStream(path2);
+					outputStream.write(b, 0, length);
+					inputStream.close();
+					outputStream.close();
+					photo = "../imgdraw/" + photo;
+
+					// 重新写cookie中的img属性值
+					CookieUtils.addCookie("image", photo, response);
+				}
+		
+		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp,photo);
 		return "studentManage";
 		
 	}
