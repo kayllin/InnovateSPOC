@@ -110,6 +110,7 @@ public class StudentDaoImpl implements StudentDao{
 				ch.setEmployed(rs.getString("employed"));
 				ch.setGname(rs.getString("gname"));
 				ch.setGid(rs.getInt("gid"));
+				ch.setHeadshot(rs.getString("headshot"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -153,14 +154,14 @@ public class StudentDaoImpl implements StudentDao{
 	@Override
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor, int gid, String gra, String emp){
+			String qq, String smajor, int gid, String gra, String emp,String photo){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			conn = (Connection) SessionFactoryUtils.getDataSource(
 				    sessionFactory).getConnection();
-			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=?,gid=?,graduation=?,employed=? where sid =?";
+			String sql = "update students set student_introduce=?,chinese_address=?,english_address=?,phone=?,qq=?,major=?,gid=?,graduation=?,employed=?,headshot=? where sid =?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Sintroduce);
 			pstmt.setString(2, chinese_address);
@@ -171,7 +172,8 @@ public class StudentDaoImpl implements StudentDao{
 			pstmt.setInt(7, gid);
 			pstmt.setString(8, gra);
 			pstmt.setString(9, emp);
-			pstmt.setString(10, sid);
+			pstmt.setString(10, photo);
+			pstmt.setString(11, sid);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

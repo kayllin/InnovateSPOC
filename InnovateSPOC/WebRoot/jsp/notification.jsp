@@ -169,58 +169,49 @@
 				<div class="row form">
 
 
+					<form action="saveNotification.do" method="post" class="form-horizontal"
+										role="form" id="majoreditform" enctype="multipart/form-data">
+						<div class="col-lg-12 form-group">
 
-					<div class="col-lg-12 form-group">
+							<div class=" col-md-4">
+									<fieldset>
+										<div class="form-group">
+											<label for="#title" class="col-sm-3 control-label">通知标题</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="title" name="title"></input>
+											</div>
+										</div>
+									</fieldset>
+							</div>
 
-						<div class=" col-md-4">
-							<form class="form-horizontal" role="form">
-								<fieldset>
-									<div class="form-group">
-										<label for="#msglx_list" class="col-sm-3 control-label">消息类型</label>
-										<div class="col-sm-6">
-											<select class="form-control" id="msglx_list">
-												<option value="1" selected="selected">通知公告</option>
-											</select>
-										</div>
-									</div>
-								</fieldset>
-								<fieldset>
-									<div class="form-group">
-										<label for="#title" class="col-sm-3 control-label">通知标题</label>
-										<div class="col-sm-6">
-											<input type="text" class="form-control" id="title"></input>
-										</div>
-									</div>
-								</fieldset>
-							</form>
 						</div>
 
-					</div>
+						<div class="row form-group">
+							<div class="col-lg-12">
 
-					<div class="row form-group">
-						<div class="col-lg-12">
-							
-							<div class="col-md-6">
-								<p class="text-center">通知内容</p>
-								<textarea class="form-control" rows="14" id="Newcontent"></textarea>
+								<div class="col-md-6">
+									<p class="text-center">通知内容</p>
+									<textarea class="form-control" rows="14" id="Newcontent" name="Newcontent"></textarea>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="col-sm-10">
+											<div id="preview">
+												<img id="imghead" width="100%" height="auto" border="0"
+													src="../images/big.jpg">
+											</div>
+											<div style="margin:20px 18px;">
+												<label class="btn btn-primary" for="file">浏览头像</label>
+												<input type="file" onchange="previewImage(this)" id="file" name="photo2" style="position:absolute;clip:rect(0 0 0 0);"> 
+											</div>
+										</div>
+									</div>
+								</div>
+
 							</div>
-							
-							<div class="col-md-6">
-								<div class="form-group">
-	                                <div class="col-sm-10">
-	                                  <div id="preview">
-	    								<img id="imghead" width="100%" height="auto" border="0" src="../images/big.jpg">
-									  </div>
-	                                  <div style="margin:20px 18px;">
-	                                  	<label class="btn btn-primary" for="file" >浏览头像</label>
-									  	<input type="file" onchange="previewImage(this)" id="file" style="position:absolute;clip:rect(0 0 0 0);">                          
-	                                  </div>
-	                                </div>
-                            	</div>
-							</div>
-							
 						</div>
-					</div>
+					</form>
 					<div class="col-lg-12 form-group">
 						<div class="col-md-4" id="btns">
 							<button id="sendNotifitation" class="btn btn-default">发布通知</button>
@@ -300,8 +291,30 @@
         return param;
     }
 	
-   
+    $("#sendNotifitation").click(function(){
+    	var title=$("#title").val();
+    	var newContent=$("#Newcontent").val();
+    	var photo=$("#file").val();
+    	//alert(title+"***"+newContent+"***"+photo);
+    	$.ajax({
+			url : '',
+			type : 'post',
+			dataType : 'json',
+			data : {
+				"title" : title,
+				"newContent":newContent,
+				"photo":photo
+			},
+			success : function(msg) {
+				bootbox.alert({
+					message : msg.str,
+					size : 'small'
+				});
+			}
+		});
+    });
+
 	</script>
-	<!-- <script type="text/javascript" src="../js/ueditor/myeditor.js"></script> -->
+	 <script type="text/javascript" src="../js/ueditor/myeditor.js"></script> 
 </body>
 </html>

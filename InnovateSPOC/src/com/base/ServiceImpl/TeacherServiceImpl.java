@@ -52,8 +52,8 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
-	public void updateteacher(String tid, String tintroduce,int gid) {
-		teacherdao.updateteacher(tid, tintroduce,gid);
+	public void updateteacher(String tid, String tintroduce,int gid,String photo) {
+		teacherdao.updateteacher(tid, tintroduce,gid,photo);
 	}
 
 	@Override

@@ -115,7 +115,7 @@ public class TeacherDaoImpl implements TeacherDao{
 				ch.setTeacher_introduce(rs.getString("introduce"));
 				ch.setGid(rs.getInt("gid"));
 				ch.setGname(rs.getString("gname"));
-//				ch.setPhoto_address(rs.getString("photo_address"));
+				ch.setPhoto_address(rs.getString("photo_address"));
 				list.add(ch);
 			}
 		} catch (SQLException e) {
@@ -157,7 +157,7 @@ public class TeacherDaoImpl implements TeacherDao{
 
 	//修改教师信息
 	@Override
-	public void updateteacher(String tid, String tintroduce, int gid) {
+	public void updateteacher(String tid, String tintroduce, int gid,String photo) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
 		PreparedStatement ps=null;
@@ -165,11 +165,12 @@ public class TeacherDaoImpl implements TeacherDao{
 		try {
 		    conn = (Connection) SessionFactoryUtils.getDataSource(
 			    sessionFactory).getConnection();
-		    String sql =("update teachers set teacher_introduce=?,gid=? where tid=?");
+		    String sql =("update teachers set teacher_introduce=?,gid=?,photo_address=? where tid=?");
 		    ps = conn.prepareStatement(sql);
 		    ps.setString(1, tintroduce);
 		    ps.setInt(2, gid);
-		    ps.setString(3, tid);
+		    ps.setString(3, photo);
+		    ps.setString(4, tid);
 		    ps.executeUpdate();
 		} catch (SQLException e) {
 		    // TODO Auto-generated catch block

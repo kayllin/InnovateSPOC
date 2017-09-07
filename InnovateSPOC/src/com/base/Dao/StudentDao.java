@@ -20,7 +20,7 @@ public interface StudentDao {
 
 	public void updateStudent(String sid, String Sintroduce,
 			String chinese_address, String english_address, String phone,
-			String qq, String smajor, int gid, String gra, String emp);
+			String qq, String smajor, int gid, String gra, String emp,String photo);
 
 	public List<groups> getGroup();
 	
