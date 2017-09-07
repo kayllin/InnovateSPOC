@@ -28,6 +28,8 @@ public class UserDaoImpl implements UserDao {
     
     @Autowired
     private SessionFactory sessionFactory;
+    
+    //根据账号密码进行验证  返回角色值
     @Override
     public int login(String username, String password) {
 	Session session = sessionFactory.openSession();
@@ -42,7 +44,7 @@ public class UserDaoImpl implements UserDao {
 	    if (ui != null) {
 		flag = ui.getRol();
 	    }
-	    System.out.println(flag+"||flag");
+	    //System.out.println(flag+"||flag");
 	} catch (Exception e) {
 	    System.out.println(e);
 	} finally {
@@ -170,6 +172,7 @@ public class UserDaoImpl implements UserDao {
 		return message;
 	}
 
+	//根据id查找对应的表  获取头像地址
 	@Override
 	public userCenter getImage(String userid) {
 
