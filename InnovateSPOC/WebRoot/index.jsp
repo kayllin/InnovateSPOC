@@ -197,116 +197,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h1 class="title1">学院新闻</h1>
 			
 			<div class=" carousel  slide" id="myCarousel4">
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel4" data-slide-to="1" class=""></li>
-					<li data-target="#myCarousel4" data-slide-to="2" class=""></li>
+				<ol class="carousel-indicators" id="showListNew">
+					
 				</ol>
 				
-				<div class="carousel-inner">
-					<div class="item active">
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/found.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>互联网+移动应用创新班成立</h2>
-									<p class="ct">
-									9月21日上午，湖南农业大学2015年计算机科学与技术专业“互联网+移动应用”创新班招生说明会在图书馆大成厅举行......
-									</p>
-									
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-18</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/research.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>彭克勤院长一行前往深圳考察合作企业并看望学生</h2>
-									<p class="ct">
-									12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-15</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/found.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>互联网+移动应用创新班成立</h2>
-									<p class="ct">
-									9月21日上午，湖南农业大学2015年计算机科学与技术专业“互联网+移动应用”创新班招生说明会在图书馆大成厅举行......
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-06</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/research.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>彭克勤院长一行前往深圳考察合作企业并看望学生</h2>
-									<p class="ct">
-									12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-04</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/found.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>信息学院举办2016年大学生电子商务“创新、创意及fdafas</h2>
-									<p class="ct">
-									9月21日上午，湖南农业大学2015年计算机科学与技术专业“互联网+移动应用”创新班招生说明会在图书馆大成厅举行......
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-06</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/research.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>彭克勤院长一行前往深圳考察合作企业并看望学生</h2>
-									<p class="ct">
-									12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-04</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-					</div>
+				<div class="carousel-inner" id="showNews">
+					
+					
+					
 				</div>
 			</div>
 			<div class="fr moreNews"><p><a href="html/news_list.html">更多&gt;&gt;</a></p></div>
