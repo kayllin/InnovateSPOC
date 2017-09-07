@@ -1,16 +1,29 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>思博客创新实验室</title>
+  <head>
+   	<meta charset="utf-8" /> 
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<title>思博客创新实验室</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 		<meta name="renderer" content="webkit">
 		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 		<link href="css/video-js.min.css" type="text/css" rel="stylesheet"/>
 		<link href="css/common.css" type="text/css" rel="stylesheet"/>
 		<link href="css/index.css" type="text/css" rel="stylesheet"/>
-	</head>
-	<body>
+
+  </head>
+  
+ <body>
 		<div class="header">
 
 			<div class="Indextitle" id="J_m_nav">
@@ -28,27 +41,27 @@
 						  </a>
 						</li>
                          <li>
-							<a href="#">
+							<a href="jsp/program.jsp">
 							  <span class="name_ch">程序组</span>
 							</a>
 						  </li>
                          <li>
-							<a href="#">
+							<a href="jsp/UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
 						<li>
-							<a href="#">
+							<a href="jsp/3D.jsp">
 							  <span class="name_ch">3D组</span>
 							</a>
 						  </li>							
 							 <li>
-							<a href="#">
+							<a href="jsp/CG.jsp">
 						  	  <span class="name_ch">CG特效组</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="jsp/recruit.jsp">
 						  	  <span class="name_ch">企业招聘</span>
 							</a>
 						  </li>
@@ -57,8 +70,8 @@
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li  data-toggle="modal" data-target="#Login">
-							<a href="#">
+						  <li>
+							<a href="login.html">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>							 
@@ -185,115 +198,13 @@
 			
 			<div class=" carousel  slide" id="myCarousel4">
 				<ol class="carousel-indicators" id="showListNew">
-					<!--<li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel4" data-slide-to="1" class=""></li>
-					<li data-target="#myCarousel4" data-slide-to="2" class=""></li>-->
+					
 				</ol>
 				
 				<div class="carousel-inner" id="showNews">
-					<!--<div class="item active">
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/found.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>互联网+移动应用创新班成立</h2>
-									<p class="ct">
-									9月21日上午，湖南农业大学2015年计算机科学与技术专业“互联网+移动应用”创新班招生说明会在图书馆大成厅举行......
-									</p>
-									
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-18</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/research.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>彭克勤院长一行前往深圳考察合作企业并看望学生</h2>
-									<p class="ct">
-									12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-15</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-					</div>-->
-					<!--<div class="item">
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/found.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>互联网+移动应用创新班成立</h2>
-									<p class="ct">
-									9月21日上午，湖南农业大学2015年计算机科学与技术专业“互联网+移动应用”创新班招生说明会在图书馆大成厅举行......
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-06</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/research.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>彭克勤院长一行前往深圳考察合作企业并看望学生</h2>
-									<p class="ct">
-									12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-04</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-					</div>-->
-					<!--<div class="item">
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/found.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>信息学院举办2016年大学生电子商务“创新、创意及fdafas</h2>
-									<p class="ct">
-									9月21日上午，湖南农业大学2015年计算机科学与技术专业“互联网+移动应用”创新班招生说明会在图书馆大成厅举行......
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-06</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>
-						<div class="newsunit">
-							<a href="html/news_3.html" >
-								<img src="images/index/research.jpg" alt="" class="fl">
-								<div class="fl news-text">
-									<h2>彭克勤院长一行前往深圳考察合作企业并看望学生</h2>
-									<p class="ct">
-									12月12日，正校级督导员、信息学院院长彭克勤，学院党委书记李晗飞等一行4人前往成都国信安信息产业基地有限公司深圳分公司考察，并看望了在公司实习实训学生。
-									</p>
-								</div>
-								<div class="fr news-date">
-									<p>2017</p>
-									<p>05-04</p>
-								</div>
-								<div class="news-bottom"></div>
-							</a>
-						</div>-->
-					</div>
+					
+					
+					
 				</div>
 			</div>
 			<div class="fr moreNews"><p><a href="html/news_list.html">更多&gt;&gt;</a></p></div>

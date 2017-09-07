@@ -651,7 +651,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div style="display: table;">
 						<div id="section1">
 							<div id="section1_1">
-								<div id="portrait"></div>
+								<div id="portrait">
+									<img src="../images/big.jpg" id="headshot">
+								</div>
 								<p>刘安奇</p>
 								<p>视觉传达专业</p>
 							</div>
