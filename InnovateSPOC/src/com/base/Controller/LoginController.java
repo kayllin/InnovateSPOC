@@ -54,7 +54,7 @@ public class LoginController {
 	    CookieUtils.addCookie("username", userid, response);	    
 	    CookieUtils.addCookie("logintime",String.valueOf(new Date().getTime()), response);
 	    CookieUtils.addCookie("userType", userType,response);
-	    String src="";
+	    String src="../imgdraw/big.jpg";
 		String name="";
 
     	userCenter ui=userService.getImage(userid);			
