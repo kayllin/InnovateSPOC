@@ -227,30 +227,12 @@ public class StudentmanageController {
 		return null;
 	}
 	
-	//获得UI学生
-	@RequestMapping("get_UIstudent.do")
-	public String get_UIstudent(HttpServletRequest request,
-		    HttpServletResponse response){
-		List<students> list1 = studentService.get_UIstudent();
-		try {
-		    List list4 = new ArrayList();
-		    list4.add(list1);
-		    JSONArray json = JSONArray.fromObject(list4);
-		    response.setContentType("text/html;charset=UTF-8");
-		    response.getWriter().print(json.toString());
-
-		} catch (Exception e) {
-		    // TODO Auto-generated catch block
-		    e.printStackTrace();
-		}
-		return null;
-	}
-	
-	//获得程序学生
-		@RequestMapping("get_Pstudent.do")
+	//获得学生
+		@RequestMapping("get_student.do")
 		public String get_Pstudent(HttpServletRequest request,
 			    HttpServletResponse response){
-			List<students> list1 = studentService.get_Pstudent();
+			int gid = Integer.parseInt(request.getParameter("gid"));
+			List<students> list1 = studentService.get_Pstudent(gid);
 			try {
 			    List list4 = new ArrayList();
 			    list4.add(list1);
@@ -264,45 +246,7 @@ public class StudentmanageController {
 			}
 			return null;
 		}
-	
-	//获得3d学生
-	@RequestMapping("get_3Dstudent.do")
-	public String get_3Dstudent(HttpServletRequest request,
-			HttpServletResponse response) {
-		List<students> list1 = studentService.get_3Dstudent();
-		try {
-			List list4 = new ArrayList();
-			list4.add(list1);
-			JSONArray json = JSONArray.fromObject(list4);
-			response.setContentType("text/html;charset=UTF-8");
-			response.getWriter().print(json.toString());
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	//获得CG学生
-	@RequestMapping("get_CGstudent.do")
-	public String get_CGstudent(HttpServletRequest request,
-			HttpServletResponse response) {
-		List<students> list1 = studentService.get_CGstudent();
-		try {
-			List list4 = new ArrayList();
-			list4.add(list1);
-			JSONArray json = JSONArray.fromObject(list4);
-			response.setContentType("text/html;charset=UTF-8");
-			response.getWriter().print(json.toString());
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
 	//获得学生简历
 	@RequestMapping("get_resume.do")
 	public String get_resume(HttpServletRequest request,

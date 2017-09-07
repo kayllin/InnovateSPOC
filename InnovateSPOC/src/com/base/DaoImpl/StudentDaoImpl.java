@@ -217,13 +217,14 @@ public class StudentDaoImpl implements StudentDao{
 	}
 
 	@Override
-	public List<students> get_Pstudent() {
+	public List<students> get_Pstudent(int gid) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from students where gid = 1";
+		String hql="from students where gid=?";
 		List<students> list = null;
 		try {
 	    	 Query query=session.createQuery(hql);
+	    	 query.setInteger(0, gid);
 	    	 list=query.list();
 		} catch (Exception e) {
 			System.out.println(e);

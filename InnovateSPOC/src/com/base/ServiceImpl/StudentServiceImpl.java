@@ -72,9 +72,9 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public List<students> get_Pstudent() {
+	public List<students> get_Pstudent(int gid) {
 		// TODO Auto-generated method stub
-		List<students> list = studentdao.get_Pstudent();
+		List<students> list = studentdao.get_Pstudent(gid);
 		return list;
 	}
 
