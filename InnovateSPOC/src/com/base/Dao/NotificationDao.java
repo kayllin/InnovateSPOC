@@ -2,6 +2,8 @@ package com.base.Dao;
 
 import java.util.List;
 
+import com.base.Po.news;
+
 public interface NotificationDao {
 
 	/*
@@ -19,4 +21,6 @@ public interface NotificationDao {
 	public List getNotificationInfo(String currentPage,String itemsPerPage);
 	
 	public String delnews(int nid);
+	
+	public List<news> getNews();
 }

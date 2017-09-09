@@ -11,6 +11,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -177,5 +178,24 @@ public class NotificationController {
 	    	    e.printStackTrace();
 	    	}
 	    	return null;
+		}
+		
+		//获得新闻
+		@RequestMapping("/getNews.do")
+		public String getNews(HttpServletRequest request,
+				HttpServletResponse response){
+			List<news> list = notificationServiceImpl.getNews();
+			try {
+			    List list4 = new ArrayList();
+			    list4.add(list);
+			    JSONArray json = JSONArray.fromObject(list4);
+			    response.setContentType("text/html;charset=UTF-8");
+			    response.getWriter().print(json.toString());
+
+			} catch (Exception e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			}
+			return null;
 		}
 }
