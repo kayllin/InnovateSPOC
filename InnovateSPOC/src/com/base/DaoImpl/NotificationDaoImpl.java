@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 
 import com.base.Dao.NotificationDao;
 import com.base.Po.news;
+import com.base.Po.teachers;
 import com.base.utils.BaseUtils;
 import com.base.utils.SqlConnectionUtils;
 
@@ -136,5 +137,22 @@ public class NotificationDaoImpl implements NotificationDao{
 			SqlConnectionUtils.free(conn, ps, null);
 		}
 		return message;
+	}
+
+	@Override
+	public List<news> getNews() {
+		// TODO Auto-generated method stub
+		List<news> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from news";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
 	}
 }
