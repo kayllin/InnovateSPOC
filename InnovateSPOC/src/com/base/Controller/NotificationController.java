@@ -11,6 +11,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONObject;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -151,5 +153,29 @@ public class NotificationController {
 			
 			map.addAttribute("notification", notification);
 			return "newdetail";
+		}
+		
+		//删除新闻
+		@RequestMapping("jsp/delnews.do")
+		public String delnews(ModelMap map, HttpServletRequest request,
+				HttpServletResponse response){
+			int nid = Integer.parseInt(request.getParameter("news"));
+			System.out.println(nid);
+			String message = notificationServiceImpl.delnews(nid);
+	    	if (message.equals("success")) {
+	    	    message = "操作成功";
+	    	} else if (message.equals("fail")) {
+	    	    message = "操作失败";
+	    	}
+	    	JSONObject getObj = new JSONObject();
+	    	getObj.put("str", message);
+	    	response.setContentType("text/html;charset=UTF-8");
+	    	try {
+	    	    response.getWriter().print(getObj.toString());
+	    	} catch (IOException e) {
+	    	    // TODO Auto-generated catch block
+	    	    e.printStackTrace();
+	    	}
+	    	return null;
 		}
 }

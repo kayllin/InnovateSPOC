@@ -227,12 +227,6 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/bootbox.min.js"></script>
 	<script src="../js/jquery.cokie.min.js"></script>
-	<!-- <script type="text/javascript" charset="utf-8"
-		src="../js/ueditor/ueditor.config.js"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="../js/ueditor/ueditor.all.min.js"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="../js/ueditor/lang/zh-cn/zh-cn.js"></script> -->
 	<script src="../js/jquery.cokie.min.js"></script>
 	<script src="../js/kg.js"></script>
 	<script type="text/javascript">
@@ -291,30 +285,10 @@
         return param;
     }
 	
-    $("#sendNotifitation").click(function(){
-    	var title=$("#title").val();
-    	var newContent=$("#Newcontent").val();
-    	var photo=$("#file").val();
-    	//alert(title+"***"+newContent+"***"+photo);
-    	$.ajax({
-			url : '',
-			type : 'post',
-			dataType : 'json',
-			data : {
-				"title" : title,
-				"newContent":newContent,
-				"photo":photo
-			},
-			success : function(msg) {
-				bootbox.alert({
-					message : msg.str,
-					size : 'small'
-				});
-			}
-		});
-    });
+    
 
 	</script>
-	 <script type="text/javascript" src="../js/ueditor/myeditor.js"></script> 
+	<script type="text/javascript" src="../js/myNeed/notification.js"></script> 
+	<script type="text/javascript" src="../js/ueditor/myeditor.js"></script> 
 </body>
 </html>
