@@ -37,4 +37,10 @@ public class NotificationServiceImpl implements NotificationService{
 		// TODO Auto-generated method stub
 		return notificationDaoImpl.getNotification(id);
 	}
+	
+	@Override
+	public String delnews(int nid){
+		String message= notificationDaoImpl.delnews(nid);
+		return message;
+	}
 }

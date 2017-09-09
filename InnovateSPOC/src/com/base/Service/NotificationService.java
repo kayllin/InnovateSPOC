@@ -17,4 +17,6 @@ public interface NotificationService {
 	   函数功能：获得当前页的公告记录
 	 */	
 	 public List getNotificationInfo(String currentPage,String itemsPerPage); 
+	 
+	 public String delnews(int nid);
 }
