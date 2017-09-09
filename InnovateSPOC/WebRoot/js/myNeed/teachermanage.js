@@ -149,16 +149,7 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#tname").val(obj[index].tname);
 	$("#sex").val(obj[index].sex);
 	$("#Tintroduce").val(obj[index].teacher_introduce);
-	alert(obj[index].photo_address);
-	$("#imghead").attr("src",obj[index].photo_address);
-//	$("#copyMname").val(obj[index].mname);	
-//	var file=obj[index].file;
-//	if(file=="null"||file==""||file==null){
-//		$("#resourcetr").prop("hidden",true);
-//	}else{
-//		$("#resourcetr").prop("hidden",false);
-//		$("#Elink").prop("href",file);
-//	}	
+	$("#imghead").attr("src",obj[index].photo_address);	
 	$("#edit").modal('show');
 	
 });

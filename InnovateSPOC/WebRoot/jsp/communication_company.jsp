@@ -114,6 +114,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 
 									</ul>
 								</li>
@@ -166,7 +168,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="pull-left">
 						<ol class="breadcrumb visible-sm visible-md visible-lg">
 							<li><a>位置</a></li>
-							<li><a href="RepairManage.jsp">学生管理</a></li>
+							<li><a href="RepairManage.jsp">企业交流管理</a></li>
 						</ol>
 					</div>
 					
