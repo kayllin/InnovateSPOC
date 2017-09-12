@@ -177,8 +177,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</tr>
 									<tr>
 										<th>选择</th>
-										<th>项目作品</th>
-										<th>学生编号</th>
+										<th>项目名称</th>
+										<th>学生姓名</th>
 										<th>参与人员</th>
 										<th>是否是负责人</th>
 										<th>操作</th>
