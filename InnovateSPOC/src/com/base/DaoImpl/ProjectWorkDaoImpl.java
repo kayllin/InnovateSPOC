@@ -293,6 +293,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 			    WorkInfo ch = new WorkInfo();
 			    ch.setPid(rs.getInt("pid"));
 			    ch.setGid(rs.getString("gid"));
+			    ch.setGname(rs.getString("gname"));
 			    ch.setProject_name(rs.getString("project_name"));
 			    ch.setProject_introduce(rs.getString("project_introduce"));
 			    ch.setProject_address(rs.getString("project_address"));
