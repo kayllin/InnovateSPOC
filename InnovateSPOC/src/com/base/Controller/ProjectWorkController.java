@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.base.Po.WorkInfo;
 import com.base.Po.groups;
+import com.base.Po.project_personnel;
 import com.base.Po.project_work;
 import com.base.Po.workList;
 import com.base.Po.work_category;
@@ -337,5 +339,67 @@ public class ProjectWorkController {
 		return null;
     }
     
+    //获取项目人员信息
+    @RequestMapping("/getPersonnel.do")
+    public String getPersonnel(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String sid = request.getParameter("sid");
+    	List<project_personnel> list = ProjectWorkService.getPersonnel(sid); 
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+    //获得作品及人员信息
+    @RequestMapping("/getAllWorkInfo.do")
+    public String getAllWorkInfo(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String pid = request.getParameter("pid");
+    	List<WorkInfo> list = ProjectWorkService.getAllWorkInfo();
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
   
+  //根据sid获得作品及人员信息
+    @RequestMapping("/getAllWorkInfoBysid.do")
+    public String getAllWorkInfoBysid(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String sid = request.getParameter("sid");
+    	List<WorkInfo> list1 = ProjectWorkService.getAllWorkInfo(sid);
+    	List<project_personnel> list2 = ProjectWorkService.getPersonnel(sid); 
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list1);
+		    listReturn.add(list2);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+    
 }

@@ -62,8 +62,49 @@ $(document).ready(function() {
 							interestingStr=interestingStr+'<div class="sec2_content"><div class="icon4"></div><div class="sec2_text"><h1>'+data[2][d].hobby+'<span>'+data[2][d].begin_time+'-'+data[2][d].sid+'</h1><br><p>'+data[2][d].hobby_description+'</p></div></div>';
 						}
 						$("#resumIntr").append(interestingStr);
+						
+						
+						//简历表作品
+						$.ajax({
+				        	type : 'POST',
+				 			dataType : 'json',
+				 			url : 'getAllWorkInfoBysid.do',
+				 			data:{
+								"sid":stuId
+							},
+				 			error : function(request) {
+				 				bootbox.alert({
+				         			  message: "请求异常666",
+				         			  size: 'small'
+				         		  });
+				 			},
+				 			success : function(data) {
+				 				alert(data[0].length+"aaa");
+				 				var Jcontstr="";
+				 				var Gstr="";
+				 				for(var g=0;g<data[0].length;g++){
+									Gstr=Gstr+'<div class="content" style="background:url('+data[0][g].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][g].project_introduce+'</h1><p>'+data[0][g].project_introduce+'</p></div></div>';
+								
+							}
+				 				for(var f=0;f<data[1].length;f++){
+				 					if(data[1][f].header ==  '是'){
+				 						Jcontstr=Jcontstr+'<div class="content" style="background:url('+data[0][f].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][f].project_introduce+'</h1><p>'+data[0][f].project_introduce+'</p></div></div>';
+				 					}
+							}
+								$("#guideProject").append(Gstr);
+								$("#joinproject").append(Jcontstr);
+								
+								
+				 			}
+				        });
+						
 					}
+					
+					
+					
 				});
+				
+				
 				$("#resume_myModal").modal('show');
 	});
 	
