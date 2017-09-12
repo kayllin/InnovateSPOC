@@ -23,16 +23,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="../css/teacher.css">
 <style type="text/css">
     	#preview{
-			width:120px;
-			height:120px;
-			border:1px solid #000;
-			border-radius:60px;
+			width:298px;
+			height:157px;
+			/* border:1px solid #000; */
 			overflow:hidden;
 		}
 #preview2{
-			width:120px;
-			height:120px;
-			border:1px solid #000;
+			width:298px;
+			height:157px;
 			border-radius:60px;
 			overflow:hidden;
 		}
