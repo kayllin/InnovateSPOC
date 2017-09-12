@@ -226,15 +226,15 @@ $("#save").click(function(){
 //图片的显示与修改
 function previewImage(file)
 {
-  var MAXWIDTH  = 120; 
-  var MAXHEIGHT = 120;
+  var MAXWIDTH  = 298; 
+  var MAXHEIGHT = 157;
   var div = document.getElementById('preview');
   if (file.files && file.files[0])
   {
       div.innerHTML ='<img id=imghead>';
       var img = document.getElementById('imghead');
       img.onload = function(){
-        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 120, 120);
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 298, 157);
         img.width  =  rect.width;
         img.height =  rect.height;
 //         img.style.marginLeft = rect.left+'px';
