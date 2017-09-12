@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a href="index.html">
+						  <a href="index.jsp">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="group_project.jsp">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>

@@ -118,7 +118,8 @@
 									<ul class="nav nav-children">
 										<li><a
 											href="projectWork.jsp"><span class="text">作品信息管理</span></a></li>
-
+										<li><a
+											href="projectPersonnel.jsp"><span class="text">项目人员管理</span></a></li>
 									</ul>
 								</li>
 								<li class="menuItem nav-parent">
@@ -193,10 +194,10 @@
 							<c:forEach items='${notifications}' var='notification'>
 
 								<div>
-									<a href="newdetail.do?id=${notification.id }"
+									<a name="news" href="newdetail.do?id=${notification.id }"
 									class="list-group-item list_a">${notification.title }
 									</a>
-									<button id="delete" class="btn btn-danger btn-xs" type="button">删除</button>
+									<button id="delete" class="btn btn-danger btn-xs" type="button" value="${notification.id }">删除</button>
 								</div>
 							</c:forEach>
 

@@ -35,42 +35,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a href="index.html">
+						  <a href="../index.jsp">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
                          <li>
-							<a href="#">
+							<a href="program.jsp">
 							  <span class="name_ch">程序组</span>
 							</a>
 						  </li>
                          <li>
-							<a href="#">
+							<a href="UI.jsp">
 							  <span class="name_ch">UI组</span>
 							</a>
 						  </li>
 						<li>
-							<a href="#">
+							<a href="3D.jsp">
 							  <span class="name_ch">3D组</span>
 							</a>
 						  </li>							
 							 <li>
-							<a href="#">
+							<a href="CG.jsp">
 						  	  <span class="name_ch">CG特效组</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="#">
+							<a href="recruit.jsp">
 						  	  <span class="name_ch">企业招聘</span>
 							</a>
 						  </li>
 						  <li>
-							<a  class="nav_stop" href="#">
+							<a  class="nav_stop" href="group_project.jsp">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li data-toggle="modal" data-target="#Login">
-							<a href="#">
+						  <li>
+							<a href="../login.html">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
