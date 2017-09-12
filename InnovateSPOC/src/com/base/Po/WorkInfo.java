@@ -14,6 +14,34 @@ public class WorkInfo {
 	private String participants;//������Ա
 	private String header;//�Ƿ�����
 	private String work_name;//�����
+	private String gname;
+	public WorkInfo(int pid, String gid, String project_name,
+			String project_introduce, String project_address,
+			String photo_address, String wid, String expression,
+			String best_work, String sid, String participants, String header,
+			String work_name, String gname) {
+		super();
+		this.pid = pid;
+		this.gid = gid;
+		this.project_name = project_name;
+		this.project_introduce = project_introduce;
+		this.project_address = project_address;
+		this.photo_address = photo_address;
+		this.wid = wid;
+		this.expression = expression;
+		this.best_work = best_work;
+		this.sid = sid;
+		this.participants = participants;
+		this.header = header;
+		this.work_name = work_name;
+		this.gname = gname;
+	}
+	public String getGname() {
+		return gname;
+	}
+	public void setGname(String gname) {
+		this.gname = gname;
+	}
 	public WorkInfo(int pid, String gid, String project_name,
 			String project_introduce, String project_address,
 			String photo_address, String wid, String expression,
