@@ -26,8 +26,9 @@ $(document).ready(function(){
 				var newListStr='';
 				var newGroup=data[0].length/2;
 				var newLast=data[0].length%2;
-				alert(newGroup);
-				alert(newLast);
+				var newTime="";
+				var newYear="";
+				var newMothe="";
 				if(newLast!==0){
 					newGroup=parseInt(newGroup)+1;
 				}
@@ -43,13 +44,19 @@ $(document).ready(function(){
 					if(i!==(newGroup-1)||newLast===0){
 						
 						for(var k=0;k<2;k++){
-							newStr=newStr+'<div class="newsunit"><a href="html/news_3.html" ><img src="'+ data[0][2*i+k].photo +'" alt="" class="fl"><div class="fl news-text"><h2>'+ data[0][2*i+k].title +'</h2><p class="ct">'+ data[0][2*i+k].content +'</p></div><div class="fr news-date"><p>2017</p><p>'+ data[0][2*i+k].time +'</p></div><div class="news-bottom"></div></a></div>';	
+							newTime=data[0][2*i+k].time;
+							newYear=newTime.substring(0,4);
+							newMothe=newTime.substring(5);
+							alert(data[0][2*i+k].photo);
+							newStr=newStr+'<div class="newsunit"><a href="html/news_3.html" ><img src="'+ data[0][2*i+k].photo +'" class="fl"><div class="fl news-text"><h2>'+ data[0][2*i+k].title +'</h2><p class="ct">'+ data[0][2*i+k].content +'</p></div><div class="fr news-date"><p>'+newYear+'</p><p>'+ newMothe +'</p></div><div class="news-bottom"></div></a></div>';	
 						}
 						newStr=newStr+'</div>';
 					}
 					else{
-						
-						newStr=newStr+'<div class="newsunit"><a href="html/news_3.html" ><img src="'+ data[0][0].photo +'" alt="" class="fl"><div class="fl news-text"><h2>'+ data[0][0].title +'</h2><p class="ct">'+ data[0][0].title +'</p></div><div class="fr news-date"><p>2017</p><p>'+ data[0][0].time +'</p></div><div class="news-bottom"></div></a></div></div>';
+						newTime=data[0][0].time.time;
+						newYear=newTime.substring(0,4);
+						newMothe=newTime.substring(5);
+						newStr=newStr+'<div class="newsunit"><a href="html/news_3.html" ><img src="'+ data[0][0].photo +'" class="fl"><div class="fl news-text"><h2>'+ data[0][0].title +'</h2><p class="ct">'+ data[0][0].title +'</p></div><div class="fr news-date"><p>'+newYear+'</p><p>'+ newMothe +'</p></div><div class="news-bottom"></div></a></div></div>';
 					}
 					
 					 

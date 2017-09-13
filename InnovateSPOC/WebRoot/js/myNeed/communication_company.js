@@ -123,6 +123,37 @@ $("#saverun").click(function(){
 });
 
 
+//获取组别
+$.ajax({
+	type : 'POST',
+	dataType : 'json',		
+	url : 'getGroup.do',  
+	async : false,
+	cache : false,
+	error : function(request) {
+		bootbox.alert({
+			message : "请求异常21",
+			size : 'small'
+		});
+	},
+	success : function(data) {
+		
+		for ( var i=0;i<data[0].length;i++) {				
+			$("#addgnameList").after(
+					"<option value="+data[0][i].gname+">"
+							+ data[0][i].gname + "</option>");
+			$("#gnameList").after(
+					"<option value="+data[0][i].gname+">"
+							+ data[0][i].gname + "</option>");	
+			
+		}	
+		
+	}
+
+});
+
+
+
 var flag=0;
 $("#delete").click(function(){
 	flag = 0;
@@ -220,6 +251,9 @@ $("#save").click(function(){
 						}
 					});
 });
+
+
+
 
 
 

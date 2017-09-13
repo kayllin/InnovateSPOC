@@ -270,7 +270,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<div class="form-group">
 													    <label for="gname" class="col-sm-2 control-label">组别</label>
 													    <div class="col-sm-10">
-													      <input type="text" class="form-control" id="gname" name="gname">
+													    	<select class="form-control" id="gname" name="gname">
+																<option id="gnameList" value="">请选择</option>
+															</select>
+													      	
 													    </div>
 													  </div>
 												</td>
@@ -336,7 +339,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<div class="form-group">
 													    <label for="addgname" class="col-sm-2 control-label">组别</label>
 													    <div class="col-sm-10">
-													      <input type="text" class="form-control" id="addgname" name="gname">
+													    	<select class="form-control" id="addgname" name="gname">
+																<option id="addgnameList" value="">请选择</option>
+															</select>
+													      <!-- <input type="text" class="form-control" id="addgname" name="gname"> -->
 													    </div>
 													  </div>
 												</td>
