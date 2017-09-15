@@ -79,7 +79,6 @@ $(document).ready(function() {
 				         		  });
 				 			},
 				 			success : function(data) {
-				 				alert(data[0].length+"aaa");
 				 				var Jcontstr="";
 				 				var Gstr="";
 				 				for(var g=0;g<data[0].length;g++){

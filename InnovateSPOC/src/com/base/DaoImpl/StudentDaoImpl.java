@@ -140,7 +140,7 @@ public class StudentDaoImpl implements StudentDao{
 					.prepareCall("{CALL innovatespoc.delete_student(?,?)}");
 			sp.setString(1, str);
 			sp.execute();
-			flag = sp.getInt(2); 
+			flag = sp.getInt(2); 	
 			message=BaseUtils.getException(flag);
 		} catch (Exception e) {
 			e.printStackTrace();

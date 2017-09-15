@@ -101,6 +101,21 @@ $(document).on("click", "#checkdetale1", function() {
 
 //修改
 $("#saverun").click(function(){
+	
+	if($("#title").val()===""){
+		$("#editWarningTitle").show();
+		return;
+	}else{
+		$("#editWarningTitle").hide();
+	}
+	
+	if($("#gname").val()===""){
+		$("#editWarningGroup").show();
+		return;
+	}else{
+		$("#editWarningGroup").hide();
+	}
+	
 	bootbox.confirm({
 		message: "是否确认修改",
 		size: 'small',
@@ -231,6 +246,28 @@ $("#ck1").on("click", function () {
 
 
 $("#save").click(function(){
+	
+	if($("#file2").val()===""){
+		$("#addWarningPhoto").show();
+		return;
+	}else{
+		$("#addWarningPhoto").hide();
+	}
+	
+	if($("#addtitle").val()===""){
+		$("#addWarningTitle").show();
+		return;
+	}else{
+		$("#addWarningTitle").hide();
+	}
+	
+	if($("#addgname").val()===""){
+		$("#addWarningGroup").show();
+		return;
+	}else{
+		$("#addWarningGroup").hide();
+	}
+	
 	bootbox.confirm({
 		message: "是否确认添加",
 		size: 'small',
@@ -251,7 +288,12 @@ $("#save").click(function(){
 						}
 					});
 });
-
+$('#add').on('hidden.bs.modal', function () {
+	$("#addgname").val("");
+	$("#addtitle").val("");
+	$("#file2").val("");
+	$("#addWarning").hide();
+});
 
 
 

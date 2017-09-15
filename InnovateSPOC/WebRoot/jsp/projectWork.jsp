@@ -144,7 +144,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</a>
 									<ul class="nav nav-children">
 										<li><a
-											href="notification.jsp"><span class="text">新闻信息管理</span></a></li>
+											href="notification.jsp"><span class="text">发布新闻</span></a></li>
+										<li><a href="newlist.do">新闻管理</a></li>
 
 									</ul>
 								</li>
@@ -185,7 +186,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<thead>
 									<tr bgcolor="#ECF1F5">
 										<td hidden id="exportMaintain">${exportMaintain}</td>
-										<td colspan="8" id="button-left">
+										<td colspan="10" id="button-left">
 											<button type="button" class="btn btn-danger" id="delete">删除</button>
 											<button type="button" class="btn btn-info"
 												data-toggle="modal" data-target="#add" id="ZJ">增加</button>

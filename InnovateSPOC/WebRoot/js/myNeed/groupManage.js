@@ -91,6 +91,12 @@ $(document).on("click", "#checkdetale1", function() {
 
 //修改
 $("#saverun").click(function(){
+	
+	if($("#gname").val()===""){
+		$("#editWarning").show();
+		return;
+	}
+	
 	bootbox.confirm({
 		message: "是否确认修改",
 		size: 'small',
@@ -188,7 +194,21 @@ $("#ck1").on("click", function () {
  });
 
 $("#save").on("click",function(){
+	
+	if($("#gname2").val()===""){
+		$("#addWarning").show();
+		return;
+	}
 	$("#addGroupform").submit();
+	
 	$("#add").modal('hide');
 });
 
+$('#add').on('hidden.bs.modal', function () {
+	$("#gname2").val("");
+	$("#addWarning").hide();
+});
+
+$('#edit').on('hidden.bs.modal', function () {
+	$("#editWarning").hide();
+});
