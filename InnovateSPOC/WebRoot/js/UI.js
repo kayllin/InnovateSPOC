@@ -106,7 +106,10 @@ $(document).ready(function() {
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getWork.do',
+ 			data :{
+ 				gid :2
+ 			},
+ 			url : 'getWorkInfoBygid.do',
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -147,7 +150,8 @@ $(document).ready(function() {
 				for(var k=1;k<num;k++){
 					Estr=Estr+'<li data-target="#mycarousel3" data-slide-to="'+k+'"></li>';
 				}
-				
+				alert(data[0].length);
+
 				for(var i=1;i<=num;i++){
 					if(i===1){
 						Estring=Estring+'<div class="item active"><ul class="p7_content">';
@@ -156,14 +160,13 @@ $(document).ready(function() {
 					}
 					if(i!==num){
 						for(var j=0;j<4;j++){
-							
 								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sid+'</p><p class="p7_condate">Dec 04,2014</p><p class="p7_conintro">'+data[0][j].graduation_year+'毕业生</p></li>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<li><p class="p7_conname">'+data[0][j].sid+'</p><p class="p7_condate">Dec 06,2014</p><p class="p7_conintro">'+data[0][j].graduation_year+'毕业生</p></li>';
+								Estring=Estring+'<li><p class="p7_conname">'+data[0][a].sid+'</p><p class="p7_condate">Dec 06,2014</p><p class="p7_conintro">'+data[0][a].graduation_year+'毕业生</p></li>';
 						}
 					}
 					

@@ -44,7 +44,9 @@ public interface ProjectWorkDao {
 
 	public List<WorkInfo> getAllWorkInfo();
 
-	public List<WorkInfo> getAllWorkInfo(String sid);  
+	public List<WorkInfo> getAllWorkInfo(String sid);
+
+	public List<project_work> getWorkInfoBypid(String pid);  
 
    
 }
