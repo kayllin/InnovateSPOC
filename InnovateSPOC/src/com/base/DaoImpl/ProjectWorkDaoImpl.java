@@ -354,6 +354,23 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 		return list;
 	}
 
+	@Override
+	public List<project_work> getWorkInfoBypid(String gid) {
+		List<project_work> list = null;
+		Session session=sessionFactory.openSession();		
+		String hql="from project_work where gid=?";
+		try {
+	    	 Query query=session.createQuery(hql);
+	    	 query.setString(0, gid);
+	    	 list=query.list();
+		} catch (Exception e) {
+			System.out.println(e);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
 
 
 }

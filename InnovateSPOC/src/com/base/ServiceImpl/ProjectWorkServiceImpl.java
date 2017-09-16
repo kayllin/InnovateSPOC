@@ -118,5 +118,12 @@ public class ProjectWorkServiceImpl implements ProjectWorkService {
 		return list;
 	}
 
+	@Override
+	public List<project_work> getWorkInfoBypid(String gid) {
+		// TODO Auto-generated method stub
+		 List<project_work>  list = workdao.getWorkInfoBypid(gid);
+		return list;
+	}
+
 
 }

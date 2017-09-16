@@ -401,5 +401,26 @@ public class ProjectWorkController {
 		return null;
     }
     
+  //根据gid获得作品信息
+    @RequestMapping("/getWorkInfoBygid.do")
+    public String getWorkInfoBypid(HttpServletRequest request,
+		    HttpServletResponse response){
+    	String gid = request.getParameter("gid");
+    	List<project_work> list1 = ProjectWorkService.getWorkInfoBypid(gid);
+		try {
+			List listReturn = new ArrayList();
+		    listReturn.add(list1);
+		    JSONArray json = JSONArray.fromObject(listReturn);
+		    response.setContentType("text/html;charset=UTF-8");
+		    response.getWriter().print(json.toString());
+
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		return null;
+    }
+    
+    
     
 }
