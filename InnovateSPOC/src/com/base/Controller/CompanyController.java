@@ -26,9 +26,11 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.base.Po.Company;
 import com.base.Po.CompanyList;
+import com.base.Po.groups;
 import com.base.Po.studentList;
 import com.base.Po.students;
 import com.base.Service.CompanyService;
+import com.base.Service.ProjectWorkService;
 import com.base.utils.CookieUtils;
 import com.base.utils.ExcelReport;
 
@@ -40,6 +42,8 @@ public class CompanyController {
 	@Autowired
 	private CompanyService companyservice;
 	
+	@Autowired
+	  private ProjectWorkService ProjectWorkService;
 	//增加
 	@RequestMapping("/addCompant.do")
 	public String addCompant(HttpServletRequest request,
@@ -267,4 +271,6 @@ public class CompanyController {
 		companyservice.updateCompany(title, photo,gname,id);
 		return "communication_company";
 	}
+	
+	
 }

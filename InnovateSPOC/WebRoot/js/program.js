@@ -144,7 +144,7 @@ $(document).ready(function() {
 				var num=0;
 				var num1=data[0].length/4;
 				var num2=data[0].length%4;
-				if(num2===0){
+				if(num==0){
 					num=num1;
 				}
 				else{
