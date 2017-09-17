@@ -227,6 +227,28 @@ public class StudentmanageController {
 		return null;
 	}
 	
+	
+	//获得学生
+			@RequestMapping("get_3Dstudent.do")
+			public String get_3Dstudent(HttpServletRequest request,
+				    HttpServletResponse response){
+				List<students> list1 = studentService.get_3Dstudent();
+				try {
+				    List list4 = new ArrayList();
+				    list4.add(list1);
+				    JSONArray json = JSONArray.fromObject(list4);
+				    response.setContentType("text/html;charset=UTF-8");
+				    response.getWriter().print(json.toString());
+
+				} catch (Exception e) {
+				    // TODO Auto-generated catch block
+				    e.printStackTrace();
+				}
+				return null;
+			}
+
+	
+	
 	//获得学生
 		@RequestMapping("get_student.do")
 		public String get_Pstudent(HttpServletRequest request,

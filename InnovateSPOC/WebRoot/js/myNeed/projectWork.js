@@ -125,14 +125,14 @@ $(document).ready(function() {
 							//增加框的js控制
 							$("#confirm").click(function(){
 								var tag=1;
-								var gid = $("#gid0").val;
-								var project_name = $("#project_name").val;
-								var project_introduce = $("#project_introduce").val;
-								var project_address = $("#project_address").val;
-								var photo_address = $("#photo_address").val;
-								var wid = $("#wid").val;
-								var expression = $("#expression").val;
-								var best_work = $("#best_work").val;
+								var gid = $("#gid0").val();
+								var project_name = $("#project_name").val();
+								var project_introduce = $("#project_introduce").val();
+								var project_address = $("#project_address").val();
+								var photo_address = $("#photo_address").val();
+								var wid = $("#wid0").val();
+								var expression = $("#expression").val();
+								var best_work = $("#best_work").val();
 								
 								if(!tag){		
 									 bootbox.alert({
@@ -270,9 +270,9 @@ $(document).ready(function() {
 							// //全选反选
 							$("#ck1").on("click", function() {
 								if ($(this).prop("checked") == true) {
-									$("#employmentManage input[name='recordcheck']").prop("checked", true);
+									$("#projectWork input[name='recordcheck']").prop("checked", true);
 								} else {
-									$("#employmentManage input[name='recordcheck']").prop("checked", false);
+									$("#projectWork input[name='recordcheck']").prop("checked", false);
 								}
 							});
 							
