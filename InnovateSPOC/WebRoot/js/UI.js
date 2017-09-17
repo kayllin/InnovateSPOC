@@ -150,7 +150,7 @@ $(document).ready(function() {
 				for(var k=1;k<num;k++){
 					Estr=Estr+'<li data-target="#mycarousel3" data-slide-to="'+k+'"></li>';
 				}
-				alert(data[0].length);
+				
 
 				for(var i=1;i<=num;i++){
 					if(i===1){

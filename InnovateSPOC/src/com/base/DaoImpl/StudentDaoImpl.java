@@ -257,7 +257,7 @@ public class StudentDaoImpl implements StudentDao{
 	public List<students> get_3Dstudent() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		String hql="from students where gid = 5";
+		String hql="from students";
 		List<students> list = null;
 		try {
 	    	 Query query=session.createQuery(hql);
