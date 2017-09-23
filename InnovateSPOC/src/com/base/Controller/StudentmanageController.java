@@ -28,11 +28,13 @@ import com.base.Po.internship;
 import com.base.Po.skill_student;
 import com.base.Po.studentList;
 import com.base.Po.students;
+import com.base.Po.userCenter;
 import com.base.Service.EducationExperienceService;
 import com.base.Service.HobbysService;
 import com.base.Service.InternshipService;
 import com.base.Service.SkillStudentService;
 import com.base.Service.StudentService;
+import com.base.Service.UserService;
 import com.base.utils.CookieUtils;
 import com.base.utils.ExcelReport;
 
@@ -54,6 +56,7 @@ public class StudentmanageController {
 	
 	@Autowired
 	private SkillStudentService skillStudentService;
+	
 	
 	//增加学生信息
 		@RequestMapping("/addstudent.do")
@@ -171,25 +174,17 @@ public class StudentmanageController {
 				 * String path = request.getSession().getServletContext()
 				 * .getRealPath("/imgdraw/");
 				 */
-				System.out.println("******mFile2="+mFile2+"********");
-				
+
 				String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
-				
-				System.out.println("******path2="+path2+"********");
+
 				// CookieUtils.addCookie("image", filename, response);
 				if (!mFile2.isEmpty()) {
-					// 先删除原有的图像
-					String deleteFile = CookieUtils.getCookieImage(request, response);
+					// 先删除原有的图像，根据sid在数据库中找到原有图像的地址
 					
-					System.out.println("****deleteFile=="+deleteFile+"*****");
-					
+					List<students> listStu = studentService.getStudents(sid);
+					String deleteFile = listStu.get(0).getHeadshot();
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path2 + deleteFile);
-					
-					System.out.println("****deleteFile=="+deleteFile+"*****");
-					
-					System.out.println("****tempFile="+tempFile+"*****");
-					
 					if (tempFile.isFile() && tempFile.exists()) {
 						tempFile.delete();
 						// System.out.println(filename+"rrrrrr");
