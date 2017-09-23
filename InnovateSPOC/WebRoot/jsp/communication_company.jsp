@@ -266,6 +266,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													  </div>
 												</td>
 											</tr>
+											
+											<tr hidden>
+												<td>
+													<div class="form-group">
+													    <label for="picture" class="col-sm-2 control-label">图片地址</label>
+													    <div class="col-sm-10">
+													      <input type="text" class="form-control" id="picture" name="picture">
+													    </div>
+													  </div>
+												</td>
+											</tr>
+											
 											<tr>
 												<td>
 													<div class="form-group">

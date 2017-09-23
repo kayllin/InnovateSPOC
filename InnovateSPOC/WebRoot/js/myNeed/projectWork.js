@@ -291,6 +291,8 @@ $(document).ready(function() {
 								$("#BestWork").val(obj[index].best_work);
 								$("#ProjectIntroduce").val(obj[index].project_introduce);
 								$("#imghead").attr("src",obj[index].photo_address);
+								$("#picture").val(obj[index].photo_address);
+								
 								$("#edit").modal('show');
 							});
 							$("#saverun").click(function(){
@@ -420,15 +422,15 @@ $(document).ready(function() {
 //图片的显示与修改
 function previewImage(file)
 {
-  var MAXWIDTH  = 120; 
-  var MAXHEIGHT = 120;
+  var MAXWIDTH  = 240; 
+  var MAXHEIGHT = 150;
   var div = document.getElementById('preview');
   if (file.files && file.files[0])
   {
       div.innerHTML ='<img id=imghead>';
       var img = document.getElementById('imghead');
       img.onload = function(){
-        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 120, 120);
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 240, 150);
         img.width  =  rect.width;
         img.height =  rect.height;
 //         img.style.marginLeft = rect.left+'px';

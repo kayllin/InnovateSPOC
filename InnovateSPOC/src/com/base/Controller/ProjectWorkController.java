@@ -196,6 +196,7 @@ public class ProjectWorkController {
 	    HttpServletResponse response, ModelMap map) throws IOException {
 	int Pid =Integer.parseInt(request.getParameter("Pid"));
 	String Gid=request.getParameter("Gid");
+	String picture=request.getParameter("picture");
 	String ProjectName=request.getParameter("ProjectName");
 	if(ProjectName.equals("")){
 		ProjectName=null;
@@ -218,7 +219,7 @@ public class ProjectWorkController {
 	}
 	
 	String photo = null;
-	
+	System.out.println(picture);
 	// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 			// 得到上传的文件
@@ -232,8 +233,7 @@ public class ProjectWorkController {
 			// CookieUtils.addCookie("image", filename, response);		
 			if (!mFile2.isEmpty()) {
 			    // 先删除原有的图像
-			    String deleteFile = CookieUtils.getCookieImage(request,
-				    response);
+			    String deleteFile = picture;
 			    deleteFile = deleteFile.substring(deleteFile
 				    .lastIndexOf("/"));
 			    File tempFile = new File(path2 + deleteFile);
@@ -257,8 +257,6 @@ public class ProjectWorkController {
 			    outputStream.close();
 			    photo = "../imgdraw/" + photo;
 
-			    // 重新写cookie中的img属性值
-			    CookieUtils.addCookie("image", photo, response);
 			}
 	
 	//System.out.println(Pid+"||"+Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);

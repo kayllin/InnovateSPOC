@@ -95,6 +95,7 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#title").val(obj[index].title);
 	$("#gname").val(obj[index].gname);
 	$("#id").val(obj[index].id);
+	$("#picture").val(obj[index].photo);
 	$("#edit").modal('show');
 	
 });

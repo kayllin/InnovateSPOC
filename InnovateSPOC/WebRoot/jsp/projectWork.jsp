@@ -25,10 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 <style type="text/css">
     	#preview{
-			width:120px;
-			height:120px;
-			border:1px solid #000;
-			border-radius:60px;
+			width:240px;
+			height:150px;
 			overflow:hidden;
 		}
 #preview2{
@@ -392,8 +390,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                   				</td>
 										</tr>
 											<tr>
-												<input type="text" class="form-control" id="Pid"
-										name="Pid" style="display:none"/>
+												<input type="text" class="form-control" id="Pid" name="Pid" style="display:none"/>
 												<td>所属组别: </td>
 												<td>
 													<select class="form-control" id="Gid" name="Gid">
@@ -416,6 +413,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 												</td>
 											</tr>
+											
+											<tr hidden>
+												<td>图片地址:</td>
+												<td>
+													<input type="text" class="form-control" id="picture" name="picture">
+
+												</td>
+											</tr>
+											
 											<tr>
 												<td>表达方式：</td>
 												<td>
