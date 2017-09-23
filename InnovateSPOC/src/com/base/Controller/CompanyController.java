@@ -222,9 +222,13 @@ public class CompanyController {
 			HttpServletResponse response, ModelMap map) throws IOException{
 		String title = request.getParameter("title");
 		String gname = request.getParameter("gname");
+		String picture=request.getParameter("picture");
 		int id = Integer.parseInt(request.getParameter("id"));
 		String photo = null;
-		
+		System.out.println("picture="+picture);
+		System.out.println("title="+title);
+		System.out.println("gname="+gname);
+		System.out.println("id="+id);
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
@@ -239,8 +243,7 @@ public class CompanyController {
 				// CookieUtils.addCookie("image", filename, response);		
 				if (!mFile2.isEmpty()) {
 				    // 先删除原有的图像
-				    String deleteFile = CookieUtils.getCookieImage(request,
-					    response);
+				    String deleteFile = picture;
 				    deleteFile = deleteFile.substring(deleteFile
 					    .lastIndexOf("/"));
 				    File tempFile = new File(path2 + deleteFile);
@@ -264,8 +267,6 @@ public class CompanyController {
 				    outputStream.close();
 				    photo = "../imgdraw/" + photo;
 
-				    // 重新写cookie中的img属性值
-				    CookieUtils.addCookie("image", photo, response);
 				}
 		
 		companyservice.updateCompany(title, photo,gname,id);

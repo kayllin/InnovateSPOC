@@ -171,15 +171,25 @@ public class StudentmanageController {
 				 * String path = request.getSession().getServletContext()
 				 * .getRealPath("/imgdraw/");
 				 */
-
+				System.out.println("******mFile2="+mFile2+"********");
+				
 				String path2 = ExcelReport.getWebRootUrl(request, "/imgdraw/");
-
+				
+				System.out.println("******path2="+path2+"********");
 				// CookieUtils.addCookie("image", filename, response);
 				if (!mFile2.isEmpty()) {
 					// 先删除原有的图像
 					String deleteFile = CookieUtils.getCookieImage(request, response);
+					
+					System.out.println("****deleteFile=="+deleteFile+"*****");
+					
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path2 + deleteFile);
+					
+					System.out.println("****deleteFile=="+deleteFile+"*****");
+					
+					System.out.println("****tempFile="+tempFile+"*****");
+					
 					if (tempFile.isFile() && tempFile.exists()) {
 						tempFile.delete();
 						// System.out.println(filename+"rrrrrr");
