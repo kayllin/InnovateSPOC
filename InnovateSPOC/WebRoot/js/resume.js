@@ -82,13 +82,14 @@ $(document).ready(function() {
 				 				var Jcontstr="";
 				 				var Gstr="";
 				 				for(var g=0;g<data[0].length;g++){
+				 					if(data[1][g].header == '是')
 									Gstr=Gstr+'<div class="content" style="background:url('+data[0][g].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][g].project_introduce+'</h1><p>'+data[0][g].project_introduce+'</p></div></div>';
 								
 							}
-				 				for(var f=0;f<data[1].length;f++){
-				 					if(data[1][f].header ==  '是'){
-				 						Jcontstr=Jcontstr+'<div class="content" style="background:url('+data[0][f].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][f].project_introduce+'</h1><p>'+data[0][f].project_introduce+'</p></div></div>';
-				 					}
+				 				for(var f=0;f<data[0].length;f++){
+
+			 						Jcontstr=Jcontstr+'<div class="content" style="background:url('+data[0][f].photo_address+') no-repeat;"><div class="intro"><h1>'+data[0][f].project_introduce+'</h1><p>'+data[0][f].project_introduce+'</p></div></div>';
+			 					
 							}
 								$("#guideProject").append(Gstr);
 								$("#joinproject").append(Jcontstr);
@@ -117,6 +118,8 @@ $(document).ready(function() {
 				$("#resumeEdu").html("");
 				$("#resumIntr").html("");
 				$("#resumeSkill").html("");
+				$("#guideProject").html("");
+				$("#joinproject").html("");
 		});
 			
 	
