@@ -11,7 +11,7 @@ $(document).ready(function(){
          		  });
  			},
  			success : function(data) {
- 				//alert(data[0].length);
+ 				alert(data[0].length);
 				var ProgramStr="";
 				var UIStr="";
 				var ThreeStr="";

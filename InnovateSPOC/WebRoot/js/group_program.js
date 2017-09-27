@@ -1,13 +1,6 @@
 $("#types").click(function(){
 	$("#type").toggle(200);
 });
-		/*var ContStr="";
-		for(var i=0;i<7;i++){
-			ContStr=ContStr+'<div class="content" style="background: url(../images/group_program/bg.png) no-repeat;"><div class="intro"><h1>软件工程师</h1><p>主导人：李彩</p><p>参与人：潘葛&nbsp;赵勇</p><p>类型：软件工程师</p></div></div>';
-		}
-		$("#contents").append(ContStr);
-	
-*/
 		
 		//获取组员作品的请求
 		$.ajax({
@@ -22,7 +15,6 @@ $("#types").click(function(){
 	         		  });
 	 			},
 				success : function(data) {
-					alert(data[0].length);
 					var ContStr="";
 					for(var i=0;i<data[0].length;i++){
 						ContStr=ContStr+'<div class="content" style="background: url('+data[0][i].photo_address+') no-repeat;"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1><p>主导人：'+data[0][i].sid+'</p><p class="menbername">参与人：'+data[0][i].participants+'</p><p class="work_type">类型：'+data[0][i].work_name+'</p></div><p class="work_group">（'+data[0][i].gname+'作品）</p><p class="work_intro">'+data[0][i].project_introduce+'</p></div>';
