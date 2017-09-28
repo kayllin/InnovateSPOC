@@ -218,6 +218,15 @@ $(document).on("click", "#checkdetale1", function() {
 	
 });
 
+$(document).on("change","#SelectOne2",function(){
+	if($(this).val()==="否"){
+		$("#hideRow").show();
+	}else{
+		$("#hideRow").hide();
+		$("#SelectOne1").val("是");
+	}
+});
+
 //删除
 var flag=0;
 $("#delete").click(function(){
