@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_student.do',
+ 			url : 'getStudentByGid.do',
  			data :{
  				gid :6
  			},
@@ -69,7 +69,10 @@ $(document).ready(function() {
 	$.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getEmploy.do',
+ 			url : 'getEmployeeStudent.do',
+ 			data :{
+ 				gid :6
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -103,9 +106,9 @@ $(document).ready(function() {
 					if(i!==number){
 						for(var j=0;j<4;j++){
 							if(j===0){
-								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+ data[0][i].photo_address +'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
+								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+data[0][j].headshot+'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+ data[0][i].photo_address +'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+data[0][j].headshot+'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
@@ -113,9 +116,9 @@ $(document).ready(function() {
 						var maxNumber=total2-(number-1)*4;
 						for(var a=0;a<maxNumber;a++){
 							if(a===0){
-								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people1.png"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div></div></div>';
+								str1='<div class="row"><div class="col-md-offset-1 col-sm-offset-1"><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+data[0][a].headshot+'"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div></div></div>';
 							}else{
-								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="../images/CG/people2.png"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div></div></div>';
+								str1='<div><div class="member_item"><div class="img-thumbnail"><div class="member_pic"><img src="'+data[0][a].headshot+'"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div></div></div>';
 							}
 							Pstring=Pstring+str1;
 						}
