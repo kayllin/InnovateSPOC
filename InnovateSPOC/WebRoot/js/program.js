@@ -4,7 +4,7 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_student.do',
+ 			url : 'getStudentByGid.do',
  			data :{
  				gid :1
  			},
@@ -137,7 +137,10 @@ $(document).ready(function() {
 	$.ajax({
     	type : 'POST',
 			dataType : 'json',
-			url : 'getEmploy.do',
+			url : 'getEmployeeStudent.do',
+			data :{
+ 				gid :1
+ 			},
 			async : false,
 			error : function(request) {
 				bootbox.alert({
@@ -170,13 +173,13 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<4;j++){
 							
-								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="../images/program/people1.png"></div><h3 class="employee_h3">'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
+								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="'+data[0][j].headshot+'"></div><h3 class="employee_h3">'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="../images/program/people1.png"></div><h3 class="employee_h3">'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
+								Estring=Estring+'<div class="employee_item"><div class="employee_pic"><img src="'+data[0][a].headshot+'"></div><h3 class="employee_h3">'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
 						}
 					}
 					

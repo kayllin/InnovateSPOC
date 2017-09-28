@@ -4,7 +4,7 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_student.do',
+ 			url : 'getStudentByGid.do',
  			data :{
  				gid :2
  			},
@@ -128,7 +128,10 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getEmploy.do',
+ 			url : 'getEmployeeStudent.do',
+ 			data:{
+ 				gid:2
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",

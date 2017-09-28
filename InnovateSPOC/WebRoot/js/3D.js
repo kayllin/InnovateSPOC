@@ -8,7 +8,7 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'get_student.do',
+ 			url : 'getStudentByGid.do',
  			data :{
  				gid :5
  			},
@@ -21,6 +21,7 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
+ 				alert(data[0].length);
  				var Pstring='';
 				var Liststring='<li data-target="#carousel_menber" data-slide-to="0" class="active"></li>';
 				var num=0;
@@ -133,7 +134,10 @@ $(document).ready(function() {
 	 $.ajax({
         	type : 'POST',
  			dataType : 'json',
- 			url : 'getEmploy.do',
+ 			url : 'getEmployeeStudent.do',
+ 			data :{
+ 				gid :5
+ 			},
  			error : function(request) {
  				bootbox.alert({
          			  message: "请求异常",
@@ -165,13 +169,13 @@ $(document).ready(function() {
 					if(i!==num){
 						for(var j=0;j<4;j++){
 							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student1_3D.png"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
+								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="'+data[0][j].headshot+'"></div><h3>'+data[0][j].sid+'</h3><p>'+data[0][j].graduation_year+'届毕业生</p></div>';
 						}
 					}else{
 						var maxNum=data[0].length-(num-1)*4;
 						for(var a=0;a<maxNum;a++){
 							
-								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="../images/3D/student2_3D.png"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
+								Estring=Estring+'<div class="memberStar"><div class="memberPhoto"><img src="'+data[0][a].headshot+'"></div><h3>'+data[0][a].sid+'</h3><p>'+data[0][a].graduation_year+'届毕业生</p></div>';
 						}
 					}
 					
