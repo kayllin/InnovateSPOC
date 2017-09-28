@@ -771,6 +771,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../js/resume.js" type="text/javascript"></script>
 	<script src="../js/3D.js" type="text/javascript"></script>   
 </html>

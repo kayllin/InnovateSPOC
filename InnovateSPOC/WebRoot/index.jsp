@@ -194,7 +194,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--新闻中心-->
 		<div class="campusnews">
 			<div class="wrap">
-			<h1 class="title1">学院新闻</h1>
+			<h1 class="title1">团队动态</h1>
 			
 			<div class=" carousel  slide" id="myCarousel4">
 				<ol class="carousel-indicators" id="showListNew">
