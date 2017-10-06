@@ -163,7 +163,6 @@ public class StudentmanageController {
 		String gra = request.getParameter("SelectOne1");
 		String emp = request.getParameter("SelectOne2");
 		String photo = null;
-		
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件

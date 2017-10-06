@@ -311,9 +311,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud_red.png">骨骼打散（骨骼建造师）
 						</span>
 					</div>
-					<div  class="product_text">完全取代人工操作，用户只需要设定好了距离、艾灸模式和艾灸
-						时间，设备的智能系统将综合用户的设定、艾绒燃烧的特点及实时监
-						控的温度等因素自动进行施灸，完成灸疗后自动提醒。
+					<div  class="product_text">使用3D MAX进行角色骨胳的绑定，使用IK、骨骼系统制作复杂角色动画，使所做的模型随着控制器运动，左右身体各部位的移动,达到模拟真人的效果。
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-4">
@@ -339,10 +337,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<img src="images/index/cloud.png">GIF动图（动作设计师）
 						</span>
 					</div>
-					<div class="product_text">采用燃烧艾条，保持最传统、最有效的艾灸方式。国内外大学和
-						 研究机构的各种研究表明，艾灸的最佳效果源于艾绒燃烧时产生的物
-						 理因子（红外线）和化学因为（药物成分）直接作用于人体的皮肤和
-						 穴位。
+					<div class="product_text">应用3ds max制作软件以及其它各类动画制作软件制作和设计3D角色和怪物的各类动作，创建真实的有机和无机组织的动作，达到效果逼真的目的，将更多的动作以优美，和谐，自然，细腻的动画形态表现于游戏之中。
 					</div>
 				</div>
 			</div>
