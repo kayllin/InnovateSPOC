@@ -212,8 +212,11 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#school_year").val(obj[index].school_year);
 	$("#smajor").val(obj[index].major);
 	$("#imghead").attr("src",obj[index].headshot);
-//	$("#graduation").val(obj[index].graduation);
-//	$("#employed").val(obj[index].employed);
+	if(obj[index].employed=="否"){
+		$("#hideRow").show();
+	}else{
+		$("#hideRow").hide();
+	}
 	$("#edit").modal('show');
 	
 });

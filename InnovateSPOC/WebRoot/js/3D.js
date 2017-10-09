@@ -21,7 +21,6 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
- 				alert(data[0].length);
  				var Pstring='';
 				var Liststring='<li data-target="#carousel_menber" data-slide-to="0" class="active"></li>';
 				var num=0;

@@ -339,7 +339,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												</td>
 											</tr>
 											
-											<tr id="hideRow" hidden>
+											<tr id="hideRow">
 												<td>是否毕业 ：<span class="setTag">*</span></td>
 												<td class="col-md-9" id="sex-style">
 													<select class="form-control" id="SelectOne1"
