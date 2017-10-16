@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 							 <li>
-							<a href="group_project.jsp">
+							<a href="jsp/group_project.jsp">
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
@@ -391,7 +391,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="foot_content">
 			<div class="foot_team">
 				<h2>SPOC团队</h2>
-				<p>创新工作室所有工作围绕搞好机组检修工作，达到修后消<br>除机组缺陷，提高机组效率，降低机组热耗为目标。</p>
+				<p>思博客重点在”教”字，是湖南农业大学的创新实验室<br>
+					特色在以工程观为理念来教学生</p>
 				<p>© 2017 <a href="http://www.miibeian.gov.cn/" target="_blank">湘ICP备17014171号</a></p>
 			</div>
 			<div class="foot_about">

@@ -351,3 +351,10 @@ a{
  	color: #fff;
 	font-size: 14px !important;
 }
+.limitWord{
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:3; 
+}
