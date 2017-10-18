@@ -277,6 +277,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													id="sex" name="sex" readonly/>
 													</td>
 											</tr>
+											<tr hidden>
+												<td>图片地址:</td>
+												<td>
+													<input type="text" class="form-control" id="picture" name="picture">
+
+												</td>
+											</tr>
 											<tr>
 												<td>组别 ：</td>
 												<td><select class="form-control" id="SelectOne"

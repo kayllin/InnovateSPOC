@@ -72,13 +72,13 @@ public class UserCenterController {
 					String path = ExcelReport.getWebRootUrl(request,"/imgdraw/");
 					//先删除原有的图像
 					String deleteFile = CookieUtils.getCookieImage(request,response);
-					System.out.println(deleteFile);
+					//System.out.println(deleteFile);
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path+deleteFile);
 					if (tempFile.isFile() && tempFile.exists()) { 
 					   tempFile.delete();
 					}
-					System.out.println(path+deleteFile);
+					//System.out.println(path+deleteFile);
 					
 					// 得到上传的文件的文件名
 					String fileName = mFile.getOriginalFilename();

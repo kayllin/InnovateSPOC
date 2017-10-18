@@ -212,6 +212,7 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#school_year").val(obj[index].school_year);
 	$("#smajor").val(obj[index].major);
 	$("#imghead").attr("src",obj[index].headshot);
+	$("#picture").val(obj[index].headshot);
 	if(obj[index].employed=="否"){
 		$("#hideRow").show();
 	}else{

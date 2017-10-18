@@ -292,7 +292,6 @@ $(document).ready(function() {
 								$("#ProjectIntroduce").val(obj[index].project_introduce);
 								$("#imghead").attr("src",obj[index].photo_address);
 								$("#picture").val(obj[index].photo_address);
-								
 								$("#edit").modal('show');
 							});
 							$("#saverun").click(function(){

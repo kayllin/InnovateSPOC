@@ -150,6 +150,7 @@ $(document).on("click", "#checkdetale1", function() {
 	$("#sex").val(obj[index].sex);
 	$("#Tintroduce").val(obj[index].teacher_introduce);
 	$("#imghead").attr("src",obj[index].photo_address);	
+	$("#picture").val(obj[index].photo_address);
 	$("#edit").modal('show');
 	
 });

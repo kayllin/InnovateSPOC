@@ -302,6 +302,7 @@ public class ProjectWorkDaoImpl implements ProjectWorkDao {
 			    ch.setExpression(rs.getString("expression"));
 			    ch.setBest_work(rs.getString("best_work"));
 			    ch.setSid(rs.getString("sid"));
+			    ch.setSname(rs.getString("sname"));
 			    ch.setParticipants(rs.getString("participants"));
 			    ch.setHeader(rs.getString("header"));
 			    ch.setWork_name(rs.getString("work_name"));

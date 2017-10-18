@@ -386,7 +386,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                   					<div style="margin:20px 18px;">
                                   						<label class="btn btn-primary" for="file" >修改图片</label>
 								  						<input type="file" onchange="previewImage(this)" id=file name="img" style="position:absolute;clip:rect(0 0 0 0);">                          
-                                  					</div>
+                                  					</div>                        
                                   				</td>
 										</tr>
 											<tr>

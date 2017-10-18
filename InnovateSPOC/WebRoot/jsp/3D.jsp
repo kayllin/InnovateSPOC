@@ -234,114 +234,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <img src="../images/3D/teamTitle.png" alt="">
             </div>
             
-			<div class="team_member">            
-            <div class=" carousel  slide" id="myCarousel2">
-				<ol class="carousel-indicators" id="myCarousel2Ol">
-					<!--<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel2" data-slide-to="1" class=""></li>-->
-				</ol>
-				<div class="carousel-inner" id="show_teamMumber">
-					<!--<div class="item  active">
-					   <div class="row">
-						   <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1">
-						   	 <div class="thumbnail">
-							     <img src="../images/3D/3Dmember1.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师 谢缘</h4>
-									<p>喜欢日，喜欢动漫，也喜欢设计，虽然不会画画。性格开朗，思维跳跃，平时有点小二但做事是很认真的哦！虽然有时候莽莽撞撞。</p>
-								  </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-							     <img src="../images/3D/3Dmember2.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师  赵玄玉</h4>
-									<p>成绩中等 喜欢看书 会P图 视频剪辑 3dmax建模 喜欢摄影 对待工作较为认真负责，喜欢认识新朋友，性格有点内向但是对人很热</p>
-								 </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						   	 <div class="thumbnail">
-								 <img src="../images/3D/3Dmember3.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  颜沙</h4>
-									 <p>开朗，稳重，有活力，待人热情，真诚。有较强的组织能力，和团队协作精神，良好的社交能力，较强的责任心和使命感</p>
-								 </div>
-						     </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>  
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>              
-						 </div>	
-					</div>
-					<div class="item">
-						 <div class="row col-md-12">
-						   <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1">
-						   	 <div class="thumbnail">
-							     <img src="../images/3D/3Dmember1.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师 谢缘</h4>
-									<p>喜欢日，喜欢动漫，也喜欢设计，虽然不会画画。性格开朗，思维跳跃，平时有点小二但做事是很认真的哦！虽然有时候莽莽撞撞。</p>
-								  </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-							     <img src="../images/3D/3Dmember2.png" alt="">
-								 <div class="caption">
-									<h4>三维设计师  赵玄玉</h4>
-									<p>成绩中等 喜欢看书 会P图 视频剪辑 3dmax建模 喜欢摄影 对待工作较为认真负责，喜欢认识新朋友，性格有点内向但是对人很热</p>
-								 </div>
-							 </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						   	 <div class="thumbnail">
-								 <img src="../images/3D/3Dmember3.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  颜沙</h4>
-									 <p>开朗，稳重，有活力，待人热情，真诚。有较强的组织能力，和团队协作精神，良好的社交能力，较强的责任心和使命感</p>
-								 </div>
-						     </div>
-						   </div>
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>  
-						   <div class="col-md-2 col-sm-2">
-						     <div class="thumbnail">
-								 <img src="../images/3D/3Dmember4.png" alt="">
-								 <div class="caption">
-									 <h4>三维设计师  伍丽君</h4>
-									 <p>本人性格开朗，稳重有活力，待人热情，真诚。工作认真负责，积极主动，能吃苦耐劳 有较强的实际动手能力和团体协作精神。</p>
-								 </div>
-						     </div>
-						   </div>              
-						 </div>	
-					</div>-->
+			<div class="team_menber">
+				<div id="carousel_menber" class="carousel slide">
+				  <!-- Indicators -->
+					  <ol class="carousel-indicators" id="team_list">
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" id="show_teamMumber">
+														
+				  	 </div>
 				</div>
-			 </div>            
-         	
 			</div>
 		</div>
         

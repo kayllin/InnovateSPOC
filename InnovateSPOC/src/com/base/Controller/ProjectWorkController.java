@@ -218,8 +218,9 @@ public class ProjectWorkController {
 		ProjectIntroduce=null;
 	}
 	
-	String photo = null;
-	System.out.println(picture);
+	String photo = picture;
+	//System.out.println(photo+"dddddddd");
+	//System.out.println(picture);
 	// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 			// 得到上传的文件
@@ -234,12 +235,15 @@ public class ProjectWorkController {
 			if (!mFile2.isEmpty()) {
 			    // 先删除原有的图像
 			    String deleteFile = picture;
+			   // System.out.println(deleteFile+"sssss");
+			    if(deleteFile == null || deleteFile == ""||deleteFile.equals("null")  ){
+					deleteFile = "../images/big.jpg";
+				}
 			    deleteFile = deleteFile.substring(deleteFile
 				    .lastIndexOf("/"));
 			    File tempFile = new File(path2 + deleteFile);
 			    if (tempFile.isFile() && tempFile.exists()) {
 				tempFile.delete();
-				// System.out.println(filename+"rrrrrr");
 			    }
 			    // 得到上传的文件的文件名
 			    String fileName = mFile2.getOriginalFilename();

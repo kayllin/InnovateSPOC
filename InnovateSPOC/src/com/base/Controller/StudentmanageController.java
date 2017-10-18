@@ -162,7 +162,8 @@ public class StudentmanageController {
 		String smajor = request.getParameter("smajor");
 		String gra = request.getParameter("SelectOne1");
 		String emp = request.getParameter("SelectOne2");
-		String photo = null;
+		String photo = request.getParameter("picture");
+		System.out.println(photo+"Dddd");
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
@@ -180,8 +181,12 @@ public class StudentmanageController {
 				if (!mFile2.isEmpty()) {
 					// 先删除原有的图像，根据sid在数据库中找到原有图像的地址
 					
-					List<students> listStu = studentService.getStudents(sid);
-					String deleteFile = listStu.get(0).getHeadshot();
+					//List<students> listStu = studentService.getStudents(sid);
+					//String deleteFile = listStu.get(0).getHeadshot();
+					String deleteFile = photo;
+					if(deleteFile == null || deleteFile.equals("null")){
+						deleteFile = "../images/big.jpg";
+					}
 					deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
 					File tempFile = new File(path2 + deleteFile);
 					if (tempFile.isFile() && tempFile.exists()) {
