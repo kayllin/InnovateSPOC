@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								
 								<div class="divider2"></div>
 
-								<li class="menuItem nav-parent">
+								<li class="menuItem nav-parent opened nav-expanded">
 									<a> <i class="icon-copy" aria-hidden="true"></i><span>简历管理</span>
 								</a>
 									<ul class="nav nav-children">

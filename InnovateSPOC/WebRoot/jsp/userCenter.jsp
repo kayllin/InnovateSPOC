@@ -162,8 +162,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                             
 					<div class="row">
-						<div class="col-md-5 col-md-offset-6">
-							<a type="button" class="btn btn-danger" id="editRusume" href="">修改简历</a>
+						<div class="col-md-5 col-md-offset-3">
+							<a type="button" class="btn btn-info" id="editRusume" href="">修改简历</a>
 							<button type="button" class="btn btn-danger" id="save">保存</button>
 						</div>
 					</div>

@@ -321,7 +321,7 @@ ul{
 }
 #show_work img{
 	max-height:700px;
-	overflow:hidden;
+	overflow:hidden !important;
 }
 #work_list{
 	position: absolute;
