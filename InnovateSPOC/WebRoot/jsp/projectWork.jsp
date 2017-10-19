@@ -386,7 +386,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                   					<div style="margin:20px 18px;">
                                   						<label class="btn btn-primary" for="file" >修改图片</label>
 								  						<input type="file" onchange="previewImage(this)" id=file name="img" style="position:absolute;clip:rect(0 0 0 0);">                          
-                                  					</div>                        
+                                  					</div>
                                   				</td>
 										</tr>
 											<tr>
@@ -402,6 +402,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td>项目名称:</td>
 												<td><input type="text" class="form-control"
 													id="ProjectName" name="ProjectName""  />
+													</td>
+											</tr>
+												<td>项目地址:</td>
+												<td><input type="text" class="form-control"
+													id="ProjectAddress" name="ProjectAddress"  />
 													</td>
 											</tr>
 											<tr>

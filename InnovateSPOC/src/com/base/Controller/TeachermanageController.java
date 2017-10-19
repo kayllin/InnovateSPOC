@@ -46,8 +46,9 @@ public class TeachermanageController {
 		String Areason = request.getParameter("Areason");
 		String password = request.getParameter("password");
 		String filename = "../images/big.jpg";
+		String position = request.getParameter("position");
 		int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
-		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,filename,gid);
+		int flag = teacherService.addTeacher(teacherId,teacherName,sex,Areason,password,filename,gid,position);
 		request.setAttribute("flag", flag);
 		return "teacherManage";
 	}
@@ -125,6 +126,7 @@ public class TeachermanageController {
     	String Tintroduce = request.getParameter("Tintroduce");
     	int gid = Integer.parseInt(request.getParameter("SelectOne"));
 		String photo = request.getParameter("picture");
+		String positon = request.getParameter("position");
 		//System.out.println(photo+"Dddd");
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
@@ -174,7 +176,7 @@ public class TeachermanageController {
 			CookieUtils.addCookie("image", photo, response);
 		}
 
-    	teacherService.updateteacher(tid, Tintroduce,gid,photo);
+    	teacherService.updateteacher(tid, Tintroduce,gid,photo,positon);
     	return "teacherManage";
     	
     }

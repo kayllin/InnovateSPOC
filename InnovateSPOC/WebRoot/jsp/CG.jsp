@@ -239,7 +239,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div class="works" align="center">
         <div  class="work" style="margin-top:100px;">
             <div class="work_imgone">
-              <img src="" height="340" id="work_img1"/>
+              <img src="../images/CG/work1.png" height="340" id="work_img1"/>
               <div class="word">
                 <img src="../images/CG/3DActive.png">
               </div>

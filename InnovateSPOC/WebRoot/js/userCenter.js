@@ -28,6 +28,10 @@ $(document).ready(function() {
     					$("#english_address").val(data[i].english_address);
     					$("#introduce").val(data[i].student_introduce);
     					$("#possword").val(data[i].password);
+    					
+    					var resumeLink="Uinter.jsp?"+data[i].sid;
+    					$("#editRusume").attr("href",resumeLink);
+    					
     					if(data[i].sex==="男"){
     						$("#male").attr("checked", "true");
     					}else{

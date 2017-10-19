@@ -119,12 +119,12 @@ $(document).ready(function() {
  			},
  		
  			success : function(data) {
-				$("#img1").attr("src",data[0][0].photo_address);
-				$("#img2").attr("src",data[0][1].photo_address);
-				$("#img3").attr("src",data[0][2].photo_address);
-				$("#img4").attr("src",data[0][3].photo_address);
-				$("#img5").attr("src",data[0][4].photo_address);
-				$("#img6").attr("src",data[0][5].photo_address);
+				//$("#img1").attr("src",data[0][0].photo_address);
+				$("#img2").attr("src",data[0][0].photo_address);
+				$("#img3").attr("src",data[0][1].photo_address);
+				$("#img4").attr("src",data[0][2].photo_address);
+				$("#img5").attr("src",data[0][3].photo_address);
+				$("#img6").attr("src",data[0][4].photo_address);
  			}
         
         });

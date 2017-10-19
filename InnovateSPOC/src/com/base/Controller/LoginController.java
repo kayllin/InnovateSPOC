@@ -70,11 +70,11 @@ public class LoginController {
 		}		
 		CookieUtils.addCookie("image", src,response);
 	    if(adminValue == 0){
-	    	//return "redirect:jsp/user.jsp";
-	    	return "redirect:InnovateSPOC/jsp/user.jsp";
+	    	return "redirect:jsp/user.jsp";
+	    	//return "redirect:InnovateSPOC/jsp/user.jsp";
 	    }else{
-	    	//return adminValue == 1?"redirect:jsp/TeachersCenter.jsp":"redirect:jsp/userCenter.jsp";
-	    	return adminValue == 1?"redirect:InnovateSPOC/jsp/TeachersCenter.jsp":"redirect:InnovateSPOC/jsp/userCenter.jsp";
+	    	return adminValue == 1?"redirect:jsp/TeachersCenter.jsp":"redirect:jsp/userCenter.jsp";
+	    	//return adminValue == 1?"redirect:InnovateSPOC/jsp/TeachersCenter.jsp":"redirect:InnovateSPOC/jsp/userCenter.jsp";
 	    }
 	    
 	    

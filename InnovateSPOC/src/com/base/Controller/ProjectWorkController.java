@@ -198,6 +198,10 @@ public class ProjectWorkController {
 	String Gid=request.getParameter("Gid");
 	String picture=request.getParameter("picture");
 	String ProjectName=request.getParameter("ProjectName");
+	String ProjectAddress = request.getParameter("ProjectAddress");
+	if(ProjectAddress.equals("")){
+		ProjectAddress=null;
+	}
 	if(ProjectName.equals("")){
 		ProjectName=null;
 	}
@@ -264,7 +268,7 @@ public class ProjectWorkController {
 			}
 	
 	//System.out.println(Pid+"||"+Gid+"||"+ProjectName+"||"+WorkCategory+"||"+Expression+"||"+BestWork+"||"+ProjectIntroduce);
-	String message = ProjectWorkService.updateWorkInfo(Pid,Gid,ProjectName,WorkCategory,Expression,BestWork,ProjectIntroduce,photo);
+	String message = ProjectWorkService.updateWorkInfo(Pid,Gid,ProjectName,WorkCategory,Expression,BestWork,ProjectIntroduce,photo,ProjectAddress);
 	if(message=="success"){
 	    message="操作成功";
 	}else if(message=="fail"){

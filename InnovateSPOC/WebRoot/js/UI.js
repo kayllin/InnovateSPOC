@@ -117,7 +117,7 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
-				var Wstring='<ul><li><img src="'+data[0][0].photo_address+'" style="width: 420px; height: 378px;"/><div id="p5_con1_bg"><p>组员作品</p></div></li><li><img src="'+data[0][1].photo_address+'" style="width: 537px; height: 378px;"/></li><li><img src="'+data[0][2].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][0].photo_address+'" style="width: 210px; height: 294px;"/></li><li><img src="'+data[0][3].photo_address+'" style="width: 520px; height: 520px;"/></li><li><img src="'+data[0][4].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][5].photo_address+'" style="width: 210px; height: 294px;"/></li></ul>';
+				var Wstring='<ul><li><img src="../images/UI/p5_con1.jpg" style="width: 420px; height: 378px;"/><div id="p5_con1_bg"><p>组员作品</p></div></li><li><img src="'+data[0][0].photo_address+'" style="width: 537px; height: 378px;"/></li><li><img src="'+data[0][1].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][2].photo_address+'" style="width: 210px; height: 294px;"/></li><li><img src="'+data[0][3].photo_address+'" style="width: 520px; height: 520px;"/></li><li><img src="'+data[0][4].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][5].photo_address+'" style="width: 210px; height: 294px;"/></li></ul>';
 				
 				$("#p5_content").append(Wstring);
  			}

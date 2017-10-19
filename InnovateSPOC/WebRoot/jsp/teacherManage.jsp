@@ -282,6 +282,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</select>
 												</td>
 											</tr>
+											<tr >
+												<td>职称:</td>
+												<td>
+													<input type="text" class="form-control" id="position" name="position">
+
+												</td>
+											</tr>
 											<tr>
 												<td>个人简介 ：<span class="setTag">*</span></td>
 												<td><!-- <input type="text" class="form-control" id="Tintroduce" name="Tintroduce"
@@ -359,6 +366,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													name="deptSelectOne1" value="" style="width:80%">
 														<option id="deptSelect1" value="" selected>请选择</option>
 											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>职称 ：<span class="setTag">*</span></td>
+										<td>
+											<input name="position" id="position" type="text" style="width:80%" class="form-control"/>
 										</td>
 									</tr>
 									<tr>

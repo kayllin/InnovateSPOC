@@ -252,7 +252,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="memberCreations">
           <div class="CreationPartOne">
             <div class="PartOne">
-              <img src="" alt="" id="img1">
+              <img src="../images/3D/PartOne_1.png" alt="" id="img1">
               <div class="creationIcon">
                 <img src="../images/3D/3DActive.png" alt="">
               </div>
@@ -292,69 +292,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li data-target="#carouselEmployeeStar" data-slide-to="1"></li>-->
 					  </ol>					
 					  <div class="carousel-inner" id="show_employee">					  
-<!--
-							<div class="item active">
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student1_3D.png">
-									</div>
-									<h3>朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student2_3D.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student3_3D.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student4_3D.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>
--->
 
-							<!--<div class="item">
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student1_3D.png">
-									</div>
-									<h3>朱锐锋</h3>
-									<p>2014级产品专业本科生，思博客设计团队首席负责人，主要擅长平面设计与手绘。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student2_3D.png">
-									</div>
-									<h3>刘安奇</h3>
-									<p>2015级视觉传达专业本科生，曾获中日环亚杯金奖，高校学年展大奖，擅长插画设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student3_3D.png">
-									</div>
-									<h3>曾　婷</h3>
-									<p>2015级视觉传达专业本科生，曾多次获得高校学年展大奖，擅长手绘与交互设计。</p>
-								</div>
-								<div class="memberStar">
-									<div class="memberPhoto">
-										<img src="../images/3D/student4_3D.png">
-									</div>
-									<h3>梁统荣</h3>
-									<p>2015级视觉传达专业本科生，这是思博客里面最丑的作品，我很自卑，大家多疼爱我。</p>
-								</div>
-							</div>-->							
+
+													
 				  	</div>                 
 			</div>
             
@@ -370,42 +310,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="carousel_teacher" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="teacher_list">
-						<!--<li data-target="#carousel_teacher" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel_teacher" data-slide-to="1"></li>-->
+						
 					  </ol>
 
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner" id="show_teacher">
 					  
-							<!--<div class="item active">
-								<div class="teacher_item">
-									<div class="teacher_left">
-										<img src="../images/3D//teacher.png">
-									</div>
-									<div class="teacher_bg">
-										<div class="teacher_right">
-											<h3 class="text-left">谢青伶</h3>
-											<p>湖南农业大学体育艺术学院环境设计系讲师</p>
-											<p class="p2">思博客创新实验室3D建模团队导师。 主讲室内设计、照明设计、电脑制图等室内设计、装饰装修课程。 同时也担任绘画、书法等课程的教学。</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="teacher_item">
-									<div class="teacher_left">
-										<img src="../images/3D//teacher.png">
-									</div>
-									<div class="teacher_bg">
-										<div class="teacher_right">
-											<h3 class="text-left">谢青伶</h3>
-											<p>湖南农业大学体育艺术学院环境设计系讲师</p>
-											<p class="p2">思博客创新实验室3D建模团队导师。 主讲室内设计、照明设计、电脑制图等室内设计、装饰装修课程。 同时也担任绘画、书法等课程的教学。</p>
-										</div>
-									</div>
-								</div>
-							</div>-->
+							
 							
 				  	</div>
 			</div>
