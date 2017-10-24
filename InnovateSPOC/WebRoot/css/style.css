@@ -717,3 +717,13 @@ padding: 50px 40px;
 	cursor:pointer;
 }
 
+.setTag{
+	color: #F70004;
+	font-size:20px;
+}
+
+.warning{
+    		color:red;
+    		font-size:14px;
+    		display:none;
+    	}

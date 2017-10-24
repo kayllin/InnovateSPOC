@@ -33,7 +33,10 @@ var Login = function () {
 	                },
 	                authCode: {
 	                    required: true
-	                }
+	                },
+					userType:{
+						required:true
+					}
 	                
 	            },
 
@@ -46,7 +49,10 @@ var Login = function () {
 	                },
 	                authCode: {
 	                    required: "验证码必填"
-	                }
+	                },
+					userType:{
+						required:"身份必选"
+					}
 	            },
 
 	            invalidHandler: function (event, validator) { //display error alert on form submit   
@@ -89,10 +95,10 @@ var Login = function () {
             handleLogin();
 			handleUniform();
 			$.backstretch([
-                            "images/backgrounds/0.jpg",
-							"images/backgrounds/1.jpg",
+                            "images/backgrounds/timg.jpg"
+							/*"images/backgrounds/1.jpg",
 							"images/backgrounds/2.jpg",
-							"images/backgrounds/3.jpg"
+							"images/backgrounds/3.jpg"*/
 					        ], {
 					          fade: 1000,
 					          duration: 4000

@@ -85,7 +85,7 @@ ul {
 	padding: 0px; 
 }
 .menu ul li { 
-	width: 110px; 
+	width: 97px; 
 	height: 110px; 
 	float: left; 
 	padding: 0px; 
@@ -106,20 +106,20 @@ ul {
 	display: block; 
 }
 .menu ul li span { 
-	width: 120px; 
+	width: 110px; 
 	float: left; 
 	text-align: center; 
 	padding-top: 6px; 
 }
 .name_ch { 
-	width: 120px; 
+	width: 100px; 
 	height: 16px; 
-	line-height: 16px; 
+	line-height: 36px; 
 	padding-top: 60px; 
-	font-size: 14px; 
+	font-size: 18px; 
 }
 .name_en { 
-	width: 120px; 
+	width: 100px; 
 	height: 16px; 
 	line-height: 16px; 
 	font-size: 12px;
