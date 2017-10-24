@@ -155,7 +155,11 @@ public class UserCenterController {
 				if (introduce.equals("")) {
 					introduce = null;
 				}
-				usercenterservice.update(id,userType, name,sex, phone,qq,major,school_year, possword,chinese_address,english_address,graduation,employed, introduce,filename);
+				String position  = request.getParameter("position");
+				if (position.equals("")) {
+					position = null;
+				}
+				usercenterservice.update(id,userType, name,sex, phone,qq,major,school_year, possword,chinese_address,english_address,graduation,employed, introduce,filename,position);
 			}
 		}
 

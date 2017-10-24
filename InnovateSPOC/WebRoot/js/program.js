@@ -17,6 +17,18 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
+ 				/*var dataFlag;
+ 				for(var n=0;n<data[0].length;n++){
+ 					
+ 					for(var m=0;m<data[0].length-n;m++){
+ 						alert(data[0][m].sorder);
+ 						if(data[0][m].sorder>data[0][m+1].sorder){
+ 							dataFlag=data[0][m];
+ 							data[0][m]=data[0][m+1];
+ 							data[0][m+1]=dataFlag;
+ 						}
+ 					}
+ 				}*/
 				var Pstring='';
 				var Liststring='<li data-target="#carousel_menber" data-slide-to="0" class="active"></li>';
 				var num=0;
@@ -41,6 +53,10 @@ $(document).ready(function() {
 					}
 					if(i!==num){
 						for(var j=0;j<5;j++){
+							/*if(data[0][5*(i-1)+j].sorder>data[0][5*(i-1)+j+1].sorder){
+								alert("较大："+data[0][5*(i-1)+j].sorder+"较小："+data[0][5*(i-1)+j+1].sorder);
+							}*/
+							
 							if(j===0){
 								
 								str1='<div class="row"><div class="col-sm-2 col-md-2 col-md-offset-1 col-sm-offset-1"><a href="resume.jsp?sid='+data[0][5*(i-1)+j].sid+'" target="_blank"><div class="thumbnail" id="'+data[0][5*(i-1)+j].sid+'"><img src="'+data[0][5*(i-1)+j].headshot+'" alt="..."><div class="caption"><h4>'+ data[0][5*(i-1)+j].sname +'</h4><p class="limitWord">'+ data[0][5*(i-1)+j].student_introduce +'</p></div></div></a></div>';

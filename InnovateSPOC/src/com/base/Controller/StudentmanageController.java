@@ -67,6 +67,7 @@ public class StudentmanageController {
 			String sex = request.getParameter("sex");
 			String Areason = request.getParameter("Areason");
 			String password = request.getParameter("password");
+			int sorder = Integer.parseInt(request.getParameter("s1order"));
 			String Caddress = request.getParameter("Caddress");
 			String Eaddress = request.getParameter("Eaddress");
 			String telephone = request.getParameter("telephone");
@@ -78,7 +79,7 @@ public class StudentmanageController {
 			String filename = "../images/big.jpg";
 			int gid = Integer.parseInt(request.getParameter("deptSelectOne1"));
 //			String photo = request.getParameter("file");
-			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,filename,gid);
+			int flag = studentService.addStudent(studentId,studentName,sex,Areason,password,sorder,Caddress,Eaddress,telephone,qq,EnrollmentYear,major,gra,emp,filename,gid);
 			request.setAttribute("flag", flag);
 			return "studentManage";
 		}
@@ -163,7 +164,7 @@ public class StudentmanageController {
 		String gra = request.getParameter("SelectOne1");
 		String emp = request.getParameter("SelectOne2");
 		String photo = request.getParameter("picture");
-		System.out.println(photo+"Dddd");
+		int sorder = Integer.parseInt(request.getParameter("sorder"));
 		// 上传文件（图片），将文件存入服务器指定路径下，并获得文件的相对路径
 				MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 				// 得到上传的文件
@@ -212,7 +213,7 @@ public class StudentmanageController {
 					CookieUtils.addCookie("image", photo, response);
 				}
 		
-		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp,photo);
+		studentService.updateStudent(sid, Sintroduce, chinese_address, english_address, phone, qq, smajor, gid, gra, emp,photo,sorder);
 		return "studentManage";
 		
 	}
