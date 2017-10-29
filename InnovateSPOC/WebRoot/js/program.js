@@ -17,18 +17,6 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
- 				/*var dataFlag;
- 				for(var n=0;n<data[0].length;n++){
- 					
- 					for(var m=0;m<data[0].length-n;m++){
- 						alert(data[0][m].sorder);
- 						if(data[0][m].sorder>data[0][m+1].sorder){
- 							dataFlag=data[0][m];
- 							data[0][m]=data[0][m+1];
- 							data[0][m+1]=dataFlag;
- 						}
- 					}
- 				}*/
 				var Pstring='';
 				var Liststring='<li data-target="#carousel_menber" data-slide-to="0" class="active"></li>';
 				var num=0;
@@ -53,9 +41,6 @@ $(document).ready(function() {
 					}
 					if(i!==num){
 						for(var j=0;j<5;j++){
-							/*if(data[0][5*(i-1)+j].sorder>data[0][5*(i-1)+j+1].sorder){
-								alert("较大："+data[0][5*(i-1)+j].sorder+"较小："+data[0][5*(i-1)+j+1].sorder);
-							}*/
 							
 							if(j===0){
 								
@@ -133,18 +118,17 @@ $(document).ready(function() {
  			},
 			success : function(data) {
 			var Wstring='';
-			var Wstr='';
-				for (var i=0;i<data[0].length;i++){
-					if(i===0){
-					Wstr=Wstr+'<li data-target="#carousel_work" data-slide-to="0" class="active"></li>';
-					Wstring=Wstring+'<div class="item active"><div class="work_item"><img src="'+data[0][i].photo_address+'"></div></div>';
-				}else{
-					Wstr=Wstr+'<li data-target="#carousel_work" data-slide-to="'+i+'"></li>';
-					Wstring=Wstring+'<div class="item"><div class="work_item"><img src="'+data[0][i].photo_address+'"></div></div>';
+			var showLength=0;
+			if(data[0].length>4){
+				showLength=4;
+			}else{
+				showLength=data[0].length;
+			}
+				for (var i=0;i<showLength;i++){
+					Wstring=Wstring+'<div class="work_content" style="background: url('+data[0][i].photo_address+') no-repeat;"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1></div></div>';
 				}
-				}
-			$("#work_list").append(Wstr);
-			$("#show_work").append(Wstring);
+			
+			$("#work_show").append(Wstring);
 			}
     
     });		
@@ -166,7 +150,15 @@ $(document).ready(function() {
 			},
 			success : function(data) {
 				var Estring='';
-				var Estr='<li data-target="#carousel_employee" data-slide-to="0" class="active"></li>';
+				var Estr='';
+				
+				if(data[0].length==0){
+					$("#Loading_member").show();
+					 
+				}else{
+					Estr='<li data-target="#carousel_employee" data-slide-to="0" class="active"></li>';
+				}
+				
 				var num=0;
 				var num1=data[0].length/4;
 				var num2=data[0].length%4;

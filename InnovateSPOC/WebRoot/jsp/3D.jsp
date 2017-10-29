@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  <div class="menu">
 						<ul>
 						<li>
-						  <a href="index.jsp">
+						  <a href="../index.jsp">
 							<span class="name_ch">首页</span>
 						  </a>
 						</li>
@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class=" carousel  slide" id="myCarousel">
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
+					
 				</ol>
 				<div class="carousel-inner">
 					<div class="item  active">
@@ -93,11 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div style="background-image:url(../images/3D/haibao_3D.jpg)"></div>
 						</a>
 					</div>
-					<div class="item">
-						<a href="#">
-							<div style="background-image:url(../images/3D/haibao_3D.jpg)"></div>
-						</a>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -109,39 +105,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li>
 					<dl>
 						<dt><a style="cursor: pointer;"><img src="../images/3D/box1.png" alt="可免费试学"></a></dt>
-						<h5>可免费试学</h5>
-						<dd>4大专业方向<br>
-							可免费试学<br>
+						<h5>自主学习</h5>
+						<dd>
+							梯队培养 <br>
+							专业引导
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
-						<dt><a style="cursor: pointer;"><img src="../images/3D/box2.png" alt="赠送北美预科"></a></dt>
-						<h5>专职指导</h5>
-						<dd>专业老师面<br>
-							对面教学
+						<dt><a style="cursor: pointer;"><img src="../images/3D/box2.png" alt="赠送北美预科" style="margin-bottom: 2px"></a></dt>
+						<h5>技能融合</h5>
+							<dd>
+							技术美术 <br>
+							目标全栈
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
 						<dt><a style="cursor: pointer;"><img src="../images/3D/box3.png" alt="与大师零距离"></a></dt>
-						<h5>全国就业网络</h5>
+						<h5>团队协作</h5>
 						<dd>
-						思博课免费为 <br>
-						学院提供就业<br>
-						服务
+							专业互补 <br>
+							合作共赢
 						</dd>
 					</dl>
 				</li>
 				<li>
 					<dl>
 						<dt><a style="cursor: pointer;"><img src="../images/3D/box4.png" alt="全国就业网络"></a></dt>
-						<h5>名企直招</h5>
+						<h5>顶岗实习</h5>
 						<dd>
-						招聘会为你免费 <br>
-						提供工作岗位
+						商业项目 <br>
+						职场素质
 						</dd>
 					</dl>
 				</li>
@@ -165,7 +162,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <div class="study_li_left">
                 <img src="../images/3D/shoe3_3D.png" />
 				<div class="study_bg">
-				  <img src="../images/3D/Adidas_3D.png" class="study_bgimg2"/>
+				  <img src="../images/3D/NewBalance_3D.png" class="study_bgimg2"/>
 				</div>
               </div>             
              </div>
@@ -178,9 +175,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
               </div>
               <div class="study_li_right">
-                <img src="../images/3D/shoe2_3D.jpg"/>
+                <img src="../images/3D/shoe2_3D.png"/>
 				<div class="study_bg">
-				  <img src="../images/3D/NewBalance_3D.png" class="study_bgimg2"/>
+				  <img src="../images/3D/Adidas_3D.png" class="study_bgimg2"/>
 				</div>
               </div>
               </div> 
@@ -198,7 +195,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="kgbox">
 			<div class="wrap boxbg">
 				<div class="box-con con2 clear">
-					<h3>三维组课程，让你产业链就业</h3>
+					<h3>三维组 创造“世界”</h3>
 					<p class="p1">
 					技术单一、知识面窄是大学生就业难的通病，通常能否胜任一个岗位并不只是考量一种技能。三维组的课程涵盖3DS MAX、MAYA、ZBRUSH等多种软件，同时重点培养三维能力，让学员成为一专多能的三维师，实现行业就业。</p>
 					<ul class="clear">
@@ -249,33 +246,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
         
         <!--作品介绍-->
-        <div class="memberCreations">
-          <div class="CreationPartOne">
-            <div class="PartOne">
-              <img src="../images/3D/PartOne_1.png" alt="" id="img1">
-              <div class="creationIcon">
-                <img src="../images/3D/3DActive.png" alt="">
-              </div>
-            </div>
-            <div class="PartOne">
-              <img src="" alt="" id="img2">
-            </div>
-            <div class="PartOne">
-              <img src="" alt="" id="img3">
-            </div>
-          </div>
-          <div class="CreationPartTwo">
-            <div class="PartTwo">
-              <img src="" alt="" id="img4">
-            </div>
-            <div class="PartTwo">
-              <img src="" alt="" id="img5">
-            </div>
-            <div class="PartTwo">
-              <img src="" alt="" id="img6">
-            </div>
-          </div>
-        </div>        
+        <div class="work">
+			<div class="work_title">
+				<img src="../images/program/GroupWork.png" width="100%">
+			</div>
+			<div class="work_item" id="work_show">
+					
+			</div>
+			
+		</div>      
         
         <!--3D组口号-->
        <div class="slogan">
@@ -285,6 +264,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!--就业明星-->
 		<div class="employeeStar">
 			<h1 class="starTitle">就业学员</h1>
+			<div id="Loading_member">
+					<img src="../images/Loading.png">
+				</div>
 			<div id="carouselEmployeeStar" class="carousel slide">
 				  <!-- Indicators -->
 					  <ol class="carousel-indicators" id="employeeCarousel">
@@ -305,7 +287,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="teacher_title">
 				<img src="../images/3D/aboutTeacher.png">
 			</div>
-			<p class="brief">学院多个重点教师组合授课。每位教师只讲授自己擅长的领域，让成员博采众家之长。指导教师还会传授国际新技术和设计理念，让成员刚加入SPOC就具有行业视野。</p>
 		
 			<div id="carousel_teacher" class="carousel slide">
 				  <!-- Indicators -->
@@ -376,8 +357,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       <!--课程安排-->
       <div class="course">
-        <h3>精心设计的课程，每一天都学有所成</h3>
-        <p>海量建模案例提供，为三维动画制作提供有力保障</p>
+        <h3 style="padding-bottom:30px;">精心设计的课程，每一天都学有所成</h3>
         <div class="courseArrange">
           <table class="table_course">
            <tbody>
@@ -389,43 +369,51 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <td>培训项目</td>
             </tr>
             <tr>
-              <td>HTML/CSS</td>
-              <td>Bootstrap框架</td>
+              <td>场景，角色建模</td>
+              <td>多边形建模</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>讲解各自用多边形建模的模型</td>
             </tr> <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>样线条建模</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>讲解各自用样条线建模的模型</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>修改器命令</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>综合前几周的内容建模，讲解各自模型</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>复合建模</td>
             </tr>
              <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>其他建模方式</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>场景，角色建模</td>
+              <td>讲解自己的模型</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>贴图</td>
+              <td>材质编辑器与贴图</td>
+            </tr>
+            <tr>
+              <td>动画</td>
+              <td>骨骼</td>
+            </tr>
+            <tr>
+              <td>动画</td>
+              <td>动画制作</td>
             </tr>
            </tbody>
           </table>
@@ -459,21 +447,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>            
-             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>                    
+            </tr>                   
           </table>
         </div>
       </div>

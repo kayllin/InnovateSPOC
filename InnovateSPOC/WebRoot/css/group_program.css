@@ -1,7 +1,7 @@
 .wrap{
 	width: 1024px;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 70px;
 }
 #head{
 	width: 1024px;
@@ -33,17 +33,23 @@
 .content{
 	width: 230px;
 	height: 345px;
-	background-size: 250px 180px !important;
 	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
 	float: left;
 	margin-right: 34px;
 	margin-top: 60px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.content img{
+	position: relative;
+    left: -41px;
+    top: 0px;
 }
 .content:nth-of-type(4),.content:nth-of-type(8){
 	margin-right: 0px;
 }
 .intro{
-	padding-top: 185px;
+	padding-top: 2px;
 
 }
 .intro h1{

@@ -157,7 +157,7 @@ ul{
 }
 .study_bgimg2{
 	vertical-align: middle;
-	padding-top: 73%;
+	padding-top: 70%;
 }
 
 
@@ -359,6 +359,15 @@ ul{
 	margin: auto;
 	margin-top: 8%;
 	position: relative;
+}
+#Loading_member{
+	width: 300px;
+	/*overflow: hidden;*/
+	margin: auto;
+}
+#Loading_member img{
+	width: 300px;
+	margin-top: 40px;
 }
 .employee_title{
 	color: #000;

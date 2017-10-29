@@ -69,11 +69,12 @@ h3{
 	line-height:20px;
 }
 .ult img{
-	margin-bottom:40px;
+	margin-bottom:10px;
 }
 .ult{
 	padding-top:60px;
 	width:644px;
+	padding-bottom:50px;
 }
 .ult li{
 	float:left;
@@ -91,7 +92,7 @@ ul{
  	margin: 0px auto;
 	height: 1200px;
 	margin-bottom:0px;
-    background: url(../images/3D/bg_tm.jpg) no-repeat center top;
+    background: url(../images/3D/bg_tm.png) no-repeat center top;
 }
 #study h3 {
     padding-top: 93px;
@@ -144,7 +145,7 @@ ul{
 }
 .study_li_right:nth-of-type(1) .study_bg img{
 	vertical-align: middle;
-	padding-top: 40%;
+	padding-top: 46%;
 }
 .study_li_left:nth-of-type(2) .study_bg img{
 	vertical-align: middle;
@@ -246,7 +247,7 @@ ul{
 	line-height:30px;
 	}
 .team_title2{
-	height: 71px;
+	height: 110px;
 	width:261px;
 	margin:auto;
 	margin-top:100px !important;
@@ -283,50 +284,64 @@ ul{
 	font-weight: bold;
 	font-size: 18px;
 }
-.memberCreations{
-	width:980px;
-	height:1000px;
-	margin: auto;
-	margin-top:12%;
+
 	
-	}	
-.CreationPartOne{
-	float:left;
-	width:450px;	
-	}
-.CreationPartOne img{
-	width: 450px;
+/*组员作品*/
+.work{
+	margin: auto;
+	margin-top: 8%;
+	max-height:800px;
 }
-.CreationPartTwo{
-	float:left;
-	width:510px;
-	margin-left:15px;
-	}
-.CreationPartTwo img{
-	width: 510px;
+.work_title{
+	margin: auto;
+	width: 980px;
+	overflow: hidden;
 }
-.PartOne{
-	margin-top:20px;	
+.work_item{
+	width: 980px;
+	margin:auto;
+	margin-bottom: 20px;
 }
-.PartOne:nth-of-type(1){
-	position:relative;
-	}
-.creationIcon{
-	position:absolute;	
-	top:30px;
-	left:45px;	
-	}
-.creationIcon img{
-	width: 350px;
-	}
-.PartTwo{
-	margin-top:11px;	
+.work_content{
+	width: 470px;
+	height: 285px;
+	background-size: 470px 210px !important;
+	box-shadow: 0px 10px 10px 1px rgba(1,1,1,0.2);
+	float: left;
+	margin-right: 30px;
+	margin-top: 30px;
+	
 }
-.PartTwo:nth-of-type(1){
-	margin-top:20px;
-	}
+.work_content:nth-of-type(even){
+	margin-right: 0px;
+}
+
+.intro{
+	padding-top: 210px;
+
+}
+.intro h1{
+	font-size: 15px;
+	font-weight: 100;
+	margin-bottom: 30px;
+	padding-left: 15px;
+}
+.intro p{
+	font-size: 12px;
+	padding-left: 25px;
+}
+.intro p:nth-of-type(3){
+	border-top: 1px solid #EFEFEF;
+	padding-top: 10px;
+}
+
+
+
+
+
+
 .slogan{
-	margin-top: 80px;
+	margin-top: 30%;
 }
 .slogan img{
 	width: 100%;
@@ -339,7 +354,7 @@ ul{
 	font-size:24px;
 	color:#000;
 	text-align:center;	
-	margin-bottom:80px;
+	margin-bottom:45px;
 	}
 #carouselEmployeeStar{
 	width:980px;

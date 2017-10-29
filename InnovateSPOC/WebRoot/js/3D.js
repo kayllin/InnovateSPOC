@@ -119,12 +119,18 @@ $(document).ready(function() {
  			},
  		
  			success : function(data) {
-				//$("#img1").attr("src",data[0][0].photo_address);
-				$("#img2").attr("src",data[0][0].photo_address);
-				$("#img3").attr("src",data[0][1].photo_address);
-				$("#img4").attr("src",data[0][2].photo_address);
-				$("#img5").attr("src",data[0][3].photo_address);
-				$("#img6").attr("src",data[0][4].photo_address);
+ 				var Wstring='';
+ 				var showLength=0;
+ 				if(data[0].length>4){
+ 					showLength=4;
+ 				}else{
+ 					showLength=data[0].length;
+ 				}
+ 					for (var i=0;i<showLength;i++){
+ 						Wstring=Wstring+'<div class="work_content" style="background: url('+data[0][i].photo_address+') no-repeat;"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1></div></div>';
+ 					}
+ 				
+ 				$("#work_show").append(Wstring);
  			}
         
         });
@@ -145,7 +151,14 @@ $(document).ready(function() {
  			},
  			success : function(data) {
 				var Estring='';
-				var Estr='<li data-target="#carouselEmployeeStar" data-slide-to="0" class="active"></li>';
+				var Estr='';
+				if(data[0].length==0){
+					$("#Loading_member").show();
+					 
+				}else{
+					Estr='<li data-target="#carouselEmployeeStar" data-slide-to="0" class="active"></li>';
+				}
+				
 				var num=0;
 				var num1=data[0].length/4;
 				var num2=data[0].length%4;

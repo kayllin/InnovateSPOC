@@ -137,6 +137,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                              </div>
                              
+                             <div class="form-group jianju sFalg">
+                                <label for="inputEmail3" class="col-sm-2 control-label">order</label>
+                                <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="shunxu" name="shunxu">
+                                </div>
+                            </div>
+                             
                              <div class="form-group jianju ">
                                 <label for="inputEmail3" class="col-sm-2 control-label">自我介绍</label>
                                 <div class="col-sm-6">

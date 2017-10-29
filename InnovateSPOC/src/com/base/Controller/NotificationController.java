@@ -61,14 +61,7 @@ public class NotificationController {
 
 			// CookieUtils.addCookie("image", filename, response);
 			if (!mFile2.isEmpty()) {
-				// 先删除原有的图像
-				String deleteFile = CookieUtils.getCookieImage(request, response);
-				deleteFile = deleteFile.substring(deleteFile.lastIndexOf("/"));
-				File tempFile = new File(path2 + deleteFile);
-				if (tempFile.isFile() && tempFile.exists()) {
-					tempFile.delete();
-					// System.out.println(filename+"rrrrrr");
-				}
+				
 				// 得到上传的文件的文件名
 				String fileName = mFile2.getOriginalFilename();
 				String fileType = fileName.substring(fileName.lastIndexOf("."));

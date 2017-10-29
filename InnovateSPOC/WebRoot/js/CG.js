@@ -82,7 +82,15 @@ $(document).ready(function() {
  			success : function(data) {
 			    var total2=data[0].length;
 				var Pstring='';
-				var Liststring='<li data-target="#carousel_students" data-slide-to="0" class="active"></li>';
+				var Liststring='';
+				
+				if(data[0].length==0){
+					$("#Loading_member").show();
+					 
+				}else{
+					Estr='<li data-target="#carousel_students" data-slide-to="0" class="active"></li>';
+				}
+				
 				var number=0;
 				var number1=total2/4;
 				var number2=total2%4;
@@ -178,12 +186,18 @@ $(document).ready(function() {
 			success : function(data) {
 
 
-				//$("#work_img1").attr("src",data[0][0].photo_address);
-				$("#work_img2").attr("src",data[0][0].photo_address);
-				$("#work3").attr("src",data[0][1].photo_address);
-				$("#work4").attr("src",data[0][2].photo_address);
-				$("#work5").attr("src",data[0][3].photo_address);
-				$("#work6").attr("src",data[0][4].photo_address);
+				var Wstring='';
+				var showLength=0;
+				if(data[0].length>4){
+					showLength=4;
+				}else{
+					showLength=data[0].length;
+				}
+					for (var i=0;i<showLength;i++){
+						Wstring=Wstring+'<div class="work_content" style="background: url('+data[0][i].photo_address+') no-repeat;"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1></div></div>';
+					}
+				
+				$("#work_show").append(Wstring);
 							
 			}
     });

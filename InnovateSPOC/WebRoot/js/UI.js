@@ -117,9 +117,18 @@ $(document).ready(function() {
          		  });
  			},
  			success : function(data) {
-				var Wstring='<ul><li><img src="../images/UI/p5_con1.jpg" style="width: 420px; height: 378px;"/><div id="p5_con1_bg"><p>组员作品</p></div></li><li><img src="'+data[0][0].photo_address+'" style="width: 537px; height: 378px;"/></li><li><img src="'+data[0][1].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][2].photo_address+'" style="width: 210px; height: 294px;"/></li><li><img src="'+data[0][3].photo_address+'" style="width: 520px; height: 520px;"/></li><li><img src="'+data[0][4].photo_address+'" style="width: 210px; height: 210px;"/><img src="'+data[0][5].photo_address+'" style="width: 210px; height: 294px;"/></li></ul>';
-				
-				$("#p5_content").append(Wstring);
+ 				var Wstring='';
+ 				var showLength=0;
+ 				if(data[0].length>4){
+ 					showLength=4;
+ 				}else{
+ 					showLength=data[0].length;
+ 				}
+ 					for (var i=0;i<showLength;i++){
+ 						Wstring=Wstring+'<div class="work_content" style="background: url('+data[0][i].photo_address+') no-repeat;"><div class="intro workName"><h1>'+data[0][i].project_name+'</h1></div></div>';
+ 					}
+ 				
+ 				$("#work_show").append(Wstring);
  			}
         
         });
@@ -140,7 +149,13 @@ $(document).ready(function() {
  			},
  			success : function(data) {
 				var Estring='';
-				var Estr='<li data-target="#mycarousel3" data-slide-to="0" class="active"></li>';
+				var Estr='';
+				if(data[0].length==0){
+					$("#Loading_member").show();
+					 $("#show_employee").css("height","0px");
+				}else{
+					Estr='<li data-target="#mycarousel3" data-slide-to="0" class="active"></li>';
+				}
 				var num=0;
 				var num1=data[0].length/4;
 				var num2=data[0].length%4;
