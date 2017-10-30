@@ -28,6 +28,11 @@ import com.base.utils.CookieUtils;
 import com.base.utils.ExcelReport;
 import com.base.utils.MessageUtils;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+
 
 @Controller("NotificationController")
 public class NotificationController {
@@ -39,7 +44,12 @@ public class NotificationController {
 		@RequestMapping("jsp/saveNotification.do")
 		public String saveNotification(HttpServletRequest request, ModelMap map,
 				HttpServletResponse response) throws IOException {
-
+			
+			Date date=new Date();
+			DateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+			String time=format.format(date);
+			System.out.println(time);
+			
 			String message = request.getParameter("Newcontent");
 			System.out.println(message+"==========");
 			String title = request.getParameter("title");
@@ -81,9 +91,10 @@ public class NotificationController {
 				CookieUtils.addCookie("image", photo, response);
 			}
 			
-			String insertSql = "insert into news(title,content,photo) values" +
+			String insertSql = "insert into news(title,content,time,photo) values" +
 					"(\'"+ title.trim()+ "\'," +
 					"\'"+ message.trim()+ "\'," +
+					"\'"+ time.trim()+ "\'," +
 					"\'"+ photo.trim()+ "\')";
 		    
 			notificationServiceImpl.setNotification(insertSql);
