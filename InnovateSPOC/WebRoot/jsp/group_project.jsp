@@ -57,12 +57,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </li>							
 							 <li>
 							<a href="CG.jsp">
-						  	  <span class="name_ch">CG特效组</span>
+						  	  <span class="name_ch">影视特效</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="recruit.jsp">
-						  	  <span class="name_ch">企业招聘</span>
+							<a href="downloadfile.jsp">
+						  	  <span class="name_ch">文件分享</span>
 							</a>
 						  </li>
 						  <li>
@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						  </li>
 						  <li>
-							<a href="../login.html">
+							<a href="../login.html" target="_blank">
 						  <span class="name_ch">登录</span>
 							</a>
 						  </li>						 
@@ -83,11 +83,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	
 		<div class="wrap">
-			<div id="head">
+			<!-- <div id="head">
 				<div id="types"><span class="c">类型</span></div>
 				<div id="type"></div>
 				<div id="search_author">作者<input id="searh"/> </div>
-			</div>
+			</div> -->
 			<div id="contents">
 				
 			</div>

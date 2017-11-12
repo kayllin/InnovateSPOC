@@ -52,12 +52,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  </li>							
 							 <li>
 							<a href="CG.jsp">
-						  	  <span class="name_ch">CG特效组</span>
+						  	  <span class="name_ch">影视特效</span>
 							</a>
 						  </li>
 							 <li>
-							<a href="recruit.jsp">
-						  	  <span class="name_ch">企业招聘</span>
+							<a href="downloadfile.jsp">
+						  	  <span class="name_ch">文件分享</span>
 							</a>
 						  </li>
 						  <li>

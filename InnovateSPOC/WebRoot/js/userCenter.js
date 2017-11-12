@@ -17,6 +17,7 @@ $(document).ready(function() {
     			for ( var item in data) {
     				
     				 if(data[i].TSflag == 2){//学生页面
+    					 $(".tFlag").hide();
     					$("#imghead").attr('src', data[i].headshot);
     					$("#id").val(data[i].sid);
     					$("#name").val(data[i].sname);
@@ -28,8 +29,6 @@ $(document).ready(function() {
     					$("#english_address").val(data[i].english_address);
     					$("#introduce").val(data[i].student_introduce);
     					$("#possword").val(data[i].password);
-    					$("#shunxu").val(data[i].sorder);
-    					alert(data[i].sorder);
     					
     					var resumeLink="Uinter.jsp?"+data[i].sid;
     					$("#editRusume").attr("href",resumeLink);
