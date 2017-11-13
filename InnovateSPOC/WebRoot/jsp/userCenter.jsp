@@ -154,6 +154,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             
 						</div>
 						
+						
+						 
+						
+						
 						<div class="col-md-3">
                         	<div class="form-group">
                                 <div class="col-sm-10">
@@ -168,7 +172,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </div>
                         </div>
                         
-                            
+                     <input type="text" class="form-control" id="picture" name="picture" style="display:none">        
 					<div class="row">
 						<div class="col-md-5 col-md-offset-3">
 							<a type="button" class="btn btn-info" id="editRusume" href="">修改简历</a>

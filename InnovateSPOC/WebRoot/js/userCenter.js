@@ -29,6 +29,7 @@ $(document).ready(function() {
     					$("#english_address").val(data[i].english_address);
     					$("#introduce").val(data[i].student_introduce);
     					$("#possword").val(data[i].password);
+    					$("#picture").val(data[i].headshot);
     					
     					var resumeLink="Uinter.jsp?"+data[i].sid;
     					$("#editRusume").attr("href",resumeLink);
