@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>SPOC创新实验室程序组</title>
+    <title>SPOC创新实验室文件下载</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -83,10 +83,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li>
-							<a href="../login.html" target="_blank">
-						  <span class="name_ch">登录</span>
-							</a>
+						  <li class="dropdown">
+						  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="name_ch ">管理入口</span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../login.html" target="_blank">登　　录</a></li>
+					            <li><a href="http://office" target="_blank">协同办公</a></li>
+					            <li><a href="http://video" target="_blank">视频教程</a></li>
+					          </ul>
 						  </li>						 
 						</ul>
 					  </div>
@@ -100,6 +103,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="col-xs-9 col-md-9 col-md-offset-1">VR经验交流PPT下载</div>
 			<div class="col-xs-2 col-md-2">
 				<a href="../images/VR.pptx">
+					<span class="linkSize">下载</span>
+					<span class="glyphicon glyphicon-download fontSize"></span>
+				</a>
+			</div>
+		</div>
+		<div class="row" style="margin-top:20px">
+			<div class="col-xs-9 col-md-9 col-md-offset-1">《僵尸玩偶》游戏设计文档下载</div>
+			<div class="col-xs-2 col-md-2">
+				<a href="../images/game.pdf">
 					<span class="linkSize">下载</span>
 					<span class="glyphicon glyphicon-download fontSize"></span>
 				</a>

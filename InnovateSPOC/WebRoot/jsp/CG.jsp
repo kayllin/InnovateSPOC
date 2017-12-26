@@ -71,10 +71,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						  <span class="name_ch">团队作品</span>
 							</a>
 						  </li>
-						  <li>
-							<a href="../login.html" target="_blank">
-						  <span class="name_ch">登录</span>
-							</a>
+						  <li class="dropdown">
+						  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="name_ch ">管理入口</span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="../login.html" target="_blank">登　　录</a></li>
+					            <li><a href="http://office" target="_blank">协同办公</a></li>
+					            <li><a href="http://video" target="_blank">视频教程</a></li>
+					          </ul>
 						  </li>						 
 						</ul>
 					  </div>

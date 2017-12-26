@@ -164,7 +164,8 @@ ul {
 	float: left; 
 	padding: 0px; 
 }
-.dropdown ul li a:link, .menu ul li a:visited { 
+.dropdown ul li a:link, .menu ul li a:visited {
+	font-size:14px;
 	width: 100px; 
 	height: 30px; 
 	color: #000; 
@@ -173,7 +174,8 @@ ul {
 	text-align:center; 
 }
 .dropdown ul li a:hover{ 
-	width: 100px; 
+	width: 100px;
+	font-size:14px; 
 	height: 30px; 
 	color: #02335b !important; 
 	background:#fff;
@@ -182,6 +184,7 @@ ul {
 .dropdown-menu{
 	position:relative;
 	min-width:105px !important;
+	background:#fff;
 	top:-30px;
 	left:10px;
 }
