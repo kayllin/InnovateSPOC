@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
     
-    //根据账号密码进行验证  返回角色值
+    /*//根据账号密码进行验证  返回角色值
     @Override
     public int login(String username, String password) {
 	Session session = sessionFactory.openSession();
@@ -53,7 +53,32 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	return flag;
-    }
+    }*/
+    //根据账号密码进行验证  返回角色值
+    @Override
+    public int login(String username, String password) {
+		// TODO Auto-generated method stub
+		int flag = -1;
+		String message = null;
+		Connection conn = null;
+		CallableStatement sp = null;
+		try {
+			conn = (Connection) SessionFactoryUtils.getDataSource(
+					sessionFactory).getConnection();
+			sp = (CallableStatement) conn
+					.prepareCall("{CALL innovatespoc.login_spoc(?,?,?)}");
+			sp.setString(1, username);
+			sp.setString(2, password);
+			sp.execute();
+			flag = sp.getInt(3); 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			SqlConnectionUtils.free(conn, sp, null);
+		}
+		return flag;
+	}
     
     //增加用户
 	@Override
